@@ -1,0 +1,80 @@
+.navbar .container .header-img{
+    top: 25vh;
+    left: 8vw;
+    position: absolute;
+    animation: slide-In 200ms;
+    width: 40vw;
+}
+
+.navbar .container .tagline{
+    top: 45vh;
+    left: 12vw;
+    animation: fade-In 400ms;
+    position: absolute;
+    width: 40vw;
+}
+
+.navbar{
+    height: 90vh;
+}
+
+.navbar-active .container .header-img{
+    animation: slide-Out 0.25s;
+    margin-top: 3vh;
+    margin-left: 4vw;
+    height: 30px;
+}
+
+.navbar-active .container .tagline{
+    display: none;
+}
+
+.navbar-active{
+    height: 90vh;
+}
+
+.navbar-active .container{
+    height: 80px;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(75,75,75,1) 0%, rgba(86,86,86,1) 100%);
+    animation : fade-In 800ms;
+    z-index: 999;
+    position: fixed;
+}
+
+/*For slide animation*/
+  
+@keyframes slide-In {
+    0% {
+        width: 0vw;
+    }
+    100% {
+        width: 40vw;
+    }
+}
+
+@keyframes slide-Out {
+    0% {
+        margin-top: 25vh;
+        margin-left: 8vw;
+        opacity: 0;
+        width: 40vw;
+    }
+    100% {
+        margin-top: 3vh;
+        margin-left: 4vw;
+        opacity: 1;
+        height: 30px;
+    }
+}
+
+@keyframes fade-In {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
