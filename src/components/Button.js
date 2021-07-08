@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Button.css";
 
-function Button() {
+function Button(link) {
     const [startButton, setStartButton] = useState(false);
     const changeButton = () => {
         if(window.scrollY >= 300){
@@ -17,7 +17,7 @@ function Button() {
     return(
         <nav className = {startButton ? 'btn-top' : 'btn'}>
             <div className="btn-container">
-                <Link className = 'sign-in-btn' to="/Sign-in">SIGN IN</Link>
+                <Link className = 'sign-in-btn' to={link}>SIGN IN</Link>
             </div>
         </nav>
     )

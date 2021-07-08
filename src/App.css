@@ -6,3 +6,11 @@
   width: 32vw;
   opacity: 25%;
 }
+
+.cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

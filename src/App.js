@@ -15,7 +15,11 @@ function App() {
             <div className="section">
               <Navbar />
               <img className = "start-up--bg-icon" src = {Img2} alt="WhiteList"></img>
-              <div className = "cards"> <Card1 /> <Card2 /> <Card3 /> </div>
+              <div className = "cards">
+                <Card1 className ='flex-card'/>            
+                <Card2 className ='flex-card'/>
+                <Card3 className ='flex-card'/> 
+              </div>
             </div>
           </Route>
         </Switch>
