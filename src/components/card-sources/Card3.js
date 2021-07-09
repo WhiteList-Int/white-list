@@ -1,27 +1,38 @@
 import React from 'react';
-import './Card-3.css';
 import { Link } from 'react-router-dom';
-
-const bubbles = [
-    { className: 'bubble', link: '/link1', text: 'Hourly Rents', id: 'one', key: 11},
-    { className: 'bubble', link: '/link2', text: 'Pension House', id: 'two', key: 12},
-    { className: 'bubble', link: '/link3', text: 'Boarding House', id: 'three', key: 13},
-    { className: 'bubble', link: '/link4', text: 'Appartment', id: 'four', key: 14},
-    { className: 'bubble', link: '/link5', text: 'Hotel', id: 'five', key: 15}
-];
+import { imgs } from "./imgSrc-2";
+import Img10 from "../images/landlord.svg";
+import './Card-3.css';
 
 function Card3() {
     return (
         <div className='card-3'>
-            {bubbles.map((bubble) => {
-                return (
-                    <Link to={bubble.link} className = 'bubble-link' key={bubble.key}>
-                        <div className = {bubble.className} id = {bubble.id}>
-                            <div className="overlay"><h2>{bubble.text}</h2></div>
+            <div className="card-3-container">
+                {imgs.map((list) => (
+                    <div className = {list.className} id = {list.id} key = {list.key}>
+                        <div className="img-containers-2">
+                            <img src = {list.imgs} alt = {list.text}/>
                         </div>
-                    </Link>  
-                )
-            })}
+                        <div className='img-text'><center><h2>{list.text}</h2></center></div>
+                    </div>
+                ))}
+            </div>
+            <div className="card-3-overlay">
+                <div className="card-3-overlay-container">
+                    <div className='card-3-overlay-text'>
+                        <div className="card-3-overlay-text-1">
+                            <h1>A landord?</h1>
+                        </div>
+                        <div className="card-3-overlay-text-2">
+                            <h2>Earn income by sharing your space</h2>
+                        </div>
+                    </div>
+                    <Link className = 'learn-more-btn' to='/learn-more'>LEARN MORE</Link>
+                </div>
+                <div className="card-3-overlay-img">
+                    <img src = {Img10} alt='landlord'/>
+                </div>
+            </div>
         </div>
     )
 }

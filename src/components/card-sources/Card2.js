@@ -16,7 +16,7 @@ function Card2() {
                         available spaces in Cebu.
                     </h3>
                     <h3>You can browse it all here!</h3>
-                    <Link to="/Sign-up" className='sign-up-btn'>Start Now!</Link>
+                    <Link to="/Sign-up" className='sign-up-btn'>START NOW!</Link>
                 </div>
             </div>
         </div>
