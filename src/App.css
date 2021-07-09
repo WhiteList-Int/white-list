@@ -14,3 +14,13 @@
   align-items: center;
 }
 
+@media screen and (max-width:600px) {
+  .start-up--bg-icon {
+    top: 150px;
+  }
+}
+@media screen and (min-width:1200px) {
+  .start-up--bg-icon {
+    top: 100px;
+  }
+}

@@ -1,72 +1,103 @@
-.navbar .container .header-img{
-    top: 25vh;
-    left: 8vw;
-    position: absolute;
+.header-img{
     animation: slide-In 200ms;
-    width: 40vw;
+    width: clamp(300px, 40vw, 500px);
 }
 
-.navbar .container .tagline{
-    top: 45vh;
-    left: 12vw;
+.tagline{
     animation: fade-In 400ms;
-    position: absolute;
-    width: 40vw;
+    margin-top: 15px;
+    width: clamp(250px, 40vw, 450px);
+}
+
+.container{
+    display: flex;
+    padding-top: clamp(10px, 20vh, 150px);
+    flex-direction: column;
+    height: 100%;
 }
 
 .navbar{
-    height: 90vh;
+    height: clamp(400px, 92vh, 700px);
 }
 
-.navbar-active .container .header-img{
-    animation: slide-Out 0.25s;
-    margin-top: 3vh;
-    margin-left: 4vw;
-    height: 30px;
+.header-img-active {
+    animation: slide-Out 200ms;
+    margin-left: 45px;
+    align-self: center;
+    height:45%;
 }
 
-.navbar-active .container .tagline{
+.tagline-active {
     display: none;
 }
 
-.navbar-active{
-    height: 90vh;
+.navbar-active {
+    height: clamp(400px, 92vh, 700px);
 }
 
-.navbar-active .container{
-    height: 80px;
-    width: 100vw;
+.container-active {
+    height: clamp(50px, 10%, 80px);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(0deg, rgba(75,75,75,1) 0%, rgba(86,86,86,1) 100%);
-    animation : fade-In 800ms;
-    z-index: 999;
+    background: linear-gradient(180deg, rgba(31,46,53,0.8) 0%, rgba(31,46,53,0.8) 50%, rgba(31,46,53,0.9) 100%);
+    z-index: 100;
     position: fixed;
 }
 
-/*For slide animation*/
+@media screen and (max-width: 600px) {
+    .header-img{
+        align-self: center;
+    }
+    .tagline{
+        align-self: center;
+    }
+    .header-img-active{
+        margin-left: 0;
+    }
+    .container-active{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .container{
+        padding-left: clamp(20px, 5vw, 100px);
+    }
+    .header-img{
+        align-self: flex-start;
+    }
+    .tagline{
+        align-self: flex-start;
+        margin-left: 50px;
+    }
+}
+/*For slide animation*/ 
   
 @keyframes slide-In {
     0% {
-        width: 0vw;
+        width: 0;
+        opacity: 0;
     }
     100% {
-        width: 40vw;
+        opacity: 1;
+        width: clamp(300px, 40vw, 500px);
     }
 }
 
 @keyframes slide-Out {
     0% {
-        margin-top: 25vh;
-        margin-left: 8vw;
+        margin-top: 24vh;
+        margin-left: 5vw;
         opacity: 0;
-        width: 40vw;
     }
     100% {
-        margin-top: 3vh;
-        margin-left: 4vw;
         opacity: 1;
-        height: 30px;
+        align-self: center;
     }
 }
 

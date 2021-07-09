@@ -1,32 +1,24 @@
-import './Card-1.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { bubbles } from "./imgSrc";
+import "./Card-1.css";
 
-const bubbles = [
-    { className: 'bubble', link: '/link1', text: 'Hourly Rents', id: 'one', key: 1},
-    { className: 'bubble', link: '/link2', text: 'Pension House', id: 'two', key: 2},
-    { className: 'bubble', link: '/link3', text: 'Boarding House', id: 'three', key: 3},
-    { className: 'bubble', link: '/link4', text: 'Appartment', id: 'four', key: 4},
-    { className: 'bubble', link: '/link5', text: 'Hotel', id: 'five', key: 5}
-];
-
-export default function Card1() {
+function Card1() {
     return (
-        <div className='card-1'>
-            <h1> Rent Options </h1>
-            <div className="bubble-container">
-                {bubbles.map((bubble) => {
-                    return (
-                        <Link to={bubble.link} className = 'bubble-link' key={bubble.key}>
-                            <div className = {bubble.className} id = {bubble.id}>
-                                <div className = 'bubble-overlay'>
-                                    <h2>{bubble.text}</h2>
-                                </div>
-                            </div>
-                        </Link>  
-                    )
-                })}
+        <div className = 'card-1'>
+            <h1>VARIOUS RENTAL SERVICES</h1>
+            <div className="card-1-container">
+                {bubbles.map((bub) => (
+                    <Link to = {bub.link} className = {bub.className} id = {bub.id} key = {bub.key}>
+                        <div className="img-containers">
+                            <img src = {bub.imgs} alt = {bub.text}/>
+                        </div>
+                        <div className='bubble-text'><center><h2>{bub.text}</h2></center></div>
+                    </Link>
+                ))}
             </div>
         </div>
     )
 }
+
+export default Card1;
