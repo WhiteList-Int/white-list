@@ -33,7 +33,9 @@ function Navbar() {
             <div className = {navbar ? 'container-active' : 'container'}>
                 <img className = {navbar ? 'header-img-active' : 'header-img'} src = {Img} alt="WhiteList"></img>
                 <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
-                <Link className = {startButton ? 'btn-top' : 'btn-bot'} to='/sign-in'>SIGN-IN</Link>
+                <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
+                    <Link className = {startButton ? 'btn-top' : 'btn-bot'} to='/sign-in'>SIGN-IN</Link>
+                </div>
             </div> 
         </nav>
     )

@@ -59,6 +59,11 @@
     background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
+.bubble:hover {
+    transition: 0.5s;
+    box-shadow: 5px 5px 8px darkgrey;
+}
+
 .bubble-text {
     height: 20%;
 }

@@ -10,12 +10,20 @@ function Footer() {
             <div className = "footer-container">
                 <div className="footer-head">
                     <div className="footer-head-left">
-                        <Link to="/about-us" className='left-links'>About WhiteList </Link>
-                        <Link to="/contact-us" className='left-links'>Contact Us</Link>
+                        <div className="llink-containers">
+                            <Link to="/about-us" className='left-links'>About WhiteList </Link>
+                        </div>
+                        <div className="llink-containers">
+                            <Link to="/contact-us" className='left-links'>Contact Us</Link>
+                        </div>
                     </div>
                     <div className="footer-head-right">
-                        <Link to="/terms-of-service" className='right-links'>Terms of Service</Link>
-                        <Link to="/privacy-policy" className='right-links'>Privacy Policy</Link>
+                        <div className="rlink-containers">
+                            <Link to="/terms-of-service" className='right-links'>Terms of Service</Link>
+                        </div>
+                        <div className="rlink-containers">
+                            <Link to="/privacy-policy" className='right-links'>Privacy Policy</Link>
+                        </div>
                     </div>
                 </div>
                 <div className="footer-tail">
