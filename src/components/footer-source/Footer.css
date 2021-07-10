@@ -1,34 +1,69 @@
 .footer {
     position: absolute;
-    display: flex;
-    flex-direction: column;
     box-shadow: 3px 0px 10px black;
     width: 100%;
-    height: clamp(200px,45vh,400px);
+    height: clamp(300px,60vh,500px);
     z-index: 100;
     background-color: #1F2E35;
 }
 
-.footer-head{
+.footer-container{
+    height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
+}
+
+.footer-head{
+    width: 100%;
+    height: 30%;
+    display: flex;
     flex-direction: row;
+}
+
+.footer-tail{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-head-left {
     display: flex;
-    width: 50%;
-    justify-content:flex-start;
-    align-self: center;
+    align-items: center;
+    justify-content: flex-end;
     flex-direction: row;
+    height: 100%;
+    width: 50%;
 }
 
 .footer-head-right {
     display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    align-self: center;
+    align-items: center;
+    justify-content: flex-start;
     flex-direction: row;
+    height: 100%;
+    width: 50%;
+}
+
+.llink-containers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45%;
+    height: 100%;
+}
+
+.rlink-containers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 45%;
+    height: 100%;
 }
 
 .left-links{
@@ -36,8 +71,6 @@
     color: white;
     text-shadow: 1px 1px 3px black;
     font-size: clamp(10px, 1vw, 20px);
-    padding-top: clamp(20px,15%,50px);
-    padding-left: clamp(30px,15%,100px);
 }
 
 .right-links{
@@ -45,8 +78,6 @@
     color: white;
     text-shadow: 1px 1px 3px black;
     font-size: clamp(10px, 1vw, 20px);
-    padding-top: clamp(20px,15%,50px);
-    padding-right: clamp(30px,15%,100px);
 }
 
 .left-links:hover{
@@ -57,15 +88,6 @@
 .right-links:hover{
     text-decoration: underline;
     color:aquamarine;
-}
-
-.footer-tail{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    justify-content: center;
 }
 
 .footer-title-text{
