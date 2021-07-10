@@ -10,10 +10,15 @@ function Card3() {
             <div className="card-3-container">
                 {imgs.map((list) => (
                     <div className = {list.className} id = {list.id} key = {list.key}>
-                        <div className="img-containers-2">
+                        <div className="imgs">
                             <img src = {list.imgs} alt = {list.text}/>
                         </div>
-                        <div className='img-text'><center><h2>{list.text}</h2></center></div>
+                        <div className='img-text'>
+                            <center>
+                                <h2>{list.text}</h2>
+                                <h3>{list.text2}</h3>
+                            </center>
+                        </div>
                     </div>
                 ))}
             </div>
