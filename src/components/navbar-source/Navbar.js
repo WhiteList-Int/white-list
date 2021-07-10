@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Img from '../images/white-list-text.svg';
 import Img2 from '../images/white-list-tagline.svg';
-import SignIn from '../sign-in-page/SignIn';
+import SignIn from '../signing-page/SignIn';
 import "./Navbar.css";
 import "./Button.css";
 
