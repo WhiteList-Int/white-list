@@ -1,10 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import Img11 from '../images/white-list-text.svg';
 import Img12 from '../images/copyright.svg';
 import "./Footer.css";
+import ContactUs from '../information-page/ContactUs';
+import { setConstantValue } from 'typescript';
+
 
 function Footer() {
+    
+    const [isOpen, setIsOpen] = useState(false);
+    const showScroll = () => {
+        document.body.setAttribute('style', 'overflow-y:scroll;');
+    }
+
     return (
         <div className = "footer">
             <div className = "footer-container">
@@ -14,7 +23,8 @@ function Footer() {
                             <Link to="/about-us" className='left-links'>About WhiteList </Link>
                         </div>
                         <div className="llink-containers">
-                            <Link to="/contact-us" className='left-links'>Contact Us</Link>
+                            <Link to="/contact-us" className='left-links' onClick={() => setIsOpen(true)}>Contact Us</Link>
+                            <ContactUs open={isOpen} onClose={()=> {setIsOpen(false);showScroll();}}> </ContactUs>
                         </div>
                     </div>
                     <div className="footer-head-right">
