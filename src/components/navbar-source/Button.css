@@ -56,16 +56,16 @@
 }
 
 @media screen and (max-width: 600px) {
-    .btn-top {
+    .btn-top-container {
         display: none;
     }
-    .btn-bot{
+    .btn-bot-container {
         align-self: center;
     }
 }
 
 @media screen and (min-width: 600px) {
-    .btn-bot{
+    .btn-bot-container {
         align-self: flex-start;
         margin-left: clamp(50px, 10vw, 200px);
     }
