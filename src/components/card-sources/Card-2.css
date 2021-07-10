@@ -28,12 +28,12 @@
     flex-direction: column;
 }
 
-h1 {
+.card-2-header h1 {
     font-size: clamp(40px, 4.2vw, 75px);
     margin: 0;
 }
 
-h2{
+.card-2-header h2 {
     font-size: clamp(25px, 3.8vw, 70px);
     margin: 0;
     font-weight: lighter;
@@ -41,7 +41,7 @@ h2{
     margin-bottom: 15vh;
 }
 
-h3 {
+.card-2-contents h3 {
     font-size: clamp(15px, 1.8vw, 50px);
     font-weight: lighter;
     padding-top: 3vh;
