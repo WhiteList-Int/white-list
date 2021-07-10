@@ -4,7 +4,7 @@ import { imgs } from "./imgSrc-2";
 import Img10 from "../images/landlord.svg";
 import './Card-3.css';
 
-function Card3() {
+const Card3 = () => {
     return (
         <div className='card-3'>
             <div className="card-3-container">

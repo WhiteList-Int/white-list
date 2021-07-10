@@ -4,7 +4,7 @@ import Img11 from '../images/white-list-text.svg';
 import Img12 from '../images/copyright.svg';
 import "./Footer.css";
 
-function Footer() {
+const Footer = () => {
     return (
         <div className = "footer">
             <div className = "footer-container">

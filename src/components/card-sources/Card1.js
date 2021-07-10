@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { bubbles } from "./imgSrc";
 import "./Card-1.css";
 
-function Card1() {
+const Card1 = () => {
     return (
         <div className = 'card-1'>
             <h1>VARIOUS RENTAL SERVICES</h1>

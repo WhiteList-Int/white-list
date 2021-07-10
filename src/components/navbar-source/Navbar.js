@@ -6,7 +6,7 @@ import SignIn from '../signing-page/SignIn';
 import "./Navbar.css";
 import "./Button.css";
 
-function Navbar() {
+const Navbar = () => {
 
     const [startButton, setStartButton] = useState(false);
     const [navbar, setNavbar] = useState(false);
@@ -42,7 +42,7 @@ function Navbar() {
                 <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
                 <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
                     <Link to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsOpen(true)}>SIGN-IN</Link>
-                    <SignIn open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}></SignIn>
+                    <SignIn open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}/>
                 </div>
             </div> 
         </nav>

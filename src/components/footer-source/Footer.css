@@ -3,7 +3,7 @@
     box-shadow: 3px 0px 10px black;
     width: 100%;
     height: clamp(300px,60vh,500px);
-    z-index: 100;
+    z-index: 3;
     background-color: #1F2E35;
 }
 

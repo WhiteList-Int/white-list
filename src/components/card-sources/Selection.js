@@ -10,7 +10,7 @@ const bubbles = [
     { className: 'bubble', link: '/link5', text: 'Hotel', id: 'five', key: 5}
 ];
 
-export default function Card1() {
+const Card1 = () => {
     return (
         <div className='card-1'>
             <h1> Rent Options </h1>
@@ -30,3 +30,5 @@ export default function Card1() {
         </div>
     )
 }
+
+export default Card1;
