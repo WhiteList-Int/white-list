@@ -6,8 +6,7 @@ import "./Footer.css";
 import ContactUs from '../information-page/ContactUs';
 import { setConstantValue } from 'typescript';
 
-
-function Footer() {
+const Footer = () => {
     
     const [isOpen, setIsOpen] = useState(false);
     const showScroll = () => {

@@ -1,8 +1,15 @@
-import React from 'react';
-import './Card-2.css';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import StartUp from '../information-page/StartUp';
+import './Card-2.css';
 
-function Card2() {
+const Card2 = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    
+    const showScroll = () => {
+        document.body.setAttribute('style','overflow-y:scroll;');
+    }
+
     return (
         <div className='card-2'>
             <div className="card-2-container">
@@ -16,7 +23,8 @@ function Card2() {
                         available spaces in Cebu.
                     </h3>
                     <h3>You can browse it all here!</h3>
-                    <Link to="/Sign-up" className='sign-up-btn'>START NOW!</Link>
+                    <Link to="/" className='sign-up-btn' onClick={()=>{setIsOpen(true)}}>START NOW!</Link>
+                    <StartUp open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}/>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ export default function SignIn({open, onClose}) {
         <> 
             {document.body.setAttribute('style','overflow:hidden;')}
             <div className="sign-in">
-                <div className='exit-zone' onClick={onClose}></div>
+                <div className='exit-zone' onClick={onClose}/>
                 <div className="sign-in-container">
                     <div className="sign-in-title">
                         <h1>Login</h1>
