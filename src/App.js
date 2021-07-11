@@ -10,8 +10,8 @@ function App() {
     <main className="App">
       <AnimatePresence exitBeforeEnter>
         <Switch loaction={location} key={location.pathname}>
-          <Route path = '/rental-dashboard' exact component={RentalDashboard}/>
-          <Route path = '/' exact component={Homepage}/>
+          <Route path = '/rental-dashboard'  component={RentalDashboard}/>
+          <Route path = '/'  component={Homepage}/>
         </Switch>
       </AnimatePresence>
     </main>
