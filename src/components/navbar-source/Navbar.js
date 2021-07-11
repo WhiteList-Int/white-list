@@ -10,7 +10,52 @@ const Navbar = () => {
 
     const [startButton, setStartButton] = useState(false);
     const [navbar, setNavbar] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isSignInOpen, setIsSignInOpen] = useState(false);
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
+    // const emailRef = useRef()
+    // const passwordRef = useRef()
+    // const passwordConfirmRef = useRef()
+    // const { signup } = useAuth()
+    // const { login } = useAuth()
+    // const [error, setError] = useState('')
+    // const [loading, setLoading] = useState(false)
+    // const history = useHistory()
+    
+    // async function handleSignUpSubmit() {
+    //     //e.preventDefault()
+
+    //     if(passwordRef.current.value !== passwordConfirmRef.current.value) {
+    //         return setError('Passwords do not match')
+    //     }
+
+    //     try {
+    //         setError('')
+    //         setLoading(true)
+    //         await signup(emailRef.current.value, passwordRef.current.value)
+    //         history.push("/")
+    //     } catch {
+    //         setError('Failed to create an account')
+    //     }
+    //     setLoading(false)
+
+    // }
+
+    // async function handleSignInSubmit() {
+    //     //e.preventDefault()
+
+    //     try {
+    //         setError('')
+    //         setLoading(true)
+    //         await login(emailRef.current.value, passwordRef.current.value)
+    //         history.push("/")
+    //     } catch {
+    //         setError('Failed to login')
+    //     }
+    //     setLoading(false)
+
+    // }
+
     
     const showScroll = () => {
         document.body.setAttribute('style','overflow-y:scroll;');
@@ -41,8 +86,13 @@ const Navbar = () => {
                 <img className = {navbar ? 'header-img-active' : 'header-img'} src = {Img} alt="WhiteList"></img>
                 <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
                 <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
-                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsOpen(true)}>SIGN-IN</NavLink>
-                    <SignIn open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}/>
+                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsSignInOpen(true)}>SIGN-IN</NavLink>
+                    <SignIn open={isSignInOpen}
+                    redirect={isSignUpOpen}
+                    onClose={() => {setIsSignInOpen(false);showScroll();}}
+                    onRedirectToUp={() => {setIsSignUpOpen(true)}}
+                    onRedirectToIn={() => {setIsSignInOpen(true);setIsSignUpOpen(false)}}
+                    />
                 </div>
             </div> 
         </nav>
