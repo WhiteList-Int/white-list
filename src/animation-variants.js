@@ -20,5 +20,22 @@ export const variants = {
     slideOutX: {
         opacity: 0,
         x: "-100%"
+    },
+
+    slideInYOpp: {
+        opacity: 1,
+        y: 0
+    },
+    slideOutYOpp: {
+        opacity: 0,
+        y: "100%"
+    },
+    slideInXOpp: {
+        opacity: 1,
+        x: 0
+    },
+    slideOutXOpp: {
+        opacity: 0,
+        x: "100%"
     }
 }
