@@ -12,6 +12,7 @@ export default function ContactUs({open, onClose}) {
     return ReactDom.createPortal(
         <>
             {document.body.setAttribute('style','overflow:hidden;')}
+
             <motion.div 
                 className="contact-us"
                 initial="fadeOut" 
@@ -43,6 +44,7 @@ export default function ContactUs({open, onClose}) {
                     </div>
                 </div>
             </motion.div>
+
         </>,
         document.getElementById('contact-us-pop-up')
     )
