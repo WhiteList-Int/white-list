@@ -1,7 +1,8 @@
 .card-2 {
     width: 88vw;
+    height: fit-content;
     padding-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: clamp(50px,5%,80px);
     margin-top: -100px;
     border-radius: 30px;
     background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
