@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { imgs } from "./imgSrc-2";
 import Img10 from "../images/landlord.svg";
 import './Card-3.css';
@@ -32,7 +32,7 @@ const Card3 = () => {
                             <h2>Earn income by sharing your space</h2>
                         </div>
                     </div>
-                    <Link className = 'learn-more-btn' to='/learn-more'>LEARN MORE</Link>
+                    <NavLink className = 'learn-more-btn' to='/learn-more'>LEARN MORE</NavLink>
                 </div>
                 <div className="card-3-overlay-img">
                     <img src = {Img10} alt='landlord'/>

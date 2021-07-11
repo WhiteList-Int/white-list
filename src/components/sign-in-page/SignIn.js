@@ -1,8 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { variants } from '../../animation-variants';
+import { transitions } from '../../page-transitions';
+import { NavLink } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
-import './Sign-in.css';
+import './SignIn.css';
 
 export default function SignIn({open, onClose}) {
     if(!open) return null;
@@ -10,7 +13,14 @@ export default function SignIn({open, onClose}) {
     return ReactDom.createPortal(
         <> 
             {document.body.setAttribute('style','overflow:hidden;')}
-            <div className="sign-in">
+            <motion.div
+                className="sign-in"
+                initial="fadeOut" 
+                animate="fadeIn" 
+                exit="fadeOut"
+                variants={variants}
+                transition={transitions.tweenEaseInFaster}
+            >
                 <div className='exit-zone' onClick={onClose}/>
                 <div className="sign-in-container">
                     <div className="sign-in-title">
@@ -21,14 +31,14 @@ export default function SignIn({open, onClose}) {
                         <input className="" type="password" value="************" required/>
                     </div>
                     <div className="sign-in-buttons">
-                        <Link to="/" className='sign-in-link'>Sign-in</Link>
+                        <NavLink to="/" className='sign-in-link'>Sign-in</NavLink>
                         <img src={gsign} alt='gsign'/>
                     </div>
                     <div className="sign-in-footer">
-                        <Link to="/" className='sign-up-link'>Not yet registered?</Link>
+                        <NavLink to="/" className='sign-up-link'>Not yet registered?</NavLink>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>,
         document.getElementById('sign-in-pop-up')
     )

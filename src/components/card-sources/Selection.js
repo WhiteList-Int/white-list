@@ -1,6 +1,6 @@
 import './Card-1.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const bubbles = [
     { className: 'bubble', link: '/link1', text: 'Hourly Rents', id: 'one', key: 1},
@@ -17,13 +17,13 @@ const Card1 = () => {
             <div className="bubble-container">
                 {bubbles.map((bubble) => {
                     return (
-                        <Link to={bubble.link} className = 'bubble-link' key={bubble.key}>
+                        <NavLink to={bubble.link} className = 'bubble-link' key={bubble.key}>
                             <div className = {bubble.className} id = {bubble.id}>
                                 <div className = 'bubble-overlay'>
                                     <h2>{bubble.text}</h2>
                                 </div>
                             </div>
-                        </Link>  
+                        </NavLink>  
                     )
                 })}
             </div>

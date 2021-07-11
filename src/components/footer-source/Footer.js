@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Img11 from '../images/white-list-text.svg';
 import Img12 from '../images/copyright.svg';
 import "./Footer.css";
 import ContactUs from '../information-page/ContactUs';
-import { setConstantValue } from 'typescript';
 
 const Footer = () => {
     
@@ -19,19 +18,19 @@ const Footer = () => {
                 <div className="footer-head">
                     <div className="footer-head-left">
                         <div className="llink-containers">
-                            <Link to="/about-us" className='left-links'>About WhiteList </Link>
+                            <NavLink to="/about-us" className='left-links'>About WhiteList </NavLink>
                         </div>
                         <div className="llink-containers">
-                            <Link to="/contact-us" className='left-links' onClick={() => setIsOpen(true)}>Contact Us</Link>
+                            <NavLink to="/contact-us" className='left-links' onClick={() => setIsOpen(true)}>Contact Us</NavLink>
                             <ContactUs open={isOpen} onClose={()=> {setIsOpen(false);showScroll();}}> </ContactUs>
                         </div>
                     </div>
                     <div className="footer-head-right">
                         <div className="rlink-containers">
-                            <Link to="/terms-of-service" className='right-links'>Terms of Service</Link>
+                            <NavLink to="/terms-of-service" className='right-links'>Terms of Service</NavLink>
                         </div>
                         <div className="rlink-containers">
-                            <Link to="/privacy-policy" className='right-links'>Privacy Policy</Link>
+                            <NavLink to="/privacy-policy" className='right-links'>Privacy Policy</NavLink>
                         </div>
                     </div>
                 </div>

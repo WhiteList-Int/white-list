@@ -1,32 +1,20 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-import Img2 from './components/images/white-list-icon-gradient.svg';
-import Navbar from './components/navbar-source/Navbar';
-import Footer from './components/footer-source/Footer';
-import Card1 from  './components/card-sources/Card1';
-import Card2 from  './components/card-sources/Card2';
-import Card3 from  './components/card-sources/Card3';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Homepage from './Homepage.js';
+import RentalDashboard from './components/main-pages/react-js/RentalDashboard';
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path = '/'>
-            <div className="section">
-              <Navbar />
-              <img className = "start-up--bg-icon" src = {Img2} alt="WhiteList"></img>
-              <div className = "cards">
-                <Card1 className ='flex-card'/>            
-                <Card2 className ='flex-card'/>
-                <Card3 className ='flex-card'/> 
-              </div>
-              <Footer />
-            </div>
-          </Route>
+    <main className="App">
+      <AnimatePresence exitBeforeEnter>
+        <Switch loaction={location} key={location.pathname}>
+          <Route path = '/rental-dashboard' exact component={RentalDashboard}/>
+          <Route path = '/' exact component={Homepage}/>
         </Switch>
-      </div>
-    </Router>
+      </AnimatePresence>
+    </main>
   );
 }
 

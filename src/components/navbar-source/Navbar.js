@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Img from '../images/white-list-text.svg';
 import Img2 from '../images/white-list-tagline.svg';
-import SignIn from '../signing-page/SignIn';
+import SignIn from '../sign-in-page/SignIn';
 import "./Navbar.css";
 import "./Button.css";
 
@@ -41,7 +41,7 @@ const Navbar = () => {
                 <img className = {navbar ? 'header-img-active' : 'header-img'} src = {Img} alt="WhiteList"></img>
                 <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
                 <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
-                    <Link to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsOpen(true)}>SIGN-IN</Link>
+                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsOpen(true)}>SIGN-IN</NavLink>
                     <SignIn open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}/>
                 </div>
             </div> 

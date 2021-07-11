@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import './Contact-us.css'
 
@@ -29,7 +29,7 @@ export default function ContactUs({open, onClose}) {
                     
                 </div>
                 <div className="contact-submit">
-                    <Link to='/' className="contact-submit-button">Contact Us</Link>
+                    <NavLink to='/' className="contact-submit-button">Contact Us</NavLink>
                 </div>
             </div>
          </div>

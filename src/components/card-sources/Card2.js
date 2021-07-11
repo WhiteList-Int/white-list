@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import StartUp from '../information-page/StartUp';
 import './Card-2.css';
 
@@ -23,7 +23,7 @@ const Card2 = () => {
                         available spaces in Cebu.
                     </h3>
                     <h3>You can browse it all here!</h3>
-                    <Link to="/" className='sign-up-btn' onClick={()=>{setIsOpen(true)}}>START NOW!</Link>
+                    <NavLink to="/" className='sign-up-btn' onClick={()=>{setIsOpen(true)}}>START NOW!</NavLink>
                     <StartUp open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}/>
                 </div>
             </div>
