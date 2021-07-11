@@ -14,7 +14,7 @@ import Img32 from '../images/house13.jpg';
 import Img33 from '../images/house14.jpg';
 import Img34 from '../images/house15.jpg';
 
-const rentData = [
+export const rentalData = [
     { className: 'rent-select', imgs: Img20, text: 'Lahug, Cebu City', link: '/', id: 'b01', stars: 5, key: 1},
     { className: 'rent-select', imgs: Img21, text: 'Mambaling, Cebu City', link: '/', id: 'b02', stars: 5, key: 2},
     { className: 'rent-select', imgs: Img22, text: 'Tisa, Cebu City', link: '/', id: 'b03', stars: 2, key: 3},
@@ -31,5 +31,3 @@ const rentData = [
     { className: 'rent-select', imgs: Img33, text: 'Bulacao, Cebu', link: '/', id: 'b014', stars: 5, key: 14},
     { className: 'rent-select', imgs: Img34, text: 'Bulacao, Cebu', link: '/', id: 'b015', stars: 3, key: 15}
 ];
-
-export default rentData;

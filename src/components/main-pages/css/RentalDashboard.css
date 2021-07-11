@@ -1,0 +1,46 @@
+.rental-dashboard-box{
+    background-image: radial-gradient(circle, rgba(99,111,116,1) 0%, rgba(31,46,53,1) 100%);
+    height: 100vh;
+    width: 100vw;
+}
+.rent-dash-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+.rent-dash-left-box{
+    height:100%;
+    width:20%;
+}
+.rent-box-right-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height:100%;
+    width:80%;
+}
+.upper-right-box{
+    height:20%;
+    width: 100%;
+}
+.lower-right-box{
+    height:89%;
+    width: 99%;
+    border-top-left-radius: 40px;
+    border: 5px inset rgba(31,46,53,1);
+    background-color: #E4E4E1;
+    background-image: radial-gradient(at top center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.03) 100%), linear-gradient(to top, rgba(255,255,255,0.1) 0%, rgba(143,152,157,0.60) 100%);
+ 	background-blend-mode: normal, multiply;
+}
+.rent-select{
+    width: 200px;
+    height: 100px;
+}
+
+.stars{
+    width: 20px;
+}

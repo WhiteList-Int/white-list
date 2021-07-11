@@ -2,12 +2,6 @@
   background: radial-gradient(circle, rgba(99,111,116,1) 0%, rgba(31,46,53,1) 100%);
 }
 
-.rental-dashboard-section {
-  height: 100%;
-  width: 100%;;
-  background: radial-gradient(circle, rgba(99,111,116,0.2) 0%, rgba(31,46,53,0.2) 100%);
-}
-
 .start-up--bg-icon {
   top: 10vh;
   right: 3vw;
