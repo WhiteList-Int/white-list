@@ -7,8 +7,8 @@ import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 import './SignIn.css';
 
-export default function SignIn({open, onClose}) {
-    if(!open) return null;
+export default function SignIn({openIn,isLoadin, onSignInClose, onRedirectToUp, onSubmitIn}) {
+    if(!openIn) return null;
 
     return ReactDom.createPortal(
         <> 
@@ -21,7 +21,7 @@ export default function SignIn({open, onClose}) {
                 variants={variants}
                 transition={transitions.tweenEaseInFaster}
             >
-                <div className='exit-zone' onClick={onClose}/>
+                <div className='exit-zone' onClick={onSignInClose}/>
                 <div className="sign-in-container">
                     <div className="sign-in-title">
                         <h1>Login</h1>
@@ -31,11 +31,16 @@ export default function SignIn({open, onClose}) {
                         <input className="" type="password" value="************" required/>
                     </div>
                     <div className="sign-in-buttons">
-                        <NavLink to="/" className='sign-in-link'>Sign-in</NavLink>
+                        <NavLink to="/" className='sign-in-link' 
+                            onClick={onSubmitIn}
+                            hidden={isLoadin}>Sign-in
+                        </NavLink>
                         <img src={gsign} alt='gsign'/>
                     </div>
                     <div className="sign-in-footer">
-                        <NavLink to="/" className='sign-up-link'>Not yet registered?</NavLink>
+                        <NavLink to="/" className='sign-up-link' onClick={onRedirectToUp}>
+                            Not yet registered?
+                        </NavLink>
                     </div>
                 </div>
             </motion.div>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import Img from '../images/white-list-text.svg';
 import Img2 from '../images/white-list-tagline.svg';
 import SignIn from '../sign-in-page/SignIn';
+import { useAuth } from '../firebase/AuthContext'
 import "./Navbar.css";
 import "./Button.css";
 
@@ -10,7 +11,54 @@ const Navbar = () => {
 
     const [startButton, setStartButton] = useState(false);
     const [navbar, setNavbar] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isSignInOpen, setIsSignInOpen] = useState(false);
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+    const { signup } = useAuth()
+    const { login } = useAuth()
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+    const history = useHistory()
+    
+    async function handleSignUpSubmit() {
+        //e.preventDefault()
+
+        if(passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError('Passwords do not match')
+        }
+
+        try {
+            setError('')
+            setLoading(true)
+            await signup(emailRef.current.value, passwordRef.current.value)
+            history.push("/")
+        } catch {
+            setError('Failed to create an account')
+        }
+        setLoading(false)
+
+    }
+
+    async function handleSignInSubmit() {
+        //e.preventDefault()
+
+        try {
+            setError('')
+            setLoading(true)
+            await login(emailRef.current.value, passwordRef.current.value)
+            history.push("/")
+        } catch {
+            setError('Failed to login')
+        }
+        setLoading(false)
+
+    }
+
+
+
     
     const showScroll = () => {
         document.body.setAttribute('style','overflow-y:scroll;');
@@ -41,8 +89,18 @@ const Navbar = () => {
                 <img className = {navbar ? 'header-img-active' : 'header-img'} src = {Img} alt="WhiteList"></img>
                 <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
                 <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
-                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsOpen(true)}>SIGN-IN</NavLink>
-                    <SignIn open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}/>
+                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsSignInOpen(true)}>SIGN-IN</NavLink>
+                    <SignIn openIn={isSignInOpen}
+                    openUp={isSignUpOpen}
+                    isLoadin={loading}
+                    isError={error}
+                    onSignInClose={() => {setIsSignInOpen(false);showScroll();}} 
+                    onSignUpClose={() => {setIsSignUpOpen(false);showScroll();}}
+                    onRedirectToIn={() => {setIsSignInOpen(true);setIsSignUpOpen(false)}}
+                    onRedirectToUp={() => {setIsSignInOpen(false);setIsSignUpOpen(true)}}
+                    onSubmitIn={() => {handleSignInSubmit();setIsSignInOpen(false);showScroll();}}
+                    onSubmitUp={() => {handleSignUpSubmit();setIsSignUpOpen(false);showScroll();}}
+                    />
                 </div>
             </div> 
         </nav>
