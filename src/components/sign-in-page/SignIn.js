@@ -15,7 +15,7 @@ const SignIn = ({open, onClose, redirect, onRedirectToUp, onRedirectToIn}) => {
     const passwordRef = useRef()
     // const { signup } = useAuth()
     // const { login } = useAuth()
-    const Authent = () => {
+    function Authent() {
         const { signup } = useAuth()
         const { login } = useAuth()
         const { currentUser } = useAuth()
