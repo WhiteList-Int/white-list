@@ -10,7 +10,8 @@ const Navbar = () => {
 
     const [startButton, setStartButton] = useState(false);
     const [navbar, setNavbar] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isSignInOpen, setIsSignInOpen] = useState(false);
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
     
     const showScroll = () => {
         document.body.setAttribute('style','overflow-y:scroll;');
@@ -41,8 +42,13 @@ const Navbar = () => {
                 <img className = {navbar ? 'header-img-active' : 'header-img'} src = {Img} alt="WhiteList"></img>
                 <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
                 <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
-                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsOpen(true)}>SIGN-IN</NavLink>
-                    <SignIn open={isOpen} onClose={() => {setIsOpen(false);showScroll();}}/>
+                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => setIsSignInOpen(true)}>SIGN-IN</NavLink>
+                    <SignIn open={isSignInOpen} 
+                        redirect={isSignUpOpen}
+                        onClose={() => {setIsSignInOpen(false);showScroll();}}
+                        onRedirectToUp={() => {setIsSignUpOpen(true)}}
+                        onRedirectToIn={() => {setIsSignInOpen(true);setIsSignUpOpen(false)}}
+                    />
                 </div>
             </div> 
         </nav>
