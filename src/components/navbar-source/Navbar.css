@@ -109,3 +109,39 @@
         opacity: 1;
     }
 }
+
+/*For Fixed Navbar*/
+
+.fixed-header-img {
+    animation: slide-Out 200ms;
+    align-self: center;
+    position: absolute;
+    top:15px;
+    height:15%;
+}
+
+.fixed-navbar {
+    height: 80px;
+    width: 100%;
+}
+
+.fixed-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(31,46,53,0.8) 0%, rgba(31,46,53,0.8) 50%, rgba(31,46,53,0.9) 100%);
+}
+
+@media screen and (max-width: 600px) {
+    .fixed-header-img {
+        margin-left: 0;
+    }
+    .fixed-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,4 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { variants } from '../../animation-variants';
+import { transitions } from '../../page-transitions';
 import { NavLink } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import './ContactUs.css'
@@ -9,7 +12,15 @@ export default function ContactUs({open, onClose}) {
     return ReactDom.createPortal(
         <>
             {document.body.setAttribute('style','overflow:hidden;')}
-        <div className="contact-us">
+
+            <motion.div 
+                className="contact-us"
+                initial="fadeOut" 
+                animate="fadeIn" 
+                exit="fadeOut"
+                variants={variants}
+                transition={transitions.tweenEaseOutFast}
+            >
             <div className="exit-zone" onClick={onClose}></div>
             <form className="contact-us-container">
                     <h2 className="contact-title">Customer Support</h2>
@@ -27,8 +38,8 @@ export default function ContactUs({open, onClose}) {
                 <div className="contact-submit">
                     <NavLink to='/' className="contact-submit-button">Contact Us</NavLink>
                 </div>
-            </form>
-         </div>
+              </form>
+            </motion.div>
         </>,
         document.getElementById('contact-us-pop-up')
     )

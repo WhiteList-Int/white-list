@@ -21,7 +21,7 @@ const Footer = () => {
                             <NavLink to="/about-us" className='left-links'>About WhiteList </NavLink>
                         </div>
                         <div className="llink-containers">
-                            <NavLink to="/contact-us" className='left-links' onClick={() => setIsOpen(true)}>Contact Us</NavLink>
+                            <NavLink to="/" className='left-links' onClick={() => setIsOpen(true)}>Contact Us</NavLink>
                             <ContactUs open={isOpen} onClose={()=> {setIsOpen(false);showScroll();}}> </ContactUs>
                         </div>
                     </div>
