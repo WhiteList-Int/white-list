@@ -7,7 +7,9 @@ import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 import './SignIn.css';
 
+
 export default function SignIn({open, onClose}) {
+    
     if(!open) return null;
 
     return ReactDom.createPortal(
@@ -35,7 +37,8 @@ export default function SignIn({open, onClose}) {
                         <img src={gsign} alt='gsign'/>
                     </div>
                     <div className="sign-in-footer">
-                        <NavLink to="/" className='sign-up-link'>Not yet registered?</NavLink>
+                        <NavLink to="/sign-up" className='sign-up-link' >Not yet registered?</NavLink>
+                        
                     </div>
                 </div>
             </motion.div>
