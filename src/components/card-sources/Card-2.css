@@ -1,8 +1,8 @@
 .card-2 {
     width: 88vw;
     height: fit-content;
-    padding-top: 50px;
-    padding-bottom: clamp(50px,5%,80px);
+    padding-top: clamp(30px,2%,50px);
+    padding-bottom: clamp(30px,4%,60px);
     margin-top: -100px;
     border-radius: 30px;
     background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);z-index: 3;
@@ -29,14 +29,14 @@
 
 .card-2-header h1 {
     font-size: clamp(40px, 4.2vw, 75px);
-    font-family: "Abril Fatface";
+    font-family: "Montserrat", sans-serif;
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-    font-weight: 100;
-    margin: 0;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .card-2-header h2 {
@@ -45,28 +45,26 @@
     background: linear-gradient(to right, #2C5364, rgb(49, 63, 68), #555e61); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-    font-family: "Raleway";
-    margin: 0;
-    font-weight: 100;
-    align-self: flex-end;
-    margin-bottom: 15vh;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 30px;
+    font-weight: 400;
+    margin-bottom: 10vh;
 }
 
 .card-2-contents h3 {
-    font-size: clamp(15px, 1.8vw, 50px);
+    font-size: clamp(15px, 1.6vw, 50px);
     font-weight: 100;
-    padding-top: 3vh;
+    padding-top: 1vh;
     color: #0F2027;
-    font-family: "Roboto";
+    font-family: "Source Sans Pro";
     margin: 0;
 }
 
 .sign-up-btn {
     background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%);
-    width: clamp(15px, 50vw, 100px);
-    margin-top: 50px;
+    width: clamp(100px, 25vw, 150px);
+    margin-top: 8vh;
     display: flex;
-    align-self: center;
     justify-content:center;
 
     padding-left: clamp(20px, 5%, 30px);
@@ -76,9 +74,10 @@
 
     text-decoration: none;
     font-size: clamp(10px, 1.8vw, 15px);
-    font-family: "Raleway";
-    font-weight: lighter;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
     text-align: center;
+    letter-spacing:2px;
     text-transform: uppercase;
 
     transition: 0.5s;
@@ -86,10 +85,30 @@
     color: white;            
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
- }
+}
 
- .sign-up-btn:hover {
-   background-position: right center; /* change the direction of the change here */
-   text-shadow: 1px 1px 3px grey;
-   text-decoration: underline;
- }
+.sign-up-btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    text-shadow: 1px 1px 3px grey;
+    text-decoration: underline;
+}
+
+@media screen and (min-width:700px){
+    .card-2-header h2{
+        align-self: flex-end;
+    }
+    .sign-up-btn{
+        align-self: flex-start;
+    }
+}
+@media screen and (max-width:700px){
+    .card-2-header h1{
+        text-align: center;
+    }
+    .card-2-header h2{
+        text-align: center;
+    }
+    .sign-up-btn{
+        align-self: center;
+    }
+}

@@ -8,17 +8,18 @@
     align-items: center;
     justify-content:center;
     text-decoration: none;
-    width: clamp(15px, 50vw, 100px);
+    width: clamp(100px, 25vw, 150px);
     border-radius: 10px;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 42px;
     padding-right: 42px;
     color: white;
-    font-size: 13px;
     text-shadow: 1px 1px 5px black;
-    font-family: "Raleway";
-    font-weight: bolder;
+    font-size: 15px;
+    font-family: "Source Sans Pro";
+    letter-spacing:2px;
+    font-weight: 700;
     background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
     background-size: 200% auto;
 }
@@ -43,8 +44,8 @@
     height: fit-content;
     text-decoration: none;
     font-size: 15px;
-    font-family: "Raleway";
-    font-weight: bolder;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
     color: aliceblue;
 }
 
