@@ -13,14 +13,14 @@ export default function ContactUs({open, onClose}) {
         <>
             {document.body.setAttribute('style','overflow:hidden;')}
 
-         <motion.div 
-         className="contact-us"
-         initial="fadeOut" 
-         animate="fadeIn" 
-         exit="fadeOut"
-         variants={variants}
-         transition={transitions.tweenEaseOutFast}
-        >
+            <motion.div 
+                className="contact-us"
+                initial="fadeOut" 
+                animate="fadeIn" 
+                exit="fadeOut"
+                variants={variants}
+                transition={transitions.tweenEaseOutFast}
+            >
             <div className="exit-zone" onClick={onClose}></div>
             <form className="contact-us-container">
                     <h2 className="contact-title">Customer Support</h2>
@@ -38,9 +38,8 @@ export default function ContactUs({open, onClose}) {
                 <div className="contact-submit">
                     <NavLink to='/' className="contact-submit-button">Contact Us</NavLink>
                 </div>
-               </form> 
+              </form>
             </motion.div>
-        
         </>,
         document.getElementById('contact-us-pop-up')
     )

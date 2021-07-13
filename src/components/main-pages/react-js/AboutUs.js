@@ -4,6 +4,9 @@ import '../css/AboutUs.css';
 import Img1 from '../../images/nash.jpg';
 import Img2 from '../../images/jez.jpg';
 import Img3 from '../../images/merv.png';
+import { motion } from 'framer-motion';
+import { variants } from '../../../animation-variants.js';
+import { transitions } from '../../../page-transitions.js';
 import { NavLink } from 'react-router-dom';
 import Footer from '../../footer-source/Footer'
 
@@ -22,7 +25,14 @@ function AboutUs() {
 
     return (
         <>
-            <body className="about-page">
+            <motion.body 
+                className="about-page"
+                initial="slideOutYOpp" 
+                animate="slideInYOpp" 
+                exit="slideOutYOpp"
+                variants={variants}
+                transition={transitions.springFaster}    
+            >
                 {window.scroll(0,0)}
                 <div class="about-section">
                     <h1 className="team-title">About Us</h1>
@@ -62,7 +72,7 @@ function AboutUs() {
                      ))}
                 </div>
                 <NavbarAbout />
-            </body>
+            </motion.body>
             <Footer />
         </>
     )

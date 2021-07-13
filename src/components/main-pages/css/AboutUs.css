@@ -23,14 +23,13 @@
 .about-section {
   color: whitesmoke;
   margin-top: 18vh;
-  height: clamp(120vh, 120%, 200vh);
+  height: clamp(120vh, 60%, 200vh);
   width: clamp(77vw, 95%, 500px);
   background-color: #e2eef3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 7vh;
   border-radius: 12px;
   text-align: justify;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
