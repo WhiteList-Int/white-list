@@ -59,7 +59,7 @@
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
-  font-size: clamp(small,medium,large);
+  font-size: clamp(small, medium, large);
 }
 
 .input-field:focus {
@@ -71,9 +71,9 @@
   justify-self: flex-end;
   align-self: flex-start;
   margin-top: 4.5vh;
-  margin-left: clamp(40px,5vw,100px);
+  margin-left: clamp(40px, 5vw, 100px);
   margin-bottom: 0;
-  font-size: clamp(10px,3vw,20px);
+  font-size: clamp(10px, 3vw, 20px);
   font-weight: bold;
   color: #0f232f;
 }
@@ -81,7 +81,7 @@
 .reason-box {
   margin-top: 20px;
   height: 50vh;
-  width: clamp(35vw, 55vw, 280px);
+  width: clamp(31vw, 51vw, 280px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +102,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10vh;
+  margin-top: 7vh;
 }
 .contact-submit-button {
   height: 8vh;
