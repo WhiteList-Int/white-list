@@ -5,16 +5,15 @@
     padding-bottom: clamp(50px,5%,80px);
     margin-top: -100px;
     border-radius: 30px;
-    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
-    z-index: 3;
+    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);z-index: 3;
     bottom: 0;
     box-shadow:5px -5px 20px black;
 }
 
 .card-2-container{
-    padding-left: clamp(0%,10%,15%);
-    padding-right: clamp(0%,10%,15%);
-    padding-top: 5%;
+    padding-left: clamp(1%,10%,15%);
+    padding-right: clamp(1%,10%,15%);
+    padding-top: 3%;
 }
 
 .card-2-contents{
@@ -25,48 +24,63 @@
 .card-2-header{
     width: 100%;
     display: flex;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     flex-direction: column;
 }
 
 .card-2-header h1 {
     font-size: clamp(40px, 4.2vw, 75px);
+    font-family: "Abril Fatface";
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-weight: 100;
     margin: 0;
 }
 
 .card-2-header h2 {
-    font-size: clamp(25px, 3.8vw, 70px);
+    font-size: clamp(25px, 3.2vw, 70px);
+    background: -webkit-linear-gradient(to right, #2C5364, rgb(49, 63, 68), #636e72);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, rgb(49, 63, 68), #555e61); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-family: "Raleway";
     margin: 0;
-    font-weight: lighter;
+    font-weight: 100;
     align-self: flex-end;
     margin-bottom: 15vh;
 }
 
 .card-2-contents h3 {
     font-size: clamp(15px, 1.8vw, 50px);
-    font-weight: lighter;
+    font-weight: 100;
     padding-top: 3vh;
-    font-family: monospace;
+    color: #0F2027;
+    font-family: "Roboto";
     margin: 0;
 }
 
 .sign-up-btn {
     background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%);
-    font-size: clamp(10px, 1.8vw, 15px);
-    margin-top: clamp(80px, 10%, 300px);
+    width: clamp(15px, 50vw, 100px);
+    margin-top: 50px;
     display: flex;
     align-self: center;
     justify-content:center;
-    text-decoration: none;
-    width: clamp(15px, 50vw, 100px);
+
     padding-left: clamp(20px, 5%, 30px);
     padding-right: clamp(20px, 5%, 30px);
     padding-top: 15px;
     padding-bottom: 15px;
+
+    text-decoration: none;
+    font-size: clamp(10px, 1.8vw, 15px);
+    font-family: "Raleway";
+    font-weight: lighter;
     text-align: center;
     text-transform: uppercase;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-weight: lighter;
+
     transition: 0.5s;
     background-size: 200% auto;
     color: white;            
@@ -76,6 +90,6 @@
 
  .sign-up-btn:hover {
    background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
+   text-shadow: 1px 1px 3px grey;
+   text-decoration: underline;
  }

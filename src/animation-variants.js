@@ -24,18 +24,18 @@ export const variants = {
 
     slideInYOpp: {
         opacity: 1,
-        y: 0
+        y: "-3%"
     },
     slideOutYOpp: {
         opacity: 0,
-        y: "100%"
+        y: 0
     },
     slideInXOpp: {
         opacity: 1,
-        x: 0
+        x: "-3%"
     },
     slideOutXOpp: {
         opacity: 0,
-        x: "100%"
+        x: 0
     }
 }

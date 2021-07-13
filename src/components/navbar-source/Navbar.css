@@ -42,7 +42,9 @@
     width: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, rgba(31,46,53,0.8) 0%, rgba(31,46,53,0.8) 50%, rgba(31,46,53,0.9) 100%);
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgb(44, 83, 100, 0.95), rgb(32, 58, 67, 0.95), rgb(15, 32, 39, 0.90));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgb(44, 83, 100, 0.95), rgb(32, 58, 67, 0.95), rgb(15, 32, 39, 0.90)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     z-index: 4;
     position: fixed;
 }
