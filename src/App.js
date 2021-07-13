@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import Homepage from './Homepage.js';
 import RentalDashboard from './components/main-pages/react-js/RentalDashboard';
 import AboutUs from './components/main-pages/react-js/AboutUs';
+import LearnMore from './components/information-page/LearnMore'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Switch loaction={location} key={location.pathname}>
           <Route path = '/rental-dashboard'  component={RentalDashboard}/>
+          <Route path = '/learn-more'  component={LearnMore}/>
           <Route path = '/about-us'  component={AboutUs}/>
           <Route path = '/'  component={Homepage}/>
 
