@@ -15,9 +15,9 @@
     padding-left: 42px;
     padding-right: 42px;
     color: white;
-    font-size: 15px;
+    font-size: 13px;
     text-shadow: 1px 1px 5px black;
-    font-family: monospace;
+    font-family: "Raleway";
     font-weight: bolder;
     background-image: linear-gradient(to right, #134E5E 0%, #71B280  51%, #134E5E  100%);
     background-size: 200% auto;
@@ -42,8 +42,8 @@
 .btn-top {
     height: fit-content;
     text-decoration: none;
-    font-size: 16px;
-    font-family: monospace;
+    font-size: 15px;
+    font-family: "Raleway";
     font-weight: bolder;
     color: aliceblue;
 }

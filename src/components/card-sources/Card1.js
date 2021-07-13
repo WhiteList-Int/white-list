@@ -10,9 +10,7 @@ const Card1 = () => {
             <div className="card-1-container">
                 {bubbles.map((bub) => (
                     <NavLink to = {bub.link} className = {bub.className} id = {bub.id} key = {bub.key}>
-                        <div className="img-containers">
-                            <img src = {bub.imgs} alt = {bub.text}/>
-                        </div>
+                        <img className="bubble-img" src = {bub.imgs} alt = {bub.text}/>
                         <div className='bubble-text'><center><h2>{bub.text}</h2></center></div>
                     </NavLink>
                 ))}
