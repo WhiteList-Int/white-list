@@ -27,11 +27,11 @@ function AboutUs() {
         <>
             <motion.body 
                 className="about-page"
-                initial="slideOutYOpp" 
-                animate="slideInYOpp" 
-                exit="slideOutYOpp"
+                initial="slideOutY" 
+                animate="slideInY" 
+                exit="slideOutY"
                 variants={variants}
-                transition={transitions.springFaster}    
+                transition={transitions.tweenEaseOutSlow}    
             >
                 {window.scroll(0,0)}
                 <div class="about-section">

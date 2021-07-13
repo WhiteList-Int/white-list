@@ -10,12 +10,17 @@
   align-items: center;
   justify-content: center;
   color: white;
+  background: #085070; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #85d8ce,
+    #085070
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    180deg,
-    rgba(31, 46, 53, 0.8) 0%,
-    rgba(31, 46, 53, 0.8) 50%,
-    rgba(31, 46, 53, 0.9) 100%
-  );
+    to top,
+    #85d8ce,
+    #085070
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -68,14 +73,26 @@
   width: 120%;
   padding: 2vh;
   border-radius: 2px;
-  background-color: #4b7d9e;
+
+  background: #085070; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #85d8ce,
+    #085070
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #63a39c,
+    #085070
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.7);
   text-align: center;
 }
 
 .team-container {
   height: 55%;
-  width: clamp(350px, 55vw, 500px);
+  width: clamp(380px, 60vw, 500px);
+  margin-top: 5vh;
   margin-bottom: 16px;
   padding: 0 8px;
   height: auto;
@@ -105,8 +122,20 @@
 
 .team-text {
   font-size: medium;
-  padding: 20px;
-  border-radius: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background: #085070; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #85d8ce,
+    #085070
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #3a615c,
+    #085070
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -124,13 +153,14 @@
 }
 
 .person-title {
-  padding: 3px;
+  padding: 10px;
   border: 2px solid rgb(52, 206, 233);
   background-color: #2a4658;
   background-image: linear-gradient(135deg, #375468 0%, #20235a 100%);
   color: rgb(226, 228, 253);
   font-weight: medium;
-  border-radius: 3px;
+  border: none;
+  border-radius: 15px;
 }
 .person-saying {
   margin: 0 2vw 0 2vw;
@@ -138,7 +168,7 @@
 }
 .contact-button {
   height: 5vh;
-  width: 60%;
+  width: 55%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -150,7 +180,7 @@
   box-shadow: 0.5px -0.5px 7px black;
   color: white;
   text-decoration: none;
-  font-size: medium;
+  font-size: large;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
