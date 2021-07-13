@@ -5,8 +5,6 @@ import ratedStar from '../../images/star-rated.svg';
 import unratedStar from '../../images/star-unrated.svg';
 import '../css/RentalDashboard.css';
 
-import React from 'react'
-
 const RentalDashboard = () => {
     return (
         <div className="outer-dash-box">

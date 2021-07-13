@@ -12,8 +12,15 @@ export default function ContactUs({open, onClose}) {
     return ReactDom.createPortal(
         <>
             {document.body.setAttribute('style','overflow:hidden;')}
-<<<<<<< HEAD
-        <div className="contact-us">
+
+         <motion.div 
+         className="contact-us"
+         initial="fadeOut" 
+         animate="fadeIn" 
+         exit="fadeOut"
+         variants={variants}
+         transition={transitions.tweenEaseOutFast}
+        >
             <div className="exit-zone" onClick={onClose}></div>
             <form className="contact-us-container">
                     <h2 className="contact-title">Customer Support</h2>
@@ -30,41 +37,10 @@ export default function ContactUs({open, onClose}) {
                 </div>
                 <div className="contact-submit">
                     <NavLink to='/' className="contact-submit-button">Contact Us</NavLink>
-=======
-
-            <motion.div 
-                className="contact-us"
-                initial="fadeOut" 
-                animate="fadeIn" 
-                exit="fadeOut"
-                variants={variants}
-                transition={transitions.tweenEaseOutFast}
-            >
-                <div className="exit-zone" onClick={onClose}></div>
-                <div className="contact-us-container">
-                    <div className="contact-title">
-                        <h1>Customer Support</h1>
-                    </div>
-                    <div className="name-box">
-                        <h3>Name</h3>
-                    </div>
-                    <div className="email-box">
-                        <h3>Email Address</h3>
-                    </div>
-                    <div className="reason-text">
-                        <h3>Reason for Contact</h3>
-                    </div>
-                    <div className="reason-box">
-                        <textarea name="" id="input-1" cols="1" rows="3"></textarea>
-                        
-                    </div>
-                    <div className="contact-submit">
-                        <NavLink to='/' className="contact-submit-button">Contact Us</NavLink>
-                    </div>
->>>>>>> 5759106c797f5de001f1ff432644968545a8ce14
                 </div>
+               </form> 
             </motion.div>
-
+        
         </>,
         document.getElementById('contact-us-pop-up')
     )
