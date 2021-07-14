@@ -42,5 +42,4 @@ const RentalDashboard = () => {
         </div>
     )
 }
-
 export default RentalDashboard;
