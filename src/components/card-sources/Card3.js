@@ -26,7 +26,7 @@ const Card3 = () => {
                 <div className="card-3-overlay-container">
                     <div className='card-3-overlay-text'>
                         <div className="card-3-overlay-text-1">
-                            <h1>A landlord?</h1>
+                            <h1>Have a Place?</h1>
                         </div>
                         <div className="card-3-overlay-text-2">
                             <h2>Earn income by sharing your space</h2>

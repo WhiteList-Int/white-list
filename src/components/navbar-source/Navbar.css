@@ -5,8 +5,8 @@
 
 .tagline{
     animation: fade-In 400ms;
-    margin-top: 15px;
-    width: clamp(250px, 40vw, 450px);
+    margin-top: 20px;
+    width: clamp(250px, 45vw, 450px);
 }
 
 .container{
@@ -75,7 +75,7 @@
     }
     .tagline{
         align-self: flex-start;
-        margin-left: 50px;
+        margin-left: clamp(50px, 10vw, 80px);
     }
 }
 /*For slide animation*/ 

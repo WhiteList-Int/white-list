@@ -49,17 +49,16 @@
 }
 
 .img-text h2{
-    font-size: clamp(20px, 150%, 40px);
-    font-family: "Abril Fatface";
-    letter-spacing: 2.5px;
+    font-size: clamp(20px, 120%, 40px);
+    font-family: "Montserrat";
     color: #1F2E35;
     text-shadow: 1px 1px 3px whitesmoke;
-    font-weight: lighter;
+    font-weight: 600;
 }
 
 .img-text h3{
     font-size: clamp(20px, 100%, 40px);
-    font-family: "Roboto";
+    font-family:'Times New Roman', Times, serif;
     color: #1F2E35;
     text-shadow: 1px 1px 3px white;
     font-weight: lighter;
@@ -83,8 +82,9 @@
     color: white;
     font-size: 12px;
     text-shadow: 1px 1px 5px black;
-    font-family:"Raleway";
-    font-weight: lighter;      
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    letter-spacing:2px; 
     border-radius: 10px;
     text-decoration: none;
 }
@@ -95,6 +95,21 @@
     text-shadow: 1px 1px 5px grey;
     color: #2dffdc;
     text-decoration: none;
+}
+
+.card-3-overlay-text-1 h1 {
+    font-family: "Montserrat";
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-weight: 700;
+}
+
+.card-3-overlay-text-2 h2 {
+    font-family: "Source Sans Pro";
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    letter-spacing: 3px;
+    font-weight: 300;
 }
 
 @media screen and (max-width: 980px){
@@ -133,22 +148,23 @@
     }
 
     .card-3-overlay-text-1 h1 {
-        font-family: "Raleway";
-        font-weight: 900;
-        font-size: clamp(50px, 8vh, 100px);
+        font-size: clamp(35px, 8vw, 80px);
     }
 
     .card-3-overlay-text-2 {
         display: flex;
         align-items: center;
+        justify-items: center;
         flex-wrap: wrap;
     }
 
     .card-3-overlay-text-2 h2 {
         margin-top: 10px;
-        font-family: "Raleway";
-        font-weight: 500;
-        font-size: clamp(20px, 1vh, 80px);
+        width: 100%;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: clamp(20px, 6vw, 50px);
+        font-size: clamp(10px, 3vw, 40px);
     }
 
     .card-3-overlay-img {
@@ -159,7 +175,7 @@
     }
 
     .card-3-overlay-img img {
-        width: clamp(200px,75%,500px);
+        width: clamp(200px,75%,400px);
         align-self: center;
     }
     
@@ -204,9 +220,7 @@
     }
 
     .card-3-overlay-text-1 h1 {
-        font-family: "Raleway";
-        font-weight: 900;
-        font-size: clamp(50px, 10vh, 65px);
+        font-size: clamp(50px, 12vh, 70px);
     }
 
     .card-3-overlay-text-2 {
@@ -216,10 +230,8 @@
     }
 
     .card-3-overlay-text-2 h2 {
+        font-size: clamp(20px, 2.2vw, 50px);
         margin-top: 10px;
-        font-family: "Raleway";
-        font-weight: 500;
-        font-size: clamp(30px, 5vh, 50px);
     }
 
     .card-3-overlay-img {
@@ -231,7 +243,7 @@
     }
 
     .card-3-overlay-img img {
-        width: clamp(200px,75%,600px);
+        width: clamp(350px,75%,600px);
     }
 
     .learn-more-btn {

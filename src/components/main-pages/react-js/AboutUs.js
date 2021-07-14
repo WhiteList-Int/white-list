@@ -24,15 +24,13 @@ function AboutUs() {
     ]
 
     return (
-        <>
-            <motion.body 
-                className="about-page"
-                initial="slideOutY" 
-                animate="slideInY" 
-                exit="slideOutY"
-                variants={variants}
-                transition={transitions.tweenEaseOutSlow}    
-            >
+        <motion.div
+        initial="slideOutY" 
+        animate="slideInY" 
+        exit="slideOutY"
+        variants={variants}
+        transition={transitions.tweenEaseOutSlower}>
+            <body className="about-page">
                 {window.scroll(0,0)}
                 <div class="about-section">
                     <h1 className="team-title">About Us</h1>
@@ -71,10 +69,10 @@ function AboutUs() {
                     </>
                      ))}
                 </div>
-                <NavbarAbout />
-            </motion.body>
+                <NavbarAbout/> 
+            </body>
             <Footer />
-        </>
+        </motion.div>
     )
 }
 
