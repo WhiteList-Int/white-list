@@ -14,7 +14,7 @@ function App() {
   return (
     <main className="App">
       <AnimatePresence exitBeforeEnter>
-        <Switch loaction={location} key={location.pathname}>
+        <Switch location={location} key={location.pathname}>
           <Route path = '/rental-dashboard'  component={RentalDashboard}/>
           <Route path = '/learn-more'  component={LearnMore}/>
           <Route path = '/terms-of-service' component={TermsService}/>

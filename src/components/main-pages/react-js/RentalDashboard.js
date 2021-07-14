@@ -6,40 +6,22 @@ import unratedStar from '../../images/star-unrated.svg';
 import "../css/RentalDashboard.css";
 
 const RentalDashboard = () => {
-
     return (
-        <div className="rental-dashboard-box">
-            <div className="rent-dash-container">
-                <div className="rent-dash-left-box">
+        <>
+            <div className="rental-dashboard">
+                <section className="rental-dasboard-side-bar">
 
-                </div>
-                <div className="rent-box-right-box">
-                    <div className="upper-right-box">
+                </section>
+                <section className="rental-dashboard-body">
+                    <div className="rental-dashboard-seach-bar-head">
 
                     </div>
-                    <div className="lower-right-box">
-                    {rentalData.map((rentData) => (
-                        <NavLink to = {rentData.link} className = {rentData.className} id = {rentData.id} key = {rentData.key}>
-                            <div className="dash-gallery-items"style={{
-                                backgroundImage: `url(${process.env.PUBLIC_URL + rentData.imgs})`,
-                                backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'cover'
-                            }}>
-                                <h2>{rentData.text}</h2>
-                                <div className="star-containers">
-                                    <img className="stars" src={(rentData.stars-1)>=0?ratedStar:unratedStar} alt="*"/>
-                                    <img className="stars" src={(rentData.stars-2)>=0?ratedStar:unratedStar} alt="*"/>
-                                    <img className="stars" src={(rentData.stars-3)>=0?ratedStar:unratedStar} alt="*"/>
-                                    <img className="stars" src={(rentData.stars-4)>=0?ratedStar:unratedStar} alt="*"/>
-                                    <img className="stars" src={(rentData.stars-5)>=0?ratedStar:unratedStar} alt="*"/>
-                                </div>
-                            </div>
-                        </NavLink>
-                    ))}
+                    <div className="rental-dashboard-main-container">
+
                     </div>
-                </div>
+                </section>
             </div>
-        </div>
+        </>
     )
 }
 export default RentalDashboard;
