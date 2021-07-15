@@ -1,89 +1,21 @@
-.rental-dashboard-box {
-  background-image: radial-gradient(
-    circle,
-    rgba(99, 111, 116, 1) 0%,
-    rgba(31, 46, 53, 1) 100%
-  );
-  height: 100vh;
+.rental-dashboard{
+  background: #085070;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #85D8CE, #074661);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #85D8CE, #085070); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100vw;
+  height: 100vh;
 }
-.rent-dash-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 100%;
+
+.rental-dashboard-head{
   width: 100%;
-}
-.rent-dash-left-box {
-  height: 100%;
-  width: 20%;
-}
-.rent-box-right-box {
+  height: 25%;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 100%;
-  width: 80%;
-}
-.upper-right-box {
-  height: 20%;
-  width: 100%;
-}
-.lower-right-box {
-  bottom: 0;
-  height: 75%;
-  width: 99%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  padding-top: 30px;
-
-  overflow-y: scroll;
-  border-top-left-radius: 20px;
-  border: 1px inset rgba(31, 46, 53, 1);
-  background-image: linear-gradient(
-    to top,
-    rgb(223, 233, 243, 0.6) 0%,
-    rgb(255, 255, 255, 0.6) 100%
-  );
-  background-blend-mode: normal, multiply;
 }
 
-.rent-select {
-  width: clamp(200px, 15%, 250px);
-  height: clamp(120px, 15%, 500px);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: flex-end;
-  text-decoration: none;
-}
-
-.dash-gallery-items {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  margin: 1% 5%;
-  opacity: 0.9;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-
-.dash-gallery-items h2 {
-  color: #e4e4e1;
-  text-shadow: 2px 2px 10px black;
-  font-size: 20px;
-}
-
-.stars {
-  width: 15px;
+.rentel-dashboard-head-img{
+  height: 30%;
+  margin-bottom: 20px;
 }

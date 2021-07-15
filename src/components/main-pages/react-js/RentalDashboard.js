@@ -1,25 +1,25 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom'
-import { rentalData } from './renData';
 import ratedStar from '../../images/star-rated.svg';
 import unratedStar from '../../images/star-unrated.svg';
+import Img from '../../images/white-list-text.svg';
+import SearchBar from '../../search-bar/SearchBar';
 import "../css/RentalDashboard.css";
+import rentData from './renData';
 
 const RentalDashboard = () => {
     return (
         <>
             <div className="rental-dashboard">
-                <section className="rental-dasboard-side-bar">
+                <div className="rental-dashboard-head">
+                    <img className = 'rentel-dashboard-head-img' src = {Img} alt="WhiteList"></img>
+                    <SearchBar placeholder="Enter Location/Type/Name: " data={rentData} />
+                </div>
+                <div className="rental-dashboard-filter-container">
 
-                </section>
-                <section className="rental-dashboard-body">
-                    <div className="rental-dashboard-seach-bar-head">
+                </div>
+                <div className="rental-dashboard-main-container">
 
-                    </div>
-                    <div className="rental-dashboard-main-container">
-
-                    </div>
-                </section>
+                </div>
             </div>
         </>
     )
