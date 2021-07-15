@@ -4,7 +4,7 @@ import unratedStar from '../../images/star-unrated.svg';
 import Img from '../../images/white-list-text.svg';
 import SearchBar from '../../search-bar/SearchBar';
 import "../css/RentalDashboard.css";
-import rentData from './renData';
+import rentData from '../comp/renData';
 
 const RentalDashboard = () => {
     return (
@@ -15,7 +15,6 @@ const RentalDashboard = () => {
                     <SearchBar placeholder="Enter Location/Type/Name: " data={rentData} />
                 </div>
                 <div className="rental-dashboard-filter-container">
-
                 </div>
                 <div className="rental-dashboard-main-container">
 
