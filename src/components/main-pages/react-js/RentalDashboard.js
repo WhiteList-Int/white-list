@@ -5,10 +5,12 @@ import rentData from './../comp/renData';
 import filterOptions from './../comp/filterOptions';
 import "../css/RentalDashboard.css";
 import { useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const RentalDashboard = () => {
     const filterRental = useRef("all");
     const filteredData = useRef(rentData);
+    const referenceData = useRef(filteredData);
 
     function handleChange(event) {
         console.log("Filter: "+ filterRental.current);
@@ -47,10 +49,19 @@ const RentalDashboard = () => {
                         );
                     })}
                 </form>
-                <SearchBar placeholder="Enter Location/Name: " data={filteredData} />
+                <SearchBar placeholder="Enter Location/Name: " data={filteredData} referenceData={referenceData} />
             </div>
             <div className="rental-dashboard-main-container">
-
+            <div className="main-rental-list-container">
+                {() => {
+                    return(
+                        referenceData.current.map((rental,key) => (
+                    <NavLink to = {rental.link} className = "main-rental-list-options" key = {rental.key}>
+                        <div className="rental-cont-img"><img className="rental-img" src = {rental.imgs} alt = {rental.category}/></div>
+                        <div className='rental-text'><center><h2>{rental.value}</h2></center></div>
+                    </NavLink>
+                )))}}
+          </div>
             </div>
         </div>
     )

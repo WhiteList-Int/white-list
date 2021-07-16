@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import Img2 from './components/images/white-list-icon-gradient.svg';
 import Navbar from './components/navbar-source/Navbar';
 import Footer from './components/footer-source/Footer';
@@ -8,9 +10,28 @@ import Card3 from  './components/card-sources/Card3';
 import './App.css';
 
 const Homepage = () => {
+    const [scrollerPopup,setScrollerPopup] = useState(true);
+
+    const showScrollUp = () => {
+        if(window.scrollY >= 500){
+            setScrollerPopup(false);
+        } else{
+            setScrollerPopup(true);
+        }
+    }
+
+    window.addEventListener('scroll', showScrollUp);
+
     return (
         <div className="homepage">
             {document.body.setAttribute('style','overflow:scroll;')}
+            <div className={scrollerPopup?"scroll-up-container-hide":"scroll-up-container-popup"}>
+                <ArrowUpwardIcon 
+                    onClick={()=>{window.scroll({top:0,left:0,behavior: 'smooth'})}} 
+                    className={scrollerPopup?"scroll-up-hide":"scroll-up-popup"}
+                    alt="Click to go back!"
+                /> <span class="scroll-up-tooltip-text">Click here to go back -></span>
+            </div>
             <Navbar />
             <img className = "start-up--bg-icon" src = {Img2} alt="WhiteList"></img>
             <div className = "cards">

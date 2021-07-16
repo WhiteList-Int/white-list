@@ -31,7 +31,7 @@ function AboutUs() {
         variants={variants}
         transition={transitions.tweenEaseOutSlower}>
             <body className="about-page">
-                {window.scroll(0,0)}
+                {window.scroll({top:0,left:0,behavior: 'smooth'})}
                 <NavbarFixed/> 
                 <div class="about-section">
                     <h1 className="team-title">About Us</h1>

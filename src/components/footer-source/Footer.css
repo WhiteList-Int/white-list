@@ -83,14 +83,12 @@
 
 .left-links:hover {
   transition: 0.5s;
-  background-color: transparent;
   text-decoration: underline;
   color: aquamarine;
 }
 
 .right-links:hover {
   transition: 0.75s;
-  background-color: transparent;
   text-decoration: underline;
   color: aquamarine;
 }

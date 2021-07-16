@@ -54,9 +54,9 @@ function SearchBar({ placeholder, data }) {
         <div className="dataResult">
           {filteredData.map((value, key) => {
             return (
-              <a className="dataItem" href={value.link} key={key}>
+              <div className="dataItem" href={value.link} key={key}>
                 <p>{value.value}</p><h6>{value.category}</h6>
-              </a>
+              </div>
             );
           })}
         </div>
