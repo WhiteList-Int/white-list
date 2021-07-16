@@ -8,8 +8,7 @@ import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 import './SignIn.css';
 
 
-export default function SignIn({open, onClose}) {
-    
+export default function SignIn({open, redirect, onClose, onRedirect}) {
     if(!open) return null;
 
     return ReactDom.createPortal(
@@ -25,20 +24,32 @@ export default function SignIn({open, onClose}) {
             >
                 <div className='exit-zone' onClick={onClose}/>
                 <div className="sign-in-container">
-                    <div className="sign-in-title">
+                    <div hidden={redirect} id="toggleLoginTitle" className="sign-in-title">
                         <h1>Login</h1>
                     </div>
+                    <div hidden={!redirect} id="toggleSignUpTitle" className="sign-in-title">
+                        <h1>Sign Up</h1>
+                    </div>
                     <div className="fill-boxes">
-                        <input className="" type="text" value="Username" required/>
-                        <input className="" type="password" value="************" required/>
+                        <input hidden={!redirect} id="toggleUserNameField" className="" type="text" placeholder="Username" required/>
+                        <input className="" type="text" placeholder="Email" required/>
+                        <input className="" type="password" placeholder="************" required/>
                     </div>
                     <div className="sign-in-buttons">
                         <NavLink to="/" className='sign-in-link'>Sign-in</NavLink>
                         <img src={gsign} alt='gsign'/>
                     </div>
-                    <div className="sign-in-footer">
-                        <NavLink to="/sign-up" className='sign-up-link' >Not yet registered?</NavLink>
-                        
+                    <div hidden={redirect} id="toggleSignInFooter"className="sign-in-footer">
+                        <NavLink to="/" className='sign-up-link'
+                        onClick={onRedirect}>
+                            Not yet registered?
+                        </NavLink>
+                    </div>
+                    <div hidden={!redirect} id="toggleSignUpFooter" className="sign-in-footer">
+                        <NavLink to="/" className='sign-up-link'
+                        onClick={onRedirect}>
+                            Already have an account?
+                        </NavLink>
                     </div>
                 </div>
             </motion.div>
