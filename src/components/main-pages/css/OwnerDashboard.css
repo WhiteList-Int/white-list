@@ -1,0 +1,190 @@
+.owner-dashboard {
+  margin: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #085070; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #85d8ce, #085070); /* Chrome 1*/
+  background: linear-gradient(to top, #85d8ce, #085070);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.owner-dashboard-title-container {
+  color: whitesmoke;
+  margin-top: 18vh;
+  height: clamp(120vh, 60%, 200vh);
+  width: clamp(90vw, 95%, 500px);
+  background-color: #131f24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  text-align: justify;
+  box-shadow: 1px -3px 10px black;
+}
+
+.your-rental {
+  margin: 2vw;
+  align-self: flex-start;
+  color: white;
+}
+
+.owner-dashboard-card {
+  height: 100%;
+  width: clamp(88vw, 93%, 500px);
+  background-color: #e2eef3;
+  color: black;
+  margin-bottom: 100%;
+  padding: 8vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 5px black;
+  z-index: 1;
+}
+
+.owner-rental {
+  height: 75vh;
+  width: 90%;
+  background-color: #0c0d0e;
+  border-radius: 25px;
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.owner-rental-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0px 4px 20px black;
+}
+
+.owner-dash-rental-detail-card {
+  height: 100%;
+  width: 35%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: absolute;
+  border-radius: 25px;
+  background-color: #131f24a2;
+  box-shadow: 0px 1px 5px black;
+}
+
+.owner-dash-title-container {
+  margin-top: 3vh;
+  height: 10%;
+  width: 100%;
+  align-self: flex-start;
+  z-index: 3;
+  position: relative;
+  background-color: #131f24e5;
+}
+
+.owner-dash-title-container h2 {
+  color: white;
+  font-size: x-large;
+  font-family: sans-serif;
+}
+
+.owner-dash-description-container {
+  height: 50%;
+  width: 100%;
+  margin-top: 3vh;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  text-align: justify;
+  background-color: #131f24e5;
+}
+
+.owner-dash-description-container h3 {
+  color: white;
+  font-size: x-large;
+  font-weight: 200;
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+.owner-dash-description-container p {
+  color: white;
+  font-size: large;
+  font-weight: 200;
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+.owner-description-icon-create {
+  background-color: white;
+  height: 4.8vh;
+  width: 3.8vw;
+  border-radius: 20px;
+  align-self: flex-end;
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+.owner-dash-pending-container {
+  height: 10%;
+  width: 100%;
+  margin-top: 3vh;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  position: relative;
+  border-radius: 30px;
+  background-color: #131f24e5;
+}
+.owner-dash-pending-container h2 {
+  color: white;
+  font-size: 21.5px;
+  font-weight: 200;
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+.owner-dash-icon-add {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  margin: 2vh 2vw 2vh 2vw;
+}
+.owner-dash-archived-container {
+  height: 10%;
+  width: 100%;
+  margin-top: 3vh;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  position: relative;
+  border-radius: 30px;
+  background-color: #131f24e5;
+}
+
+.owner-dash-archived-container h2 {
+  color: white;
+  font-size: 21.5px;
+  font-weight: 200;
+  margin: 2vh 2vw 2vh 2vw;
+}
