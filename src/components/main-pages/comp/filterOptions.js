@@ -4,7 +4,8 @@ const filterOptions = [
     { value: 'apartment', label: 'Apartment' },
     { value: 'renthouse', label: 'Renthouse' },
     { value: 'hotel', label: 'Hotel' },
-    { value: 'lease', label: 'Lease' }
+    { value: 'lease', label: 'Lease' },
+    { value: 'all', label: 'All' }
 ]
 
 export default filterOptions;

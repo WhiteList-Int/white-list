@@ -3,7 +3,12 @@
   background: -webkit-linear-gradient(to top, #85D8CE, #074661);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #85D8CE, #085070); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .rental-dashboard-head{
@@ -13,9 +18,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .rentel-dashboard-head-img{
-  height: 30%;
-  margin-bottom: 20px;
+  width: 50%;
+  margin-bottom: 100px;
+}
+
+.rental-dashboard-filter-form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.rental-dashboard-filter-options{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Source Sans Pro";
+  text-shadow: 1px 1px 3px black;
+  font-weight: 100;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.rental-dashboard-filter-options h4{
+  height: fit-content;
+  margin: 10px;
 }

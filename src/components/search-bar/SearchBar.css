@@ -61,14 +61,19 @@ input:focus {
   color: black;
 }
 
-.dataItem p {
+.dataItem p, h6 {
   margin-left: 10px;
 }
-a {
+
+.dataItem h6{
+  color: grey;
+}
+
+.dataItem{
   text-decoration: none;
 }
 
-a:hover {
+.dataItem:hover {
   background-color: lightgrey;
 }
 
