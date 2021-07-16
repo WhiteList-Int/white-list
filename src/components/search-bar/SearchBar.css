@@ -1,3 +1,7 @@
+.search{
+  width: fit-content;
+}
+
 .searchInputs {
   display: flex;
 }

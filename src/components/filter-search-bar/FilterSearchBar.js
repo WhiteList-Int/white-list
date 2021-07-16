@@ -1,4 +1,19 @@
-// import React, { Component, Fragment } from 'react';
+import React from 'react';
+import { useState } from 'react';
+import SearchBar from '../search-bar/SearchBar';
+import filterOptions from './../main-pages/comp/filterOptions';
+
+const FilterSearchBar = (options) => {
+    return (
+        <div className="filter-search">
+            <SearchBar placeholder="Enter Location/Name: "/>
+        </div>
+    )
+}
+
+export default FilterSearchBar
+
+// import React, { Component, Fragment } from 'react';i
 // import Select, { createFilter } from 'react-select';
 // import { colourOptions } from '../data';
 // import { Note } from '../styled-components';

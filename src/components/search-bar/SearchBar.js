@@ -11,7 +11,7 @@ function SearchBar({ placeholder, data }) {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
-      return value.text.toLowerCase().includes(searchWord.toLowerCase());
+      return value.value.toLowerCase().includes(searchWord.toLowerCase());
     });
 
     if (searchWord === "") {
@@ -48,7 +48,7 @@ function SearchBar({ placeholder, data }) {
           {filteredData.slice(0, 15).map((value, key) => {
             return (
               <a className="dataItem" href={value.link}>
-                <p>{value.text} </p>
+                <p>{value.value} </p>
               </a>
             );
           })}
