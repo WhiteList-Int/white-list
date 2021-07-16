@@ -2,6 +2,7 @@ body{
   height: 100%;
   overflow-x: hidden;
 }
+
 .homepage{
   background: #085070;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #85D8CE, #074661);  /* Chrome 10-25, Safari 5.1-6 */
