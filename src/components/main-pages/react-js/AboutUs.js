@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarAbout from '../../navbar-source/NavbarAbout';
+import NavbarFixed from '../../navbar-source/NavbarFixed';
 import '../css/AboutUs.css';
 import Img1 from '../../images/nash.jpg';
 import Img2 from '../../images/jez.jpg';
@@ -32,6 +32,7 @@ function AboutUs() {
         transition={transitions.tweenEaseOutSlower}>
             <body className="about-page">
                 {window.scroll(0,0)}
+                <NavbarFixed/> 
                 <div class="about-section">
                     <h1 className="team-title">About Us</h1>
                     <h2 className="about-h2">Mission</h2>
@@ -69,7 +70,6 @@ function AboutUs() {
                     </>
                      ))}
                 </div>
-                <NavbarAbout/> 
             </body>
             <Footer />
         </motion.div>
