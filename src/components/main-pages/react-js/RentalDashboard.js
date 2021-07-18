@@ -1,18 +1,22 @@
 import React from 'react';
+import rentData from './../comp/renData';
+import starFilled from '../../images/star-rated.svg';
+import starUnfilled from '../../images/star-unrated.svg';
 import Img from '../../images/white-list-text.svg';
 import SearchBar from './../../search-bar/SearchBar';
-import rentData from './../comp/renData';
 import filterOptions from './../comp/filterOptions';
-import "../css/RentalDashboard.css";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { motion } from 'framer-motion';
 import { variants } from '../../../animation-variants.js';
 import { transitions } from '../../../page-transitions.js';
 import { useRef, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import "../css/RentalDashboard.css";
 
 const RentalDashboard = () => {
     const filterRental = useRef("all");
     const filteredData = useRef(rentData);
+    const currentWindow = useRef("startOfPage");
     const [rentalFilter,setRentalFilter] = useState("");
 
     function handleChange(event) {
@@ -33,6 +37,16 @@ const RentalDashboard = () => {
         console.log("Data: "+ filteredData.current);
     };
 
+    const backToHeader = () => {
+        var element = document.getElementById("startOfPage");
+        currentWindow.current = "startOfPage";
+        element.scrollIntoView({
+          behavior: "smooth"
+        });
+    };
+
+    window.addEventListener('resize',()=>{document.getElementById(currentWindow.current).scrollIntoView({bottom:0}); console.log(currentWindow.current)});
+
     useEffect(() => {
         filteredData.current=filteredData.current;
     },[rentalFilter]);
@@ -44,10 +58,12 @@ const RentalDashboard = () => {
             animate="fadeIn" 
             exit="fadeOut"
             variants={variants}
-            transition={transitions.linearFastest}
+            transition={transitions.linear}
         >
+            {()=>{const address = window.location.href; console.log(address)}}
             {document.body.setAttribute('style','overflow:hidden;')}
             <div className="rental-dashboard">
+                <span id="startOfPage"/>
                 <div className="rental-dashboard-head">
                     <img className = 'rentel-dashboard-head-img' src = {Img} alt="WhiteList"></img>
                     <form className="rental-dashboard-filter-form">
@@ -66,9 +82,14 @@ const RentalDashboard = () => {
                             );
                         })}
                     </form>
-                    <SearchBar placeholder="Enter Location/Name: " data={filteredData} />
+                    <SearchBar placeholder="Enter Location/Name: " data={filteredData} address={currentWindow} />
                 </div>
-                <div className="rental-dashboard-main-container" id="mainPage">
+                <div className="rental-dashboard-main-container">
+                    <span id="mainPage"/>
+                    <div className="rental-dashboard-main-navbar">
+                        <ArrowBackIcon className="rental-dashboard-back-icon" onClick={backToHeader}/>
+                        <h2>Search Results</h2>
+                    </div>
                     <div className="main-rental-list-container">
                         {filteredData.current.map((rental,key) => {
                             return (
@@ -85,8 +106,18 @@ const RentalDashboard = () => {
                                             backgroundImage: `url(${rental.imgs})`
                                         }}
                                     >
-                                        <div className="overlay-color">
+                                        <div className="overlay-color"/>
+                                    </div>
+                                    <div className="information-box">
+                                        <div className="text-box">
                                             <h2>{rental.value}</h2>
+                                        </div>
+                                        <div className="stars-container">
+                                            <img src={(rental.stars)>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-1>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-2>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-3>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-4>0?starFilled:starUnfilled} alt="*"/>
                                         </div>
                                     </div>
                                 </NavLink>

@@ -46,10 +46,6 @@ body{
   color: white;
   cursor: pointer;
   padding: 10px;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
 }
 
 .scroll-up-container-hide{
@@ -57,15 +53,10 @@ body{
   position: fixed;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   z-index: 6;
   bottom: -100%;
   left: 0;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -ms-transition: 0.8s;
-  -o-transition: 0.8s;
 }
 
 .scroll-up-hide{
@@ -74,15 +65,11 @@ body{
   border-radius: 100%;
   color: white;
   padding: 10px;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
 }
 
 .scroll-up-tooltip-text {
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.3s;
   position: fixed;
   bottom: 42px;
   right: 100px;
@@ -94,10 +81,6 @@ body{
   border-radius: 6px;
   padding: 8px;
   z-index: 7;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
 }
 
 @media screen and (max-width:600px) {
@@ -120,7 +103,7 @@ body{
   }
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:600px) {
   .scroll-up-container-hide{
     align-items: flex-end;
     margin-bottom: 40px;
@@ -137,13 +120,9 @@ body{
     margin-right: 40px;
   }
   .scroll-up-container-popup:hover .scroll-up-tooltip-text {
-    transition: 1s;
+    transition: 0.8s;
     right: 90px;
     opacity: 1;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -ms-transition: 1s;
-    -o-transition: 1s;
 }
   .start-up--bg-icon {
     top: 100px;

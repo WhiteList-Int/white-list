@@ -30,7 +30,7 @@ const Homepage = () => {
                     onClick={()=>{window.scroll({top:0,left:0,behavior: 'smooth'})}} 
                     className={scrollerPopup?"scroll-up-hide":"scroll-up-popup"}
                     alt="Click to go back!"
-                /> <span class="scroll-up-tooltip-text">Click here to go back -></span>
+                /> <span className="scroll-up-tooltip-text">Click here to go back -></span>
             </div>
             <Navbar />
             <img className = "start-up--bg-icon" src = {Img2} alt="WhiteList"></img>

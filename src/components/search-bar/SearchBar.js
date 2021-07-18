@@ -3,7 +3,7 @@ import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 
-function SearchBar({ placeholder, data, dashboard }) {
+function SearchBar({ placeholder, data, address }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
@@ -28,10 +28,10 @@ function SearchBar({ placeholder, data, dashboard }) {
 
   const beginSearch = () => {
     var element = document.getElementById("mainPage");
+    address.current = "mainPage";
     element.scrollIntoView({
       behavior: "smooth"
     });
-    element.setAttribute("style","overflow-y:scroll;");
   };
 
   return (
