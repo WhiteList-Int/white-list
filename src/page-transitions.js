@@ -24,6 +24,11 @@ export const transitions = {
         stiffness: 10,
         duration: 0.25
     },
+    springFastest: {
+        type: "spring",
+        stiffness: 10,
+        duration: 0.1
+    },
 
     linearSlower: {
         type: "linear",
@@ -45,7 +50,11 @@ export const transitions = {
         type: "linear",
         duration: 0.25
     },
-    
+    linearFastest: {
+        type: "linear",
+        duration: 0.1
+    },
+
     tweenEaseInSlower: {
         type: "tween",
         ease: "easeIn",
@@ -71,7 +80,12 @@ export const transitions = {
         ease: "easeIn",
         duration: 0.25
     },
-    
+    tweenEaseInFastest: {
+        type: "tween",
+        ease: "easeIn",
+        duration: 0.1
+    },
+
     tweenEaseOutSlower: {
         type: "tween",
         ease: "easeOut",
@@ -97,4 +111,9 @@ export const transitions = {
         ease: "easeOut",
         duration: 0.25
     },
+    tweenEaseOutFastest: {
+        type: "tween",
+        ease: "easeOut",
+        duration: 0.1
+    }
 }

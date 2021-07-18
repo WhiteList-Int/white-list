@@ -40,18 +40,12 @@ input:focus {
 .dataResult {
   margin-top: -5px;
   width: 360px;
-  position: absolute;
-  height: fit-content;
+  height: 160px;
+  overflow-y: scroll;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  overflow: hidden;
-  overflow-y: auto;
-}
-
-.dataResult::-webkit-scrollbar {
-  display: none;
 }
 
 .dataResult .dataItem {

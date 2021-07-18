@@ -26,6 +26,14 @@ function SearchBar({ placeholder, data, dashboard }) {
     setWordEntered("");
   };
 
+  const beginSearch = () => {
+    var element = document.getElementById("mainPage");
+    element.scrollIntoView({
+      behavior: "smooth"
+    });
+    element.setAttribute("style","overflow-y:scroll;");
+  };
+
   return (
     <div className="search">
       <div className="searchInputs">
@@ -37,7 +45,7 @@ function SearchBar({ placeholder, data, dashboard }) {
         />
         <div className="searchIcon">
           {filteredData.length === 0 ? (
-            <SearchIcon />
+            <SearchIcon onClick={beginSearch} />
           ) : (
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}

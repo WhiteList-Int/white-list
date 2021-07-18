@@ -4,6 +4,9 @@ import SearchBar from './../../search-bar/SearchBar';
 import rentData from './../comp/renData';
 import filterOptions from './../comp/filterOptions';
 import "../css/RentalDashboard.css";
+import { motion } from 'framer-motion';
+import { variants } from '../../../animation-variants.js';
+import { transitions } from '../../../page-transitions.js';
 import { useRef, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -35,7 +38,15 @@ const RentalDashboard = () => {
     },[rentalFilter]);
 
     return (
-        <div className="rental-dashboard-bg">
+        <motion.div 
+            className="rental-dashboard-bg"
+            initial="fadeOut" 
+            animate="fadeIn" 
+            exit="fadeOut"
+            variants={variants}
+            transition={transitions.linearFastest}
+        >
+            {document.body.setAttribute('style','overflow:hidden;')}
             <div className="rental-dashboard">
                 <div className="rental-dashboard-head">
                     <img className = 'rentel-dashboard-head-img' src = {Img} alt="WhiteList"></img>
@@ -57,7 +68,7 @@ const RentalDashboard = () => {
                     </form>
                     <SearchBar placeholder="Enter Location/Name: " data={filteredData} />
                 </div>
-                <div className="rental-dashboard-main-container">
+                <div className="rental-dashboard-main-container" id="mainPage">
                     <div className="main-rental-list-container">
                         {filteredData.current.map((rental,key) => {
                             return (
@@ -84,7 +95,7 @@ const RentalDashboard = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 export default RentalDashboard;
