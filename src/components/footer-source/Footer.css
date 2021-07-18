@@ -70,6 +70,7 @@
 .left-links {
   text-decoration: none;
   color: white;
+  cursor: pointer;
   text-shadow: 1px 1px 3px black;
   font-size: clamp(10px, 1vw, 20px);
 }

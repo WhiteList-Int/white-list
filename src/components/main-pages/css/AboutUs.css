@@ -26,6 +26,8 @@
 }
 
 .about-section {
+  
+  transition: 1s;
   color: whitesmoke;
   margin-top: 18vh;
   height: clamp(120vh, 60%, 200vh);
