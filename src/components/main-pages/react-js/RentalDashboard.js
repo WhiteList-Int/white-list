@@ -106,7 +106,7 @@ const RentalDashboard = () => {
                                             backgroundImage: `url(${rental.imgs})`
                                         }}
                                     >
-                                        <div className="overlay-color"/>
+                                        <div className="overlay-color"><h5>{rental.name}</h5></div>
                                     </div>
                                     <div className="information-box">
                                         <div className="text-box">
