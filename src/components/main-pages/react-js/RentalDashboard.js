@@ -12,6 +12,7 @@ import { transitions } from '../../../page-transitions.js';
 import { useRef, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import "../css/RentalDashboard.css";
+import { FunctionsRounded } from '@material-ui/icons';
 
 const RentalDashboard = () => {
     const filterRental = useRef("all");
@@ -54,6 +55,7 @@ const RentalDashboard = () => {
     return (
         <motion.div 
             className="rental-dashboard-bg"
+            id="rentalDashboard"
             initial="fadeOut" 
             animate="fadeIn" 
             exit="fadeOut"
@@ -61,7 +63,6 @@ const RentalDashboard = () => {
             transition={transitions.linear}
         >
             {()=>{const address = window.location.href; console.log(address)}}
-            {document.body.setAttribute('style','overflow:hidden;')}
             <div className="rental-dashboard">
                 <span id="startOfPage"/>
                 <div className="rental-dashboard-head">
