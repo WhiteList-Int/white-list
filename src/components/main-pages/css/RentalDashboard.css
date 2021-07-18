@@ -29,6 +29,7 @@
 
 .rentel-dashboard-head-img{
   width: clamp(300px,50%,1000px);
+  height: clamp(100px,30%,300px);
   margin-bottom: 100px;
 }
 
