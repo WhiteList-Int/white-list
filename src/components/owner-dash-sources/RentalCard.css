@@ -89,6 +89,7 @@
   background-color: white;
   height: 15%;
   width: 15%;
+  margin-top: 10px;
   margin-right: 10px;
   border-radius: 20px;
   display: flex;
@@ -104,7 +105,7 @@
 .owner-dash-pending-container {
   height: 10%;
   width: 100%;
-  margin-top: 3vh;
+  margin-top: 2vh;
   z-index: 3;
   display: flex;
   flex-direction: row;
@@ -112,29 +113,35 @@
   justify-content: center;
   text-align: justify;
   border-radius: 30px;
+  white-space: nowrap;
+  position: relative;
   background-color: #131f24e5;
+}
+.owner-dash-pending-container-disabled {
+  display: none;
 }
 .owner-dash-pending-container h2 {
   color: white;
-  font-size: x-large;
+  font-size: clamp(0.8rem, 1.8vw, 2.5rem);
   margin-right: 2vw;
-  margin-left: 2vw;
-  font-weight: 200;
+  font-weight: 100;
 }
 
-.owner-dash-add-active {
-  background-color: white;
-  height: 35px;
-  width: 35px;
-  border-radius: 25px;
+.owner-dash-small-button {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  height: clamp(1.5rem, 3vw, 3rem);
+  width: clamp(2rem, 3vw, 2.5rem);
+  border-radius: 50px;
+  background-color: rgba(251, 251, 251, 0.829);
   border: none;
 }
+.owner-dash-small-button:hover {
+  background-color: #ffffff;
+}
 
-.owner-dash-add-disabled {
+.owner-dash-small-button-disabled {
   display: none;
 }
 
@@ -148,9 +155,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: relative;
+  justify-content: flex-start;
   text-align: justify;
   background-color: #131f24e5;
+}
+.disable-pending-container-active {
+  display: none;
 }
 
 .owner-dash-pending-cont-row {
@@ -158,18 +168,22 @@
   flex-direction: row;
 }
 
-.owner-dash-icon-minus {
-  background-color: white;
-  height: 30px;
-  width: 30px;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  margin: 2vh 2vw 2vh 2vw;
+.owner-dash-pending-container-active h2 {
+  color: white;
+  margin: 1vh 1vw;
+  font-size: clamp(0.8rem, 1.8vw, 2.5rem);
+  font-weight: 300;
 }
-
-.owner-dash-minus-disabled {
-  display: none;
+.owner-dash-small-button-pend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(1rem, 3vw, 3rem);
+  width: clamp(1rem, 3vw, 2.5rem);
+  margin: 1vh 1vw;
+  border-radius: 50px;
+  background-color: rgba(251, 251, 251, 0.829);
+  border: none;
 }
 
 .owner-dash-pending-container-active h3 {
@@ -274,9 +288,9 @@
 
 .owner-dash-archived-container h2 {
   color: white;
-  font-size: x-large;
+  font-size: clamp(0.8rem, 1.8vw, 2.5rem);
   margin-right: 2vw;
-  font-weight: 200;
+  font-weight: 100;
 }
 /* End Archived Connections */
 
@@ -292,10 +306,6 @@
 
 .owner-dash-remove-rental:hover {
   background-color: #ba4848;
-}
-
-.owner-dash-remove-rental::after {
-  opacity: 0;
 }
 
 .owner-dash-remove-rental h2 {
