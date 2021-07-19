@@ -1,0 +1,51 @@
+.owner-dashboard {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #085070; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #85d8ce, #085070); /* Chrome 1*/
+  background: linear-gradient(to top, #85d8ce, #085070);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.owner-dashboard-title-container {
+  color: whitesmoke;
+  margin-top: 18vh;
+  height: clamp(120vh, 60%, 200vh);
+  width: clamp(90vw, 95%, 500px);
+  background-color: #131f24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  text-align: justify;
+  box-shadow: 1px -3px 10px black;
+}
+
+.your-rental {
+  margin: 2vw;
+  align-self: flex-start;
+  color: white;
+}
+
+.owner-dashboard-card {
+  height: 100%;
+  width: clamp(88vw, 93%, 500px);
+  background-color: #e2eef3;
+  color: black;
+  margin-bottom: 100%;
+  padding: 8vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 5px black;
+  border-radius: 0px;
+  z-index: 1;
+}
