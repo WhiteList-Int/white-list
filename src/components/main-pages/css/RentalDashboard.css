@@ -1,28 +1,42 @@
+#startOfPage{
+  align-self: flex-start;
+  justify-self: flex-start;
+  padding-top: clamp(50px,20vh,200px);
+  top:0;
+  left:0;
+}
+
 .rental-dashboard-bg{
   background: #085070;
   background: -webkit-linear-gradient(to top, #85D8CE, #074661);
   background: linear-gradient(to top, #85D8CE, #085070);
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 0;
+  scroll-snap-stop: always;
+  overflow-y: scroll;
 }
 
-.rental-dashboard{
-  width:100%;
-  height: 100%;
+.rental-dashboard-bg section{
+  scroll-snap-align: start;
+}
+
+.stop {
+  scroll-snap-stop: always;
 }
 
 .rental-dashboard-head{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: clamp(50px,20vh,200px);
   justify-content: flex-start;
 }
 
@@ -62,7 +76,7 @@
 
 .rental-dashboard-main-container{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -89,6 +103,7 @@
 .rental-dashboard-back-icon{
   padding-right:20px;
   height: 50px;
+  cursor: pointer;
   text-shadow: 1px 1px 3px black;
   color: white;
 }
