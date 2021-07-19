@@ -24,7 +24,7 @@ const Homepage = () => {
 
     return (
         <div className="homepage">
-            {document.body.setAttribute('style','overflow:scroll;')}
+            {document.body.setAttribute('style','overflow-y:scroll;')}
             <div className={scrollerPopup?"scroll-up-container-hide":"scroll-up-container-popup"}>
                 <ArrowUpwardIcon 
                     onClick={()=>{window.scroll({top:0,left:0,behavior: 'smooth'})}} 

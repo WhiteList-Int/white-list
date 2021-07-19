@@ -6,6 +6,7 @@ import Img from '../../images/white-list-text.svg';
 import SearchBar from './../../search-bar/SearchBar';
 import filterOptions from './../comp/filterOptions';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Select from 'react-select';
 import { motion } from 'framer-motion';
 import { variants } from '../../../animation-variants.js';
 import { transitions } from '../../../page-transitions.js';
@@ -17,13 +18,14 @@ const RentalDashboard = () => {
     const filterRental = useRef("all");
     const filteredData = useRef(rentData);
     const currentWindow = useRef("startOfPage");
+    const [windowState, setWindowState] = useState(true);
     const [rentalFilter,setRentalFilter] = useState("");
 
     function handleChange(event) {
         console.log("Filter: "+ filterRental.current);
-        console.log("Selected: "+ event.target.value);
-        setRentalFilter(event.target.value);
-        filterRental.current = event.target.value;
+        console.log("Selected: "+ event.value);
+        setRentalFilter(event.value);
+        filterRental.current = event.value;
 
         const newFilter = rentData.filter((data) => {
             return data.category.toLowerCase().includes(filterRental.current.toLowerCase());
@@ -47,11 +49,25 @@ const RentalDashboard = () => {
     };
 
     window.addEventListener('resize',()=>{
-        document.getElementById(currentWindow.current).scrollIntoView({bottom:0});
-         console.log(currentWindow.current)
+        if(window.innerWidth<600){
+            setWindowState(false);
+        } else{
+            setWindowState(true);
+        }
+        document.getElementById("startOfPage").scrollIntoView({bottom:0});
+        currentWindow.current="startOfPage";
+        console.log(currentWindow.current);
     });
 
     useEffect(() => {
+        if(window.innerWidth<600){
+            setWindowState(false);
+        } else{
+            setWindowState(true);
+        }
+        document.body.setAttribute('style','overflowX:hidden;');
+        window.scrollTo({top:0,left:0});
+        console.log(currentWindow.current);
         filteredData.current=filteredData.current;
     },[rentalFilter]);
 
@@ -65,12 +81,22 @@ const RentalDashboard = () => {
             variants={variants}
             transition={transitions.linear}
         >
-            {document.body.setAttribute('style','overflowX:hidden;')}
-            {window.scrollTo({top:0,left:0})}
             <section className="rental-dashboard-head">
                 <span id="startOfPage"/>
                 <img className = 'rentel-dashboard-head-img' src = {Img} alt="WhiteList"></img>
-                <form className="rental-dashboard-filter-form">
+                <Select
+                    classNamePrefix="filter-select"
+                    placeholder="Filter Selection"
+                    defaultValue="All"
+                    isClearable='false'
+                    isSearchable='false'
+                    className = {windowState?"rental-dashboard-filter-select-hide":"rental-dashboard-filter-select"}
+                    name="Filter Selection"
+                    value={filterOptions.find(obj => obj.value === filterOptions)}
+                    options={filterOptions}
+                    onChange={handleChange}
+                />
+                <form className={windowState?"rental-dashboard-filter-form":"rental-dashboard-filter-form-hide"}>
                     {filterOptions.map((filter, key)=>{
                         return(
                             <div className="rental-dashboard-filter-options">
@@ -101,8 +127,8 @@ const RentalDashboard = () => {
                                 <div
                                     className="main-rental-list-options-imgs"
                                     style={{
-                                        width: 200,
-                                        height: 200,
+                                        width: 150,
+                                        height: 150,
                                         backgroundRepeat: 'no-repeat',
                                         backgroundSize: 'cover',
                                         backgroundPosition: 'center center',
@@ -114,7 +140,7 @@ const RentalDashboard = () => {
                                 </div>
                                 <div className="information-box">
                                     <div className="text-box">
-                                        <h2>{rental.value}</h2>
+                                        <h3>{rental.value}</h3>
                                     </div>
                                     <div className="stars-container">
                                         <img src={(rental.stars)>0?starFilled:starUnfilled} alt="*"/>

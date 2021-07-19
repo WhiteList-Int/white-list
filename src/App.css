@@ -1,8 +1,3 @@
-body{
-  height: 100%;
-  overflow-x: hidden;
-}
-
 .homepage{
   background: #085070;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #85D8CE, #074661);  /* Chrome 10-25, Safari 5.1-6 */
@@ -34,10 +29,6 @@ body{
   z-index: 6;
   bottom: 0;
   left: 0;
-  -webkit-transition:1s;
-  -moz-transition:1s;
-  -ms-transition:1s;
-  -o-transition:1s;
 }
 
 .scroll-up-popup{
@@ -128,3 +119,4 @@ body{
     top: 100px;
   }
 }
+

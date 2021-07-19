@@ -18,7 +18,6 @@
   align-items: center;
   justify-content: center;
   scroll-snap-type: y mandatory;
-  scroll-padding: 0;
   scroll-snap-stop: always;
   overflow-y: scroll;
 }
@@ -46,12 +45,25 @@
   margin-bottom: clamp(20px,10vh,100px);
 }
 
+.rental-dashboard-filter-select-hide{
+  display: none;
+}
+
+.rental-dashboard-filter-form-hide{
+  display: none;
+}
+
+.rental-dashboard-filter-select{
+  width: 60vw;
+  margin-bottom: 5vh;
+}
+
 .rental-dashboard-filter-form{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 20px;
 }
 
@@ -75,17 +87,17 @@
 }
 
 .rental-dashboard-main-container{
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
 .rental-dashboard-main-navbar{
-  position: sticky;
+  position: inherit;
   top:0;
   display: flex;
   flex-direction: row;
@@ -112,9 +124,11 @@
   /* background-color: rgba(255, 255, 255, 0.5); */
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  flex-wrap:inherit;
+  justify-self: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 25px;
   overflow-y: scroll;
   border-radius: 10px;
   width: 100%;
@@ -122,7 +136,7 @@
 }
 
 .main-rental-list-container::-webkit-scrollbar {
-  width: 3px;
+  width: 0px;
 }
 
 .main-rental-list-options {
@@ -131,8 +145,8 @@
   text-decoration: none;
   border-bottom-left-radius: 30px;
   border-top-right-radius: 30px;
-  margin-right: clamp(20px, 3%, 200px);
-  margin-left: clamp(20px, 3%, 200px);
+  margin-right: clamp(20px, 2%, 100px);
+  margin-left: clamp(20px, 2%, 100px);
   margin-top: clamp(20px, 1%, 50px);
   margin-bottom: clamp(20px, 1%, 50px);
   height: fit-content;
@@ -164,8 +178,8 @@
 }
 
 .information-box{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -185,7 +199,7 @@
 }
 
 .stars-container img{
-  width: 20px;
+  width: clamp(10px,1vw,15px);
 }
 
 .text-box{
@@ -202,17 +216,16 @@
   text-shadow: 1px 1px 3px rgb(66, 66, 66);
 }
 
-.text-box h2{
+.text-box h3{
   color: white;
   width: 100%;
   background-color: rgba(173, 173, 173, 0.25);
   text-shadow: 1px 1px 3px black;
-  padding: 20px;
+  padding: 10px;
 }
 
-@media screen and (max-height: 600px){
-  .rental-dashboard-head{
-    overflow-y: scroll;
+@media screen and (max-width: 720px){
+  .main-rental-list-container{
+    justify-content: center;
   }
-
 }
