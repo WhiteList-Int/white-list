@@ -12,6 +12,9 @@
   position: relative;
 }
 
+.container-disabled {
+  display: none;
+}
 .owner-rental-img {
   height: 100%;
   width: 100%;
@@ -61,14 +64,6 @@
   text-align: justify;
   background-color: #131f24e5;
 }
-.owner-dash-dis-description {
-  height: 10%;
-  width: 100%;
-  margin-top: 2vh;
-  z-index: 3;
-  background-color: #131f24e5;
-  display: none;
-}
 
 .owner-dash-description-container h3 {
   color: white;
@@ -96,9 +91,46 @@
   justify-content: center;
   align-self: flex-end;
 }
-.owner-description-icon-disabled {
-  display: none;
+
+.owner-dash-edit-desc {
+  margin-top: 2vh;
+  background-color: #131f24df;
+  height: 50%;
+  width: 100%;
 }
+.owner-edit-desc-field {
+  margin-top: 2vh;
+  font-size: x-large;
+  font-weight: 200;
+  padding: 15px 10px;
+  height: 65%;
+  width: 90%;
+  border: none;
+  color: white;
+  background-color: #131f246c;
+}
+.owner-edit-desc-field::placeholder {
+  color: white;
+  font-size: x-large;
+  font-weight: 200;
+  text-align: justify;
+}
+
+.owner-edit-desc-field-button {
+  margin-top: 1vh;
+  height: 12%;
+  width: 70%;
+  color: white;
+  background-color: #29434e;
+  border: none;
+  border-radius: 25px;
+}
+
+.owner-edit-desc-field-button:hover {
+  color: black;
+  background-color: #3ed598;
+}
+
 /* End Description */
 
 /* Pending Connections */
@@ -116,9 +148,6 @@
   white-space: nowrap;
   position: relative;
   background-color: #131f24e5;
-}
-.owner-dash-pending-container-disabled {
-  display: none;
 }
 .owner-dash-pending-container h2 {
   color: white;
@@ -141,10 +170,6 @@
   background-color: #ffffff;
 }
 
-.owner-dash-small-button-disabled {
-  display: none;
-}
-
 /* active pending  container */
 .owner-dash-pending-container-active {
   height: 55%;
@@ -158,9 +183,6 @@
   justify-content: flex-start;
   text-align: justify;
   background-color: #131f24e5;
-}
-.disable-pending-container-active {
-  display: none;
 }
 
 .owner-dash-pending-cont-row {

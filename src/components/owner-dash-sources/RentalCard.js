@@ -13,6 +13,7 @@ function RentalCard() {
     
     const [showPending, setPendActive] = useState(false);
     const [disableDescription, setDisDescription] = useState(false);
+    const [editDescription, setEditDesc] = useState(false);
 
     return (
         <div>
@@ -25,18 +26,23 @@ function RentalCard() {
                             </div>
                             
                             {/* Description */}
-                            <div className={disableDescription? 'owner-dash-dis-description' : 'owner-dash-description-container'} >
+                            <div className={disableDescription? "container-disabled" : 'owner-dash-description-container'} >
                                 <h3 >Description </h3>
                                 <p> {rental.desc}</p>
-                                <div className={disableDescription ? 'owner-description-icon-disabled':'owner-description-icon-active'} >
-                                    <IconButton>
+                                <div className={disableDescription ? "container-disabled":'owner-description-icon-active'} >
+                                    <IconButton onClick = {()=>{ setEditDesc(true);setDisDescription(true);}}>
                                     <CreateIcon color="action" />
                                     </IconButton>
                                 </div>
                             </div>
+                            {/* Description Edit */}
+                            <div className={editDescription? "owner-dash-edit-desc":"container-disabled"}>
+                                <textarea className="owner-edit-desc-field" cols="1" rows="5" placeholder={rental.desc}></textarea>
+                                <button className="owner-edit-desc-field-button" onClick={()=>{ setEditDesc(false); setDisDescription(false);}}>Save Changes</button>
+                            </div>
 
                             {/* Pending Connections */}
-                            <div className={showPending? "owner-dash-pending-container-disabled":"owner-dash-pending-container"} >
+                            <div className={showPending? "container-disabled":"owner-dash-pending-container"} >
                                 <h2 >Pending Connections</h2>
                                 <button className="owner-dash-small-button" >
                                     <IconButton onClick = {() => { setPendActive(true);setDisDescription(true);}}>
@@ -46,7 +52,7 @@ function RentalCard() {
                             </div>
                             
                             {/* Pending Active */}
-                            <div className={showPending? "owner-dash-pending-container-active":"disable-pending-container-active"} >
+                            <div className={showPending? "owner-dash-pending-container-active":"container-disabled"} >
                                 <div className="owner-dash-cont-row">
                                     <h2 >Pending Connections</h2>
                                     <button className="owner-dash-small-button-pend" >
