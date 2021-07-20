@@ -1,4 +1,4 @@
-//dummy data if separate ang pend connections
+//dummy data for pending connections
 
 export const pends = [
     { className: 'pend', name: 'Coco Martin', num: '09225346912', email:'probinsyano@gmail.com'},
