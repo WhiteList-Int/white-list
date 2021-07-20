@@ -8,12 +8,18 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
+import ConfirmWindow from './ConfirmWindow'
 
 function RentalCard() {
     
     const [showPending, setPendActive] = useState(false);
     const [disableDescription, setDisDescription] = useState(false);
     const [editDescription, setEditDesc] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    // const showScroll = () => {
+    //     document.body.setAttribute('style', 'overflow-y:scroll;');
+    // }
+
 
     return (
         <div>
@@ -38,7 +44,7 @@ function RentalCard() {
                             {/* Description Edit */}
                             <div className={editDescription? "owner-dash-edit-desc":"container-disabled"}>
                                 <textarea className="owner-edit-desc-field" cols="1" rows="5" placeholder={rental.desc}></textarea>
-                                <button className="owner-edit-desc-field-button" onClick={()=>{ setEditDesc(false); setDisDescription(false);}}>Save Changes</button>
+                                <button className="owner-edit-desc-field-button" onClick={()=>{ setEditDesc(false); setDisDescription(false);setIsOpen(true);}}>Save Changes</button>
                             </div>
 
                             {/* Pending Connections */}
@@ -67,12 +73,12 @@ function RentalCard() {
                                             <h3>{pend.name}</h3>
                                             <div className="owner-dash-button-cont">
                                                 <div className="owner-dash-disapprove-cont">
-                                                    <IconButton>
+                                                    <IconButton onClick={()=>{setIsOpen(true);}}>
                                                         <CloseIcon fontSize='large'/>
                                                     </IconButton>
                                                 </div>
                                                 <div className="owner-dash-approve-cont">
-                                                    <IconButton>
+                                                    <IconButton onClick={()=>{setIsOpen(true);}}>
                                                         <CheckIcon fontSize='large' />
                                                     </IconButton>
                                                 </div>
@@ -94,11 +100,13 @@ function RentalCard() {
                                     </IconButton>
                                 </button>
                             </div>
-                            <button className="owner-dash-remove-rental" onClick={()=>{}}>
+                            <button className="owner-dash-remove-rental" onClick={()=>{setIsOpen(true);}}>
                                 <h2>Remove Rental Property</h2>
                             </button>
+                            <ConfirmWindow open={isOpen} onClose={()=> {setIsOpen(false);}}></ConfirmWindow>
                         {/* End Detail Card */}
                         </div>    
+                        
                     </div>
                 ))}
         </div>

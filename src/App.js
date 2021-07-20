@@ -7,6 +7,7 @@ import AboutUs from './components/main-pages/react-js/AboutUs';
 import LearnMore from './components/information-page/LearnMore'
 import TermsService from './components/information-page/TermsService'
 import PrivacyPolicy from './components/information-page/PrivacyPolicy'
+import ConfirmWindow from './components/owner-dash-sources/ConfirmWindow.js';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path = '/terms-of-service' component={TermsService}/>
           <Route path = '/privacy-policy' component={PrivacyPolicy}/>
           <Route path = '/about-us'  component={AboutUs}/>
+          <Route path = '/test'  component={ConfirmWindow}/>
           <Route path = '/'  component={Homepage}/>
 
         </Switch>
