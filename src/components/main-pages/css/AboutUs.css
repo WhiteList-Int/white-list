@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,8 @@
 }
 
 .about-section {
+  
+  transition: 1s;
   color: whitesmoke;
   margin-top: 18vh;
   height: clamp(120vh, 60%, 200vh);
@@ -60,6 +62,7 @@
   text-indent: 2vw;
   color: #2a4658;
 }
+
 .about2-p {
   font-size: medium;
   width: 100%;
@@ -106,6 +109,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 .team-img-container {
   margin: 8px;
   display: flex;
@@ -162,10 +166,12 @@
   border: none;
   border-radius: 15px;
 }
+
 .person-saying {
   margin: 0 2vw 0 2vw;
   text-align: justify;
 }
+
 .contact-button {
   height: 5vh;
   width: 55%;

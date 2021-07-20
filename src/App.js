@@ -14,7 +14,7 @@ function App() {
 
   return (
     <main className="App">
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <Switch location={location} key={location.pathname}>
           <Route path = '/rental-dashboard'  component={RentalDashboard}/>
           <Route path = '/owner-dashboard'  component={OwnerDashboard}/>

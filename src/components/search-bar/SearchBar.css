@@ -4,26 +4,26 @@
 
 .searchInputs {
   display: flex;
+  border-radius: 5px;
+  background-color: white;
+  flex-direction: row;
+  align-items: center;
 }
 
 .search input {
-  background-color: white;
   border: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 15px;
+  font-size: clamp(12px,2vh,15px);
   letter-spacing: 1px;
-  padding: 10px;
-  height: 20px;
-  width: 300px;
+  padding: clamp(5px,2vh,10px);
+  height: 10px;
+  width: clamp(250px,30vw,300px);
 }
 
 .searchIcon {
-  height: 40px;
-  width: 40px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  background-color: white;
+  height: clamp(30px,6vh,40px);
+  width: clamp(30px,5vh,40px);
   display: grid;
   place-items: center;
 }
@@ -38,37 +38,38 @@ input:focus {
 }
 
 .dataResult {
-  margin-top: -5px;
-  width: 360px;
+  margin-top: clamp(-5px,-1vh,-1px);
+  width: clamp(300px,40vw,360px);
   height: fit-content;
+  max-height: clamp(80px,25vh,160px);
+  overflow-y: scroll;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  overflow: hidden;
-  overflow-y: auto;
-}
-
-.dataResult::-webkit-scrollbar {
-  display: none;
 }
 
 .dataResult .dataItem {
   width: 100%;
-  height: 40px;
+  height: clamp(25px,5vh,40px);
   display: flex;
   align-items: center;
   color: black;
 }
 
-.dataItem p {
+.dataItem p, h6 {
   margin-left: 10px;
 }
-a {
+
+.dataItem h6{
+  color: grey;
+}
+
+.dataItem{
   text-decoration: none;
 }
 
-a:hover {
+.dataItem:hover {
   background-color: lightgrey;
 }
 

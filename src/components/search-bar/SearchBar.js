@@ -3,14 +3,14 @@ import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 
-function SearchBar({ placeholder, data }) {
+function SearchBar({ placeholder, data, address }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = data.filter((value) => {
+    const newFilter = data.current.filter((value) => {
       return value.value.toLowerCase().includes(searchWord.toLowerCase());
     });
 
@@ -26,6 +26,14 @@ function SearchBar({ placeholder, data }) {
     setWordEntered("");
   };
 
+  const beginSearch = () => {
+    var element = document.getElementById("mainPage");
+    address.current = "mainPage";
+    element.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div className="search">
       <div className="searchInputs">
@@ -37,19 +45,26 @@ function SearchBar({ placeholder, data }) {
         />
         <div className="searchIcon">
           {filteredData.length === 0 ? (
-            <SearchIcon />
+            <SearchIcon onClick={beginSearch} />
           ) : (
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
         </div>
       </div>
-      {filteredData.length != 0 && (
+      {filteredData.length === 0 && wordEntered!=="" && (
         <div className="dataResult">
-          {filteredData.slice(0, 15).map((value, key) => {
+          <div className="dataItem">
+            <p>No results Found.</p>
+          </div>
+        </div>
+      )}
+      {filteredData.length !== 0 && (
+        <div className="dataResult">
+          {filteredData.map((value, key) => {
             return (
-              <a className="dataItem" href={value.link}>
-                <p>{value.value} </p>
-              </a>
+              <div className="dataItem" href={value.link} key={key}>
+                <p>{value.value}</p><h6>{value.category}</h6>
+              </div>
             );
           })}
         </div>

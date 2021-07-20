@@ -1,0 +1,45 @@
+.nav-fixed {
+  height: fit-content;
+  width: 100vw;
+  position: sticky;
+}
+
+.nav-fixed-header-img {
+  width: 180px;
+  padding: 20px;
+  margin-left: 45px;
+  align-self: center;
+}
+
+.nav-fixed-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    rgb(44, 83, 100, 0.95),
+    rgb(32, 58, 67, 0.95),
+    rgb(15, 32, 39, 0.9)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgb(44, 83, 100, 0.95),
+    rgb(32, 58, 67, 0.95),
+    rgb(15, 32, 39, 0.9)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media screen and (max-width: 600px) {
+  .nav-fixed-header-img {
+    margin-left: 0;
+  }
+  .nav-fixed-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

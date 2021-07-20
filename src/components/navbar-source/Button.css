@@ -51,7 +51,6 @@
 
 .btn-top:hover {
     transition: 0.5s;
-    background-position: right center;
     color: #80d0c7;
     text-decoration: underline;
 }

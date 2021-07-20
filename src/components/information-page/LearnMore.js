@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarAbout from '../navbar-source/NavbarAbout';
+import NavbarFixed from '../navbar-source/NavbarFixed';
 import './LearnMore.css'
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants.js';
@@ -11,6 +11,7 @@ function LearnMore() {
 
     return (
         <>
+            <NavbarFixed />
             <motion.body 
                 className="learn-more-page"
                 initial="slideOutY" 
@@ -40,7 +41,6 @@ function LearnMore() {
                     Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod ab debitis unde cum minima repellat, quos harum quaerat ullam rem ducimus non accusamus esse veritatis ipsa assumenda! Iste quas expedita sunt, voluptas mollitia, distinctio maiores ex assumenda sint quod libero sed molestias. Dolorum nisi quas doloribus, nulla esse nemo dignissimos. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab dolorem laboriosam rem porro assumenda. Doloremque corporis libero voluptatem architecto odio, commodi ut maxime, adipisci sed reprehenderit saepe! Officia deleniti voluptatum, voluptatibus optio earum distinctio et ullam quibusdam nisi est repellat saepe pariatur impedit eius omnis cum enim. Quibusdam sit harum dignissimos sint, praesentium dolor esse impedit enim nostrum, magnam excepturi non, nobis culpa iste delectus quis iusto placeat fugit commodi optio libero fuga voluptatibus modi. Enim voluptatibus soluta minus assumenda officia voluptates expedita tempora ut! Itaque nostrum odio recusandae, possimus natus sed reiciendis sequi illo quae animi laudantium aliquam fugiat!</p>
                         <p className="learn-p" id="type3-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, neque architecto. Voluptas aliquam ut sit placeat assumenda accusantium adipisci asperiores tempore consectetur dolorem totam minus, commodi illo cum illum? Minima dicta architecto temporibus repellat itaque tenetur sed alias repudiandae consequuntur facilis iste voluptas, optio aliquam neque soluta corporis commodi vero rerum. Quod perspiciatis, recusandae, error debitis eos et repellendus adipisci eius ad voluptatem vitae tenetur? Rem sed natus molestiae eligendi accusamus doloremque aliquid nostrum optio. Nulla rem itaque temporibus veritatis sed impedit inventore, magnam neque dolores eum ratione quis vel iure ipsa debitis non molestiae ut. Similique sint, pariatur earum cupiditate debitis itaque dolorem eligendi vero rem minima deserunt quia eos fugit quidem at alias tempore illum reprehenderit qui nihil ipsam fugiat esse sunt? Eaque, pariatur quod. Ipsum voluptatibus obcaecati fugiat alias magnam rem laborum explicabo enim tempore doloremque deleniti, ad voluptas in harum debitis nisi impedit commodi delectus! Animi optio quisquam at nesciunt rem praesentium velit eos dolore, dicta veritatis quibusdam consectetur numquam ut autem! At cum eaque ratione voluptas maiores quaerat, ullam harum, eos tenetur eveniet reprehenderit. Facilis sed minus dolorum incidunt vero corrupti architecto natus optio? Quod commodi corrupti temporibus blanditiis quis inventore cum voluptates nobis consequuntur!</p>
                     </div>
-                <NavbarAbout />
             </motion.body>
             <Footer />
         </>

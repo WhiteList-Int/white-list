@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarAbout from '../../navbar-source/NavbarAbout';
+import NavbarFixed from '../../navbar-source/NavbarFixed';
 import '../css/AboutUs.css';
 import Img1 from '../../images/nash.jpg';
 import Img2 from '../../images/jez.jpg';
@@ -24,15 +24,25 @@ function AboutUs() {
     ]
 
     return (
-        <motion.div
-        initial="slideOutY" 
-        animate="slideInY" 
-        exit="slideOutY"
-        variants={variants}
-        transition={transitions.tweenEaseOutSlower}>
-            <body className="about-page">
-                {window.scroll(0,0)}
-                <div class="about-section">
+        <div>
+            {window.scroll({top:0,left:0})}
+            <motion.body 
+                className="about-page"
+                initial="fadeOut" 
+                animate="fadeIn" 
+                exit="fadeOut"
+                variants={variants}
+                transition={transitions.tweenEaseOutFastest}
+            >
+                <NavbarFixed/> 
+                <motion.div 
+                    class="about-section" 
+                    initial="slideOutYOpp" 
+                    animate="slideInYOpp" 
+                    exit="slideOutYOpp"
+                    variants={variants}
+                    transition={transitions.tweenEaseOutFaster}
+                >
                     <h1 className="team-title">About Us</h1>
                     <h2 className="about-h2">Mission</h2>
                     <p className="about-p">The primary goal of our company is to be trusted and reliable in providing
@@ -51,8 +61,16 @@ function AboutUs() {
                         corporate relationships.
                         <br />
                         <p className="about2-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempora alias sed, laborum nisi saepe at officia illum itaque voluptas perspiciatis aliquid voluptatum tenetur iure eaque ullam sint ipsam quaerat repellat laudantium, qui tempore fuga. Officiis, incidunt nemo id maiores officia ipsa tempora quaerat neque vel autem consequuntur natus sint?</p></p> 
-                    </div>
-                <div className="team-container">
+                    </motion.div>
+
+                <motion.div 
+                    className="team-container"
+                    initial="slideOutYOpp" 
+                    animate="slideInYOpp" 
+                    exit="slideOutYOpp"
+                    variants={variants}
+                    transition={transitions.tweenEaseOutFaster}
+                >
                     <h1 className="team-title">Our Team</h1>
                     {developers.map((dev) => (
                         <>
@@ -68,11 +86,10 @@ function AboutUs() {
                         <NavLink to='/' class="contact-button">Contact</NavLink>
                     </>
                      ))}
-                </div>
-                <NavbarAbout/> 
-            </body>
+                </motion.div>
+            </motion.body>
             <Footer />
-        </motion.div>
+        </div>
     )
 }
 
