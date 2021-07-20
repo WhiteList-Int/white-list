@@ -24,32 +24,34 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
             >
                 <div className='exit-zone' onClick={onClose}/>
                 <div className="sign-in-container">
-                    <div hidden={redirect} id="toggleLoginTitle" className="sign-in-title">
-                        <h1>Login</h1>
-                    </div>
-                    <div hidden={!redirect} id="toggleSignUpTitle" className="sign-in-title">
-                        <h1>Sign Up</h1>
-                    </div>
-                    <div className="fill-boxes">
-                        <input hidden={!redirect} id="toggleUserNameField" className="" type="text" placeholder="Username" required/>
-                        <input className="" type="text" placeholder="Email" required/>
-                        <input className="" type="password" placeholder="************" required/>
-                    </div>
-                    <div className="sign-in-buttons">
-                        <NavLink to="/" className='sign-in-link'>Sign-in</NavLink>
-                        <img src={gsign} alt='gsign'/>
-                    </div>
-                    <div hidden={redirect} id="toggleSignInFooter"className="sign-in-footer">
-                        <NavLink to="/" className='sign-up-link'
-                        onClick={onRedirect}>
-                            Not yet registered?
-                        </NavLink>
-                    </div>
-                    <div hidden={!redirect} id="toggleSignUpFooter" className="sign-in-footer">
-                        <NavLink to="/" className='sign-up-link'
-                        onClick={onRedirect}>
-                            Already have an account?
-                        </NavLink>
+                    <div className="sign-in-inner-container">
+                        <div hidden={redirect} id="toggleLoginTitle" className="sign-in-title">
+                            <h1>LOG IN</h1>
+                        </div>
+                        <div hidden={!redirect} id="toggleSignUpTitle" className="sign-in-title">
+                            <h1>SIGN UP</h1>
+                        </div>
+                        <div className="fill-boxes">
+                            <input hidden={!redirect} id="toggleUserNameField" className="" type="text" placeholder="Username" required/>
+                            <input className="" type="text" placeholder="Email" required/>
+                            <input className="" type="password" placeholder="************" required/>
+                        </div>
+                        <div className="sign-in-buttons">
+                            <NavLink to="/" className='sign-in-link'>Sign-in</NavLink>
+                            <img src={gsign} alt='gsign' className='google-link'/>
+                        </div>
+                        <div hidden={redirect} id="toggleSignInFooter" className="sign-in-footer">
+                            <NavLink to="/" className='sign-up-link'
+                            onClick={onRedirect}>
+                                Not yet registered?
+                            </NavLink>
+                        </div>
+                        <div hidden={!redirect} id="toggleSignUpFooter" className="sign-in-footer">
+                            <NavLink to="/" className='sign-up-link'
+                            onClick={onRedirect}>
+                                Already have an account?
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </motion.div>

@@ -1,6 +1,5 @@
 import Img from '../images/white-list-text.svg';
 import "./NavbarFixed.css";
-import "./Button.css";
 import { NavLink } from 'react-router-dom';
 
 const NavbarFixed = () => {

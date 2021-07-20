@@ -4,6 +4,7 @@ import starFilled from '../../images/star-rated.svg';
 import starUnfilled from '../../images/star-unrated.svg';
 import Img from '../../images/white-list-text.svg';
 import SearchBar from './../../search-bar/SearchBar';
+import NavbarTransparent from "../../navbar-source/NavbarTransparent";
 import filterOptions from './../comp/filterOptions';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Select from 'react-select';
@@ -81,8 +82,9 @@ const RentalDashboard = () => {
             variants={variants}
             transition={transitions.linear}
         >
+            
             <section className="rental-dashboard-head">
-                <span id="startOfPage"/>
+                <span id="startOfPage"><NavbarTransparent /></span>
                 <img className = 'rentel-dashboard-head-img' src = {Img} alt="WhiteList"></img>
                 <Select
                     classNamePrefix="filter-select"
@@ -121,38 +123,39 @@ const RentalDashboard = () => {
                     <h2>Search Results</h2>
                 </div>
                 <div className="main-rental-list-container">
-                    {filteredData.current.map((rental,key) => {
-                        return (
-                            <NavLink to = {rental.link} className = "main-rental-list-options" key = {rental.key}>
-                                <div
-                                    className="main-rental-list-options-imgs"
-                                    style={{
-                                        width: 150,
-                                        height: 150,
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center center',
-                                        backgroundBlendMode: 'overlay',
-                                        backgroundImage: `url(${rental.imgs})`
-                                    }}
-                                >
-                                    <div className="overlay-color"><h5>{rental.name}</h5></div>
-                                </div>
-                                <div className="information-box">
-                                    <div className="text-box">
-                                        <h3>{rental.value}</h3>
+                    <div className="center-rental-list-options">    </div>
+                        {filteredData.current.map((rental,key) => {
+                            return (
+                                <NavLink to = {rental.link} className = "main-rental-list-options" key = {rental.key}>
+                                    <div
+                                        className="main-rental-list-options-imgs"
+                                        style={{
+                                            width: 150,
+                                            height: 150,
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center center',
+                                            backgroundBlendMode: 'overlay',
+                                            backgroundImage: `url(${rental.imgs})`
+                                        }}
+                                    >
+                                        <div className="overlay-color"><h5>{rental.name}</h5></div>
                                     </div>
-                                    <div className="stars-container">
-                                        <img src={(rental.stars)>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-1>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-2>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-3>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-4>0?starFilled:starUnfilled} alt="*"/>
+                                    <div className="information-box">
+                                        <div className="text-box">
+                                            <h3>{rental.value}</h3>
+                                        </div>
+                                        <div className="stars-container">
+                                            <img src={(rental.stars)>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-1>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-2>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-3>0?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-4>0?starFilled:starUnfilled} alt="*"/>
+                                        </div>
                                     </div>
-                                </div>
-                            </NavLink>
-                        );
-                    })}
+                                </NavLink>
+                            );
+                        })}
                 </div>
             </section>
         </motion.div>

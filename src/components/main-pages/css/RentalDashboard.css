@@ -1,15 +1,15 @@
 #startOfPage{
   align-self: flex-start;
   justify-self: flex-start;
-  padding-top: clamp(50px,20vh,200px);
+  padding-bottom: clamp(50px,20vh,200px);
   top:0;
   left:0;
 }
 
 .rental-dashboard-bg{
-  background: #085070;
-  background: -webkit-linear-gradient(to top, #85D8CE, #074661);
-  background: linear-gradient(to top, #85D8CE, #085070);
+  background: hsl(198, 87%, 24%);
+  background: -webkit-linear-gradient(to top, hsl(173, 52%, 68%), hsl(198, 87%, 20%));
+  background: linear-gradient(to top, hsl(173, 52%, 68%), hsl(198, 87%, 24%));
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -19,6 +19,7 @@
   justify-content: center;
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 

@@ -11,6 +11,17 @@
   align-self: center;
 }
 
+.nav-trans-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding-top: 20px;
+  flex-direction: row-reverse;
+  top: 0;
+  left: 0;
+  background: transparent;
+} 
+
 .nav-fixed-container {
   height: 100%;
   width: 100%;
@@ -31,6 +42,26 @@
     rgb(32, 58, 67, 0.95),
     rgb(15, 32, 39, 0.9)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.profileIcon{
+  color: white;
+  display: flex;
+  margin-right: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-trans-container h3{
+  color: white;
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  margin-right: 10px;
+}
+
+.profileIcon svg {
+  font-size: 30px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
