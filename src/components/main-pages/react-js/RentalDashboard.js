@@ -1,5 +1,5 @@
 import React from 'react';
-import rentData from './../comp/renData';
+import rentData from '../comp/renData';
 import starFilled from '../../images/star-rated.svg';
 import starUnfilled from '../../images/star-unrated.svg';
 import Img from '../../images/white-list-text.svg';
@@ -17,16 +17,48 @@ import "../css/RentalDashboard.css";
 
 const RentalDashboard = () => {
     const filterRental = useRef("all");
-    const filteredData = useRef(rentData);
     const currentWindow = useRef("startOfPage");
     const [windowState, setWindowState] = useState(true);
-    const [rentalFilter,setRentalFilter] = useState("");
+
+    const [rentalFilter,setRentalFilter] = useState(()=>{
+        const pathName = window.location.pathname;
+        var defaultRentalFilter = "all";
+        filterOptions.map((data) => {
+            if(pathName.includes(data.value)){
+                defaultRentalFilter = data.value;
+            }
+        });
+        console.log(defaultRentalFilter);
+        return defaultRentalFilter;
+    });
+
+    const filteredData = useRef(rentData.filter((data) => {
+        return data.category.toLowerCase().includes(rentalFilter.toLowerCase());
+    }));
 
     function handleChange(event) {
         console.log("Filter: "+ filterRental.current);
         console.log("Selected: "+ event.value);
         setRentalFilter(event.value);
         filterRental.current = event.value;
+
+        const newFilter = rentData.filter((data) => {
+            return data.category.toLowerCase().includes(filterRental.current.toLowerCase());
+        });
+        if (filterRental.current === "all") {
+            filteredData.current = rentData;
+        } else {
+            filteredData.current = newFilter;
+        }
+        console.log("newFilter: "+ filterRental.current);
+        console.log("Data: "+ filteredData.current);
+    };
+
+    function handleRadioChange(event) {
+        console.log("Filter: "+ filterRental.current);
+        console.log("Selected: "+ event.target.value);
+        setRentalFilter(event.target.value);
+        filterRental.current = event.target.value;
 
         const newFilter = rentData.filter((data) => {
             return data.category.toLowerCase().includes(filterRental.current.toLowerCase());
@@ -89,7 +121,7 @@ const RentalDashboard = () => {
                 <Select
                     classNamePrefix="filter-select"
                     placeholder="Filter Selection"
-                    defaultValue="All"
+                    defaultValue={rentalFilter}
                     isClearable='false'
                     isSearchable='false'
                     className = {windowState?"rental-dashboard-filter-select-hide":"rental-dashboard-filter-select"}
@@ -104,9 +136,10 @@ const RentalDashboard = () => {
                             <div className="rental-dashboard-filter-options">
                                 <input
                                     type = "radio"
+                                    checked = {rentalFilter===filter.value}
                                     value = {filter.value}
                                     name = "rentalType"
-                                    onChange = {handleChange}
+                                    onChange = {handleRadioChange}
                                     key = {key}
                                 />
                                 <h4>{filter.label}</h4>

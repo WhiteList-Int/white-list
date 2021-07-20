@@ -7,9 +7,9 @@ import Img6 from '../images/lease.svg';
 
 export const bubbles = [
     { className: 'bubble', imgs: Img1, text: 'Penthouse', link: '/rental-dashboard/penthouse', id: 'b1', key: 1},
-    { className: 'bubble', imgs: Img2, text: 'Boarding House', link: '/rental-dashboard/boarding-house', id: 'b2', key: 2},
-    { className: 'bubble', imgs: Img3, text: 'Apartment', link: '/rental-dashboard/bedspace', id: 'b3', key: 3},
-    { className: 'bubble', imgs: Img4, text: 'Rent House', link: '/rental-dashboard/apartment', id: 'b4', key: 4},
+    { className: 'bubble', imgs: Img2, text: 'Boarding House', link: '/rental-dashboard/boardinghouse', id: 'b2', key: 2},
+    { className: 'bubble', imgs: Img3, text: 'Apartment', link: '/rental-dashboard/apartment', id: 'b3', key: 3},
+    { className: 'bubble', imgs: Img4, text: 'Rent House', link: '/rental-dashboard/renthouse', id: 'b4', key: 4},
     { className: 'bubble', imgs: Img5, text: 'Hotel', link: '/rental-dashboard/hotel', id: 'b5', key: 5},
-    { className: 'bubble', imgs: Img6, text: 'Lease', link: '/rental-dashboard/for-lease', id: 'b6', key: 6}
+    { className: 'bubble', imgs: Img6, text: 'Lease', link: '/rental-dashboard/lease', id: 'b6', key: 6}
 ];
