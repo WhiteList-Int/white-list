@@ -1,0 +1,91 @@
+.confirm-window-page {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: #0e1b2083; /* fallback for old browsers */
+}
+
+.confirm-window-cont {
+  display: flex;
+  height: clamp(200px, 25%, 300px);
+  width: clamp(350px, 55%, 450px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 10px;
+  background-color: #131f24d5;
+  color: white;
+}
+
+.confirm-type-cont {
+  height: 20%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: rgba(12, 55, 56, 0.424);
+}
+
+.confirm-question-cont {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 55%;
+  width: 100%;
+  background-color: #fffcfcbd;
+}
+.confirm-question-cont p {
+  margin-left: 5%;
+  font-size: clamp(1rem, 1.2rem, 1.8rem);
+  color: #06090b;
+}
+
+.confirm-buttons-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2vh;
+  height: 20%;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #1f2122;
+}
+
+.confirm-no-button {
+  height: 100%;
+  width: 50%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(23, 104, 105, 0.424);
+  cursor: pointer;
+  font-size: clamp(1rem, 1.2rem, 1.8rem);
+}
+.confirm-no-button:hover {
+  background-color: #1f2122;
+  color: white;
+}
+
+.confirm-yes-button {
+  height: 100%;
+  width: 50%;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  background-color: #ffffff9b;
+  cursor: pointer;
+  font-size: clamp(1rem, 1.2rem, 1.8rem);
+}
+
+.confirm-yes-button:hover {
+  background-color: white;
+  color: black;
+}

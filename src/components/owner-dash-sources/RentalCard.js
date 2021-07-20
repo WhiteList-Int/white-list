@@ -8,12 +8,20 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
+import ConfirmWindow from './ConfirmWindow'
+import { archives } from './archivedSrc';
 
 function RentalCard() {
     
-    const [showPending, setPendActive] = useState(false);
-    const [disableDescription, setDisDescription] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const showScroll = () => {
+        document.body.setAttribute('style', 'overflow-y:scroll;');
+     }
+     const [disableDescription, setDisDescription] = useState(false);
     const [editDescription, setEditDesc] = useState(false);
+    const [showPending, setPendActive] = useState(false);
+    const [showArchive, setArchActive] = useState(false);
 
     return (
         <div>
@@ -31,21 +39,28 @@ function RentalCard() {
                                 <p> {rental.desc}</p>
                                 <div className={disableDescription ? "container-disabled":'owner-description-icon-active'} >
                                     <IconButton onClick = {()=>{ setEditDesc(true);setDisDescription(true);}}>
-                                    <CreateIcon color="action" />
+                                        <CreateIcon fontSize='medium' />
                                     </IconButton>
                                 </div>
                             </div>
                             {/* Description Edit */}
                             <div className={editDescription? "owner-dash-edit-desc":"container-disabled"}>
                                 <textarea className="owner-edit-desc-field" cols="1" rows="5" placeholder={rental.desc}></textarea>
-                                <button className="owner-edit-desc-field-button" onClick={()=>{ setEditDesc(false); setDisDescription(false);}}>Save Changes</button>
+                                <div className="owner-dash-cont-row" id="desc-button-cont" >
+                                <button className="owner-dash-small-button" id="backspace-icon">
+                                <IconButton onClick = {()=>{ setEditDesc(false);setDisDescription(false);}}>
+                                    <KeyboardBackspaceIcon fontSize='medium' />
+                                </IconButton>
+                                </button>
+                                <button className="owner-edit-desc-field-button" onClick={()=>{ setIsOpen(true);}}>Save Changes</button>
+                                </div>
                             </div>
 
                             {/* Pending Connections */}
                             <div className={showPending? "container-disabled":"owner-dash-pending-container"} >
                                 <h2 >Pending Connections</h2>
                                 <button className="owner-dash-small-button" >
-                                    <IconButton onClick = {() => { setPendActive(true);setDisDescription(true);}}>
+                                    <IconButton onClick = {() => { setPendActive(true);setDisDescription(true);setArchActive(false);setEditDesc(false);}}>
                                         <AddIcon fontSize='medium' />
                                     </IconButton>
                                 </button>
@@ -67,12 +82,12 @@ function RentalCard() {
                                             <h3>{pend.name}</h3>
                                             <div className="owner-dash-button-cont">
                                                 <div className="owner-dash-disapprove-cont">
-                                                    <IconButton>
+                                                    <IconButton onClick={()=>{setIsOpen(true);}}>
                                                         <CloseIcon fontSize='large'/>
                                                     </IconButton>
                                                 </div>
                                                 <div className="owner-dash-approve-cont">
-                                                    <IconButton>
+                                                    <IconButton onClick={()=>{setIsOpen(true);}}>
                                                         <CheckIcon fontSize='large' />
                                                     </IconButton>
                                                 </div>
@@ -85,20 +100,56 @@ function RentalCard() {
                                     </div>  
                                 ))}
                             </div>
+                            
                             {/* Archived Connections */}
-                            <div className="owner-dash-archived-container" >
+                            <div className={showArchive? "container-disabled":"owner-dash-archived-container"} >
                                 <h2 >Archived Connections</h2>
                                 <button className="owner-dash-small-button">
-                                    <IconButton>
+                                    <IconButton onClick = {() => { setArchActive(true);setDisDescription(true);setPendActive(false);setEditDesc(false);}}>
                                         <AddIcon fontSize='medium' />
                                     </IconButton>
                                 </button>
                             </div>
-                            <button className="owner-dash-remove-rental" onClick={()=>{}}>
+
+                            {/* Archived Active */}
+                            <div className={showArchive? "owner-dash-pending-container-active":"container-disabled"} >
+                                <div className="owner-dash-cont-row">
+                                    <h2 >Archived Connections</h2>
+                                    <button className="owner-dash-small-button-pend" >
+                                        <IconButton onClick = {() => { setArchActive(false);setDisDescription(false);}}>
+                                            <RemoveIcon fontSize='medium' />
+                                        </IconButton>
+                                    </button>
+                                </div>
+                                {archives.map((archive)=>(
+                                    <div className="owner-dash-pending-request" >
+                                        <div className="owner-dash-pending-name-cont">
+                                            <h3>{archive.name}</h3>
+                                            <div className="owner-dash-button-cont">
+                                                <div className="owner-dash-disapprove-cont">
+                                                    <IconButton onClick={()=>{setIsOpen(true);}}>
+                                                        <CloseIcon fontSize='large'/>
+                                                    </IconButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="owner-dash-pending-cont-row">
+                                            <p>{archive.num}</p>
+                                            <p>{archive.email}</p>
+                                        </div>
+                                    </div>  
+                                ))}
+                            </div>
+
+                            <button className="owner-dash-remove-rental" onClick={()=>{setIsOpen(true);}}>
                                 <h2>Remove Rental Property</h2>
                             </button>
+                            <ConfirmWindow open={isOpen} onClose={()=> {
+                                if(editDescription){setEditDesc(false); setDisDescription(false);}setIsOpen(false);showScroll();}
+                                }/>
                         {/* End Detail Card */}
                         </div>    
+                        
                     </div>
                 ))}
         </div>
