@@ -21,12 +21,10 @@
     #85d8ce,
     #085070
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .about-section {
-  
   transition: 1s;
   color: whitesmoke;
   margin-top: 18vh;

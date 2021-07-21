@@ -12,7 +12,6 @@ export default function ContactUs({open, onClose}) {
     return ReactDom.createPortal(
         <>
             {document.body.setAttribute('style','overflow:hidden;')}
-
             <motion.div 
                 className="contact-us"
                 initial="fadeOut" 

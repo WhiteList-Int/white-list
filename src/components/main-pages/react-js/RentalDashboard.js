@@ -37,6 +37,8 @@ const RentalDashboard = () => {
     }));
 
     function handleChange(event) {
+
+        if(event===null) event = {value:"all"};
         console.log("Filter: "+ filterRental.current);
         console.log("Selected: "+ event.value);
         setRentalFilter(event.value);

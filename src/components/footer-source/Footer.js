@@ -9,7 +9,7 @@ const Footer = () => {
     
     const [isOpen, setIsOpen] = useState(false);
     const showScroll = () => {
-        document.body.setAttribute('style', 'overflow-y:scroll;');
+        document.body.setAttribute('style', 'overflow-y:scroll;overflow-x:hidden;');
     }
 
     return (

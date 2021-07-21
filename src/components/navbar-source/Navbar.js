@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Img from '../images/white-list-text.svg';
 import Img2 from '../images/white-list-tagline.svg';
@@ -8,6 +8,7 @@ import "./Button.css";
 
 const Navbar = () => {
 
+    const pathName = useRef(window.location.pathname);
     const [startButton, setStartButton] = useState(false);
     const [navbar, setNavbar] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,7 @@ const Navbar = () => {
                 <img className = {navbar ? 'header-img-active' : 'header-img'} src = {Img} alt="WhiteList"></img>
                 <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
                 <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
-                    <NavLink to='/' className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => {setIsOpen(true); setIsRedirect(false)}}>SIGN-IN</NavLink>
+                    <NavLink to={pathName.current} className = {startButton ? 'btn-top' : 'btn-bot'} onClick={() => {setIsOpen(true); setIsRedirect(false)}}>SIGN-IN</NavLink>
                     <SignIn open={isOpen} 
                     redirect={isRedirect}
                     onRedirect={() => {setIsRedirect(!isRedirect)}}

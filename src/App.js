@@ -22,8 +22,7 @@ function App() {
           <Route path = '/terms-of-service' component={TermsService}/>
           <Route path = '/privacy-policy' component={PrivacyPolicy}/>
           <Route path = '/about-us'  component={AboutUs}/>
-          <Route path = '/'  component={Homepage}/>
-
+          <Route path = '/homepage'  component={Homepage}/>
         </Switch>
       </AnimatePresence>
     </main>

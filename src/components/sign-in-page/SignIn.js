@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants';
 import { transitions } from '../../page-transitions';
@@ -9,6 +10,8 @@ import './SignIn.css';
 
 
 export default function SignIn({open, redirect, onClose, onRedirect}) {
+    const pathName = useRef(window.location.pathname);
+
     if(!open) return null;
 
     return ReactDom.createPortal(
@@ -37,17 +40,17 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                             <input className="" type="password" placeholder="************" required/>
                         </div>
                         <div className="sign-in-buttons">
-                            <NavLink to="/" className='sign-in-link'>Sign-in</NavLink>
+                            <NavLink to={pathName.current} className='sign-in-link'>Sign-in</NavLink>
                             <img src={gsign} alt='gsign' className='google-link'/>
                         </div>
                         <div hidden={redirect} id="toggleSignInFooter" className="sign-in-footer">
-                            <NavLink to="/" className='sign-up-link'
+                            <NavLink to={pathName.current} className='sign-up-link'
                             onClick={onRedirect}>
                                 Not yet registered?
                             </NavLink>
                         </div>
                         <div hidden={!redirect} id="toggleSignUpFooter" className="sign-in-footer">
-                            <NavLink to="/" className='sign-up-link'
+                            <NavLink to={pathName.current} className='sign-up-link'
                             onClick={onRedirect}>
                                 Already have an account?
                             </NavLink>

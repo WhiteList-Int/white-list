@@ -1,9 +1,5 @@
 import Img1 from '../images/house1.jpg';
 import Img2 from '../images/house2.jpg';
-import Img3 from '../images/house3.jpg';
-import Img4 from '../images/house4.jpg';
-import Img5 from '../images/house5.jpg';
-import Img6 from '../images/house6.jpg';
 
 export const rentals = [
     { className: 'rental', imgs: Img1, name: 'Juan Place', id: 'r1', key: 1,
