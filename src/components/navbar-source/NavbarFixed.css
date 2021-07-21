@@ -1,7 +1,7 @@
 .nav-fixed {
   height: fit-content;
+  position: absolute;
   width: 100vw;
-  position: sticky;
 }
 
 .nav-fixed-header-img {
@@ -21,6 +21,69 @@
   left: 0;
   background: transparent;
 } 
+
+.profile-side-nav-container{
+  width: 150px;
+  height: 100px;
+  right: 30px;
+  align-self: flex-end;
+  position: absolute;
+}
+
+.profile-side-nav{
+  transition: 0.5s;
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 10px;
+  background-color: antiquewhite;
+}
+
+.profile-side-nav-hide{
+  transition: 0.5s;
+  height: 0%;
+  width: 100%;
+  background-color: antiquewhite;
+}
+
+.profile-side-nav-options {
+  display: inline-flex;
+  justify-content: flex-end;
+  width:100%;
+  height:50%;
+}
+
+.profile-side-nav-options .profile-side-nav-link{
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  padding-top: 15px; 
+  padding-right: 20px;
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+
+.profile-side-nav-options .profile-side-nav-link:hover{
+  transition: 0s;
+  color: hsl(0, 50%, 50%);
+  text-decoration: underline;
+}
+
+.profile-side-nav .profile-side-nav-link{
+  transition: 1.5s;
+  opacity: 1;
+}
+
+.profile-side-nav-hide .profile-side-nav-link{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.profile-side-nav-options{
+  width: 100%;
+  height: 50%;
+}
 
 .nav-fixed-container {
   height: 100%;

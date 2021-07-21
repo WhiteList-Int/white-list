@@ -112,7 +112,6 @@ const RentalDashboard = () => {
             id="scrolling"
             initial="fadeOut" 
             animate="fadeIn" 
-            exit="fadeOut"
             variants={variants}
             transition={transitions.linear}
         >
