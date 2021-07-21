@@ -15,10 +15,10 @@ function AboutUs() {
         { className: 'devs', imgs: Img1, text: 'Nash Uriel Tapayan', text1: 'Front-end Developer',
         text2: 'I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy.',
         text3: 'nashuriel.tapayan@cit.edu'},
-        { className: 'devs', imgs: Img2, text: 'Jezreel Jedidiah Floreta', text1: 'Back-end Developer', 
+        { className: 'devs', imgs: Img2, text: 'Jezreel Jedidiah Floreta', text1: 'Database Developer', 
         text2: 'When we have respect for ourselves and others, we gravitate towards connections that encourage that.',
         text3: 'jezreeljedidiah.floreta@cit.edu'},
-        { className: 'devs', imgs: Img3, text: 'Mervin John Tampus', text1: 'Newbie Developer',
+        { className: 'devs', imgs: Img3, text: 'Mervin John Tampus', text1: 'UX Designer and Co-Developer',
         text2: 'A man should have the aim and the determination to be honest and upright and sincere in all that he undertakes. If he adds persistency to this he can hardly help being successful.',
         text3: 'mervinjohn.tampus@cit.edu'}
     ]
@@ -30,16 +30,14 @@ function AboutUs() {
                 className="about-page"
                 initial="fadeOut" 
                 animate="fadeIn" 
-                exit="fadeOut"
                 variants={variants}
-                transition={transitions.tweenEaseOutFastest}
+                transition={transitions.tweenEaseOutFaster}
             >
                 <NavbarFixed/> 
                 <motion.div 
                     class="about-section" 
                     initial="slideOutYOpp" 
                     animate="slideInYOpp" 
-                    exit="slideOutYOpp"
                     variants={variants}
                     transition={transitions.tweenEaseOutFaster}
                 >
@@ -66,8 +64,7 @@ function AboutUs() {
                 <motion.div 
                     className="team-container"
                     initial="slideOutYOpp" 
-                    animate="slideInYOpp" 
-                    exit="slideOutYOpp"
+                    animate="slideInYOpp"   
                     variants={variants}
                     transition={transitions.tweenEaseOutFaster}
                 >

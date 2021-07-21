@@ -1,4 +1,4 @@
-import Img1 from '../images/penthouses.svg';
+import Img1 from '../images/lodginghouse.svg';
 import Img2 from '../images/boarding-houses.svg';
 import Img3 from '../images/apartments.svg';
 import Img4 from '../images/rent-house.svg';
@@ -6,7 +6,7 @@ import Img5 from '../images/hotels.svg';
 import Img6 from '../images/lease.svg';
 
 export const bubbles = [
-    { className: 'bubble', imgs: Img1, text: 'Penthouse', link: '/rental-dashboard/penthouse', id: 'b1', key: 1},
+    { className: 'bubble', imgs: Img1, text: 'Lodging House', link: '/rental-dashboard/lodginghouse', id: 'b1', key: 1},
     { className: 'bubble', imgs: Img2, text: 'Boarding House', link: '/rental-dashboard/boardinghouse', id: 'b2', key: 2},
     { className: 'bubble', imgs: Img3, text: 'Apartment', link: '/rental-dashboard/apartment', id: 'b3', key: 3},
     { className: 'bubble', imgs: Img4, text: 'Rent House', link: '/rental-dashboard/renthouse', id: 'b4', key: 4},

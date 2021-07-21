@@ -1,5 +1,5 @@
 const filterOptions = [
-    { value: 'penthouse', label: 'Penthouse' },
+    { value: 'lodginghouse', label: 'Lodging House' },
     { value: 'boardinghouse', label: 'Boarding House' },
     { value: 'apartment', label: 'Apartment' },
     { value: 'renthouse', label: 'Renthouse' },
