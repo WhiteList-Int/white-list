@@ -2,8 +2,14 @@ import React from 'react'
 import '../css/EditProfile.css'
 import NavbarFixed from '../../navbar-source/NavbarFixed';
 import Img from '../../images/jez.jpg'
+import { useRef } from 'react';
+
 
 function EditProfile() {
+
+    const imageSrc = useRef(Img);
+    
+
     return (
         <div className="edit-profile-page">
             <NavbarFixed />
@@ -12,9 +18,10 @@ function EditProfile() {
                     <h1>Renter's Profile</h1>
                 </div>
                 <div className="edit-profile-picture">
-                       <img src={Img} alt="" />
+                       <img src={imageSrc.current} alt="" id="change-image" />
                 </div>
-                <button className="edit-profile-change" id="change-picture">Change Picture</button>
+                <p><input type="file"  accept="image/*" name="image" id="file"  onchange={(event)=>imageSrc.current=event.value} style={{display: 'none'}} /></p>
+                <p className="edit-profile-change" id="change-picture"><label  for="file" style={{cursor: 'pointer'}}>Upload Image</label></p>
                     
                     <div className="edit-profile-info-cont">
                             <div className="edit-profile-row">
@@ -28,7 +35,7 @@ function EditProfile() {
                                 <p>Birthday</p>
                                 <button className="edit-profile-change">Change</button>
                             </div>
-                            <input className="edit-profile-input" type="text" placeholder="12/25/2000"/>
+                            <input className="edit-profile-input" type="date" placeholder="12/25/2000"/>
                         
                         
                             <div className="edit-profile-row">

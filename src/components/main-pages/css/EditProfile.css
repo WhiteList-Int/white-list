@@ -59,29 +59,29 @@
   height: clamp(20px, 25px, 30px);
   width: clamp(70px, 75px, 80px);
   background-color: #19282f;
-  color: #1db2f4;
+  color: hsl(0, 0%, 80%);
   border-radius: 10px;
   border: none;
   position: relative;
 }
 .edit-profile-change:hover {
-  color: white;
+  color: hsl(0, 0%, 100%);
   background-color: black;
 }
 
 #change-picture {
-  margin-top: 1vh;
+  margin: 0;
   height: clamp(20px, 25px, 30px);
   width: clamp(100px, 150px, 200px);
+  text-align: center;
   background-color: #19282f;
-  color: #1db2f4;
+  color: hsl(0, 0%, 100%);
   border-radius: 10px;
-  border: none;
   position: relative;
 }
 
 #change-picture:hover {
-  color: white;
+  color: hsl(0, 0%, 100%);
   background-color: black;
 }
 
@@ -95,6 +95,7 @@
   height: clamp(40px, 1vh, 55px);
   width: 80%;
   border-radius: 5px;
+  border: 2px inset;
   font-size: large;
   padding: 0.2vh 0.5vw;
 }
@@ -113,6 +114,7 @@
 .edit-profile-row p {
   height: 100%;
   font-size: clamp(1rem, 1.125rem, 1.3rem);
+  font-weight: 500;
   width: 69%;
   color: black;
   margin: 0;
@@ -148,6 +150,7 @@
     justify-content: flex-start;
     position: relative;
     padding-bottom: 5vh;
+    transition: 1s;
   }
   .edit-profile-info-cont {
     margin-top: 2vh;
