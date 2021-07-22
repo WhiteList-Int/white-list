@@ -99,8 +99,13 @@
   font-size: large;
   padding: 0.2vh 0.5vw;
 }
+
 .edit-profile-input::placeholder {
   color: black;
+}
+
+.edit-profile-input:focus::placeholder {
+  color: grey;
 }
 
 .edit-profile-row {
