@@ -4,10 +4,11 @@ import { useState }  from 'react';
 import { NavLink } from 'react-router-dom';
 
 const NavbarFixed = () => {
+    
     const [openNavbar,setOpenNavbar] = useState(false);
 
     return(
-        <nav className = 'nav-fixed'>
+        <nav className = 'nav-trans-fixed'>
             <div className = 'nav-trans-container'>
                 <div className="profileIcon"><AccountCircleIcon onClick={()=>setOpenNavbar(!openNavbar)} /></div>
                 <h3>Nash-Taps</h3>

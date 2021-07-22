@@ -51,18 +51,20 @@ input:focus {
 
 .dataResult .dataItem {
   width: 100%;
-  height: clamp(25px,5vh,40px);
-  display: flex;
-  align-items: center;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   color: black;
 }
 
 .dataItem p, h6 {
-  margin-left: 10px;
+  width: fit-content;
+  padding-left: 10px;
 }
 
 .dataItem h6{
   color: grey;
+  padding-left: 15px !important;
 }
 
 .dataItem{

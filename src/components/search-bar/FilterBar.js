@@ -3,7 +3,7 @@ import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 
-function SearchBar({
+function FilterBar({
   placeholder, 
   onchange,
   rawData, 
@@ -73,8 +73,28 @@ function SearchBar({
           )}
         </div>
       </div>
+      {filteredData.length === 0 && wordEntered!=="" && (
+        <div className="dataResult">
+          <div className="dataItem">
+            <p>No results Found.</p>
+          </div>
+        </div>
+      )}
+      {filteredData.length !== 0 && (
+        <div className="dataResult">
+          {filteredData.map((value, key) => {
+            return (
+              <div className="dataItem" href={value.link} key={key}>
+                <div><p>{value.name} </p></div>
+                <div><h6>@{value.value}</h6></div>
+                <div><h6>{value.categoryName}</h6></div>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
 
-export default SearchBar;
+export default FilterBar;

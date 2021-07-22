@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     padding-top: clamp(20px, 5vh, 60px);
+    margin-top: clamp(-60px, -5vh, 20px);
     padding-bottom: clamp(150px, 10vh, 180px);
     border-radius: 30px;
     background-color: #CDDCDC;

@@ -1,138 +1,274 @@
+import Img20 from '../../images/house1.jpg';
+import Img21 from '../../images/house2.jpg';
+import Img22 from '../../images/house3.jpg';
+import Img23 from '../../images/house4.jpg';
+import Img24 from '../../images/house5.jpg';
+import Img25 from '../../images/house6.jpg';
+import Img26 from '../../images/house7.jpg';
+import Img27 from '../../images/house8.jpg';
+import Img28 from '../../images/house9.jpg';
+import Img29 from '../../images/house10.jpg';
+import Img30 from '../../images/house11.jpg';
+import Img31 from '../../images/house12.jpg';
+import Img32 from '../../images/house13.jpg';
+import Img33 from '../../images/house14.jpg';
+import Img34 from '../../images/house15.jpg';
+
 const sampleData = [
     {
         name:'Abaka Lodge Rooms',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
+        minPrice: 150,
+        maxPrice: 500,
+        capacity: '2 to 3 heads',
+        available: 8,
+        total: 10,
+        imgs: Img20,
         category:'lodginghouse',
-        address: 'Lahug, Cebu City',
+        value: 'Lahug, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 5, 
-        key: 1
+        key: 1,
+        id: 1
     },
     {
         name:'Edaha Boarding House',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Boarding House',
+        minPrice: 2500,
+        maxPrice: 3000,
+        capacity: '2 boarders',
+        available: 10,
+        total: 10,
+        imgs: Img21,
         category:'boardinghouse',
-        address: 'Mambaling, Cebu City',
+        value: 'Mambaling, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 5, 
-        key: 2
+        key: 2,
+        id: 2
     },
     {
         name:'Ilama Apartment',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Apartment',
+        minPrice: 3500,
+        maxPrice: 4000,
+        capacity: '4 to 5 heads',
+        available: 3,
+        total: 5,
+        imgs: Img22,
         category:'apartment',
-        address: 'Tisa, Cebu City',
+        value: 'Tisa, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 2, 
-        key: 3
+        key: 3,
+        id: 3
     },
     {
         name:'Naupa Apartment',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Apartment',
+        minPrice: 3500,
+        maxPrice: 4000,
+        capacity: '4 to 5 heads',
+        available: 3,
+        total: 5,
+        imgs: Img23,
         category:'apartment',
-        address: 'Ramos, Cebu City',
+        value: 'Ramos, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 5, 
-        key: 4
+        key: 4,
+        id: 4
     },
     {
         name:'Rasata Rental',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Rent House',
+        minPrice: 7000,
+        maxPrice: 7000,
+        capacity: 'unlimited',
+        available: 1,
+        total: 1,
+        imgs: Img24,
         category:'renthouse',
-        address: 'Talisay City',
+        value: 'Talisay City',
+        amenities: ["TV set","Wi-fi"],
         stars: 3, 
-        key: 5
+        key: 5,
+        id: 5
     },
     {
         name:'Juan Lodge Rooms',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
+        minPrice: 150,
+        maxPrice: 500,
+        capacity: '2 to 3 heads',
+        available: 8,
+        total: 10,
+        imgs: Img25,
         category:'lodginghouse',
-        address: 'Bulacao, Cebu City',
+        value: 'Bulacao, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 5,
-        key: 6
+        key: 6,
+        id: 6
     },
     {
         name:'Maria for Lease',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lease',
+        minPrice: 12000,
+        maxPrice: 12000,
+        capacity: '6 years',
+        available: 1,
+        total: 1,
+        imgs: Img26,
         category:'lease',
-        address: 'Lahug, Cebu City',
+        value: 'Lahug, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 4, 
-        key: 7
+        key: 7,
+        id: 7
     },
     {
         name:'Carlos Hotel',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Hotel',
+        minPrice: 3500,
+        maxPrice: 6000,
+        capacity: '1 to 4 heads',
+        available: 0,
+        total: 0,
+        imgs: Img27,
         category:'hotel',
-        address: 'Bulacao, Cebu City',
+        value: 'Bulacao, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 2, 
-        key: 8
+        key: 8,
+        id: 8
     },
     {
         name:'Sibila Lodge Rooms',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
+        minPrice: 150,
+        maxPrice: 500,
+        capacity: '2 to 3 heads',
+        available: 8,
+        total: 10,
+        imgs: Img28,
         category:'lodginghouse',
-        address: 'Talisay City',
+        value: 'Talisay City',
+        amenities: ["TV set","Wi-fi"],
         stars: 1, 
-        key: 9
+        key: 9,
+        id: 9
     }, 
     {
         name:'Jose Apartment',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Apartment',
+        minPrice: 3500,
+        maxPrice: 4000,
+        capacity: '4 to 5 heads',
+        available: 3,
+        total: 5,
+        imgs: Img29,
         category:'apartment',
-        address: 'Talisay City',
+        value: 'Talisay City',
+        amenities: ["TV set","Wi-fi"],
         stars: 4, 
-        key: 10
+        key: 10,
+        id: 10
     }, 
     {
         name:'Felipe Lodge Rooms',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
+        minPrice: 150,
+        maxPrice: 500,
+        capacity: '2 to 3 heads',
+        available: 8,
+        total: 10,
+        imgs: Img30,
         category:'lodginghouse',
-        address: 'Mambaling, Cebu City',
+        value: 'Mambaling, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 3, 
-        key: 11
+        key: 11,
+        id: 11
     }, 
     {
         name:'Cardo Lodge Rooms',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
+        minPrice: 150,
+        maxPrice: 500,
+        capacity: '2 to 3 heads',
+        available: 8,
+        total: 10,
+        imgs: Img31,
         category:'lodginghouse',
-        address: 'Mambaling, Cebu City',
+        value: 'Mambaling, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 2, 
-        key: 12
+        key: 12,
+        id: 12
     },
     {
         name:'Dalisay Hotel',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Hotel',
+        minPrice: 3500,
+        maxPrice: 6000,
+        capacity: '1 to 4 heads',
+        available: 0,
+        total: 0,
+        imgs: Img32,
         category:'hotel',
-        address: 'Bulacao, Cebu City',
+        value: 'Bulacao, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 4, 
-        key: 13
+        key: 13,
+        id: 13
     },
     {
         name:'Elena Lodge Rooms',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
+        minPrice: 150,
+        maxPrice: 500,
+        capacity: '2 to 3 heads',
+        available: 8,
+        total: 10,
+        imgs: Img33,
         category:'lodginghouse',
-        address: 'Talisay City',
+        value: 'Talisay City',
+        amenities: ["TV set","Wi-fi"],
         stars: 5, 
-        key: 14
+        key: 14,
+        id: 14
     },
     {
         name:'Sebastian Boarding House',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Boarding House',
+        minPrice: 2500,
+        maxPrice: 3000,
+        capacity: '2 boarders',
+        available: 10,
+        total: 10,
+        imgs: Img34,
         category:'boardinghouse',
-        address: 'Bulacao, Cebu City',
+        value: 'Bulacao, Cebu City',
+        amenities: ["TV set","Wi-fi"],
         stars: 3, 
-        key: 15
+        key: 15,
+        id: 15
     }
 ];
 

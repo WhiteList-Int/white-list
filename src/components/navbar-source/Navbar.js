@@ -19,7 +19,7 @@ const Navbar = () => {
     }
 
     const changeNavbar = () => {
-        if(window.scrollY >= 100){
+        if(window.scrollY >= 50){
             setNavbar(true);
         } else{
             setNavbar(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
     }
 
     const changeButton = () => {
-        if(window.scrollY >= 100){
+        if(window.scrollY >= 50){
             setStartButton(true);
         } else{
             setStartButton(false);

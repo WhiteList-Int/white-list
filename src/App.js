@@ -19,7 +19,7 @@ function App() {
         <Switch location={location} key={location.pathname}>
           <Route path = '/rental-dashboard'  component={RentalDashboard}/>
           <Route path = '/owner-dashboard'  component={OwnerDashboard}/>
-          <Route path = '/edit-profile'  component={EditProfile}/>
+          <Route path = '/profile-dashboard'  component={EditProfile}/>
           <Route path = '/learn-more'  component={LearnMore}/>
           <Route path = '/terms-of-service' component={TermsService}/>
           <Route path = '/privacy-policy' component={PrivacyPolicy}/>

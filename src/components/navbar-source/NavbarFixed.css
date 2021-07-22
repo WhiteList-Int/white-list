@@ -1,39 +1,50 @@
 .nav-fixed {
   height: fit-content;
-  position: absolute;
+  z-index: 10;
   width: 100vw;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, rgb(44, 83, 100, 0.95), rgb(32, 58, 67, 0.95), rgb(15, 32, 39, 0.90));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, rgb(44, 83, 100, 0.95), rgb(32, 58, 67, 0.95), rgb(15, 32, 39, 0.90)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .nav-fixed-header-img {
-  width: 180px;
-  padding: 20px;
+  width: 150px;
+  padding: 15px;
   margin-left: 45px;
   align-self: center;
 }
 
+.nav-trans-fixed {
+  height: fit-content;
+  padding-top: 30px;
+  width: 50vw;
+}
+
 .nav-trans-container {
+  flex-direction: row-reverse;
+  background: transparent;
   height: 100%;
   width: 100%;
   display: flex;
-  padding-top: 20px;
-  flex-direction: row-reverse;
   top: 0;
   left: 0;
-  background: transparent;
-} 
+}
 
 .profile-side-nav-container{
-  width: 150px;
-  height: 100px;
-  right: 30px;
-  align-self: flex-end;
-  position: absolute;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  right: 0px;
 }
 
 .profile-side-nav{
   transition: 0.5s;
-  width: 100%;
-  height: 100%;
+  width: 160px;
+  right: 30;
+  height: 100px;
+  margin-right: 30px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 10px;
   background-color: antiquewhite;
@@ -41,8 +52,10 @@
 
 .profile-side-nav-hide{
   transition: 0.5s;
-  height: 0%;
-  width: 100%;
+  margin-right: 30px;
+  height: 0;
+  width: 0;
+  right: 30px;
   background-color: antiquewhite;
 }
 
@@ -58,8 +71,7 @@
   font-size: 13px;
   font-family: "Montserrat";
   font-weight: 600;
-  padding-top: 15px; 
-  padding-right: 20px;
+  padding: 15px 20px;
   text-decoration: none;
   color: hsl(0, 0%, 0%);
 }
@@ -85,28 +97,6 @@
   height: 50%;
 }
 
-.nav-fixed-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  top: 0;
-  left: 0;
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    rgb(44, 83, 100, 0.95),
-    rgb(32, 58, 67, 0.95),
-    rgb(15, 32, 39, 0.9)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    rgb(44, 83, 100, 0.95),
-    rgb(32, 58, 67, 0.95),
-    rgb(15, 32, 39, 0.9)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 .profileIcon{
   color: white;
   display: flex;
@@ -128,12 +118,13 @@
 }
 
 @media screen and (max-width: 600px) {
-  .nav-fixed-header-img {
-    margin-left: 0;
-  }
-  .nav-fixed-container {
+  
+  .nav-trans-container {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+  }
+
+  .nav-trans-container h3{
+    display: none;
   }
 }
