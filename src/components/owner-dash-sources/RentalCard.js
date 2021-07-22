@@ -18,7 +18,7 @@ function RentalCard() {
     const showScroll = () => {
         document.body.setAttribute('style', 'overflow-y:scroll;');
      }
-     const [disableDescription, setDisDescription] = useState(false);
+    const [disableDescription, setDisDescription] = useState(false);
     const [editDescription, setEditDesc] = useState(false);
     const [showPending, setPendActive] = useState(false);
     const [showArchive, setArchActive] = useState(false);
