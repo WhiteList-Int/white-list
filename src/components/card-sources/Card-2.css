@@ -1,13 +1,16 @@
 .card-2 {
-    width: 88vw;
+    width: 90vw;
     height: fit-content;
     padding-top: clamp(30px,2%,50px);
     padding-bottom: clamp(30px,4%,60px);
     margin-top: -100px;
-    border-radius: 30px;
-    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);z-index: 3;
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px black;
+    /* background-color: white; */
+    background-color: #CDDCDC;
+    background: linear-gradient(to top, hsl(210, 45%, 91%) 0%, hsl(0, 0%, 100%) 100%);
+    z-index: 3;
     bottom: 0;
-    box-shadow:5px -5px 20px black;
 }
 
 .card-2-container{
@@ -61,7 +64,7 @@
 }
 
 .sign-up-btn {
-    background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%);
+    background-image: var(--btn-bg-color);
     width: clamp(100px, 25vw, 150px);
     margin-top: 8vh;
     display: flex;
@@ -69,8 +72,8 @@
 
     padding-left: clamp(20px, 5%, 30px);
     padding-right: clamp(20px, 5%, 30px);
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     text-decoration: none;
     font-size: clamp(10px, 1.8vw, 15px);
@@ -84,7 +87,7 @@
     background-size: 200% auto;
     color: white;            
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .sign-up-btn:hover {

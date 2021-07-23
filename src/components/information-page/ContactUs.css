@@ -17,13 +17,13 @@
 }
 .contact-us-container {
   display: flex;
-  height: clamp(55%, 70%, 600px);
-  width: clamp(40%, 68%, 400px);
+  height: clamp(400px, 60%, 600px);
+  width: clamp(400px, 50%, 500px);
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   border-radius: 10px;
-  background-color: #e2eef3;
+  background-color: white;
   padding-top: 3vh;
   padding-bottom: 3vh;
 }
@@ -53,6 +53,7 @@
 #email {
   margin-bottom: 0vh;
 }
+
 .contact-input-field {
   height: 100%;
   width: 75%;
@@ -81,7 +82,7 @@
 .reason-box {
   margin-top: 20px;
   height: 50vh;
-  width: clamp(31vw, 51vw, 280px);
+  width: clamp(300px, 80%, 400px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,34 +97,32 @@
 }
 
 .contact-submit {
-  height: clamp(10vh, 20vh, 200px);
-  width: clamp(25vw, 30vw, 800px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 7vh;
+  margin-top: 20px;
 }
 
 .contact-submit-button {
-  height: 8vh;
-  width: 30vw;
-  border-radius: 5px;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px 50px;
+  border-radius: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #2a4658;
-  background: linear-gradient(
-    180deg,
-    rgba(31, 46, 53, 0.8) 0%,
-    rgba(31, 46, 53, 0.8) 50%,
-    rgba(31, 46, 53, 0.9) 100%
-  );
-  background-size: 100% auto;
-  box-shadow: 0.5px -0.5px 7px black;
+  background: var(--btn-bg-color);
+  background-size: 200% auto;
   color: white;
   text-decoration: none;
-  font-size: medium;
+  font-size: clamp(15px,10%,20px);
   font-weight: 500;
+}
+
+.contact-submit-button:hover {
+  transition: 0.5s;
+  text-shadow: 1px 1px 3px black;
+  background-position: right center;
 }
