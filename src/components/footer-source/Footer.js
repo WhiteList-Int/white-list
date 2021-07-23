@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom';
-import Img11 from '../images/white-list-text.svg';
-import Img12 from '../images/copyright.svg';
+import Img11 from '../images/white-list-text-black.svg';
+import Img12 from '../images/copyright-black.svg';
 import "./Footer.css";
 import ContactUs from '../information-page/ContactUs';
 

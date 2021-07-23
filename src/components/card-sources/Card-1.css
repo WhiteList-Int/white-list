@@ -5,15 +5,12 @@
     padding-top: clamp(20px, 5vh, 60px);
     margin-top: clamp(-60px, -5vh, 20px);
     padding-bottom: clamp(150px, 10vh, 180px);
-    border-radius: 30px;
-    background-color: #CDDCDC;
-    background: #ECE9E6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 20px;
+    background: white;
     background-blend-mode: normal,color-burn;
     z-index: 2;
     bottom: 0;
-    box-shadow:5px -5px 20px black;
+    box-shadow: 0px -1px 20px black;
 }
 
 .card-1 h1{
@@ -54,9 +51,8 @@
     height: clamp(120px, 15vh, 500px);
     border: 1px dotted grey;
     border-radius: 30px;
-    background: #ECE9E6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #CDDCDC;
+    background: linear-gradient(to top, hsl(210, 15%, 100%) 0%, hsl(0, 0%, 100%) 100%);
 }
 
 .bubble:hover {

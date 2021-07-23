@@ -121,7 +121,6 @@ const RentalDashboard = () => {
             variants={variants}
             transition={transitions.linear}
         >
-            
             <section className="rental-dashboard-head">
                 <nav id="startOfPage"></nav>
                 <div className="rental-nav-trans"><NavbarTransparent /></div>

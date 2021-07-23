@@ -8,7 +8,7 @@
   justify-content: center;
   color: white;
   background: #085070; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #85d8ce, #085070); /* Chrome 1*/
+  background: -webkit-linear-gradient(to top, #85d8ce, #085272); /* Chrome 1*/
   background: linear-gradient(to top, #85d8ce, #085070);
   font-family: Arial, Helvetica, sans-serif;
 }
