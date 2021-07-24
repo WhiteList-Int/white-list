@@ -137,14 +137,16 @@
 }
 
 .rental-dashboard-main-navbar h2{
-  color: black;
-  font-weight: 600;
-  font-family: "Source Sans Pro";
-  text-shadow: 2px 2px 3px hsl(0, 0%, 70%);
+  background: linear-gradient(to right, hsl(200, 60%, 25%) 0%, hsl(198, 30%, 30%) 30%, hsl(198, 80%, 25%)) 100%; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 30px;
+  font-family: "Montserrat";
 }
 
 .rental-dashboard-back-icon{
-  padding-right:20px;
+  padding-right:30px;
   height: 50px;
   cursor: pointer;
   text-shadow: 1px 1px 3px black;
@@ -165,7 +167,7 @@
   scroll-snap-type: y proximity;
   scroll-padding: 20px;
   scroll-snap-stop: always;
-  height: 82%;
+  height: calc(100vh - 130px);
 }
 
 .main-rental-list-container::-webkit-scrollbar {
@@ -315,6 +317,11 @@
   color: hsl(200, 60%, 30%);
   transform: scale(0.8);
   padding-left: 15px;
+}
+
+.main-rental-list-container-spacer{
+  width: 100vw;
+  height: 20px;
 }
 
 @media screen and (max-width: 720px){

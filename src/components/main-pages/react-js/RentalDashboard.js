@@ -185,9 +185,14 @@ const RentalDashboard = () => {
                     </div>
                 </div>
                 <div className="main-rental-list-container">
+
                     {filteredData.current.map((rental,key) => {
                         return (
-                            <NavLink to = "/" className = "main-rental-list-options" key = {rental.key}>
+                            <NavLink 
+                                to = {"/rental-preview/#"+rental.id}
+                                className = "main-rental-list-options" 
+                                key = {rental.key}
+                            >
                                 <div className="main-rental-list-options">
                                     <div
                                         className="main-rental-list-options-imgs"
