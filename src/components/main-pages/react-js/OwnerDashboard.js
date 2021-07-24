@@ -1,15 +1,15 @@
 import React from 'react'
 import '../css/OwnerDashboard.css'
-import NavbarFixed from '../../navbar-source/NavbarFixed';
 import Footer from '../../footer-source/Footer'
 import RentalCard from '../../owner-dash-sources/RentalCard';
+import OwnerNavbar from '../../owner-dash-sources/OwnerNavbar';
 
 
 function OwnerDashboard() {
     return (
         <>
         <body className="owner-dashboard">
-            <NavbarFixed />
+            <OwnerNavbar />
             <div className="owner-dashboard-title-container">
                 <h1 className="your-rental">Your Rental</h1>
                 </div>

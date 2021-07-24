@@ -4,10 +4,12 @@ import Img2 from '../images/house2.jpg';
 export const rentals = [
     { className: 'rental', imgs: Img1, name: 'Juan Place', id: 'r1', key: 1,
     desc: 'Concord offers spacious unfurnished rooms for rent in Jakosalem St, Cebu City. It’s near Sanciangko St., and University of the Visayas. With its floor area, roomies can personalize the coliving space, bring in allowed appliances, and make it a lot more like home.',
+    landlord: 'Juan Dela Cruz',
     },
     { className: 'rental', imgs: Img2, name: 'Bahay ni Nanay',  id: 'r2', key: 2,
     desc: 'You can have a valuable time with yourself and your family if you stay here. Connect now!',
-},
+    landlord: 'Nanay',
+    },
    
 ];
 

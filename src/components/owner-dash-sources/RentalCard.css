@@ -1,39 +1,19 @@
 /* Background to Cards*/
 .owner-rental {
-  height: clamp(60vh, 75vh, 120vh);
+  height: clamp(400px, 55vh, 800px);
   width: 100%;
-  margin-bottom: 10vh;
-  background-color: #0c0d0e;
-  border-radius: 25px;
+  padding: 2vh 2vw 2vh 2vw;
+  background-color: rgba(0, 0, 0, 0.26);
+  margin-top: 5vh;
   display: flex;
-  align-self: center;
   flex-direction: row;
-  justify-content: flex-end;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10vh;
 }
 
 .container-disabled {
   display: none;
-}
-.owner-rental-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 25px;
-  box-shadow: 0px 4px 20px black;
-}
-
-.owner-dash-rental-detail-card {
-  height: 100%;
-  width: clamp(300px, 35%, 400px);
-  align-self: flex-end;
-  display: flex;
-  flex-direction: column;
-  z-index: 2;
-  position: absolute;
-  border-radius: 25px;
-  background-color: #131f24a2;
-  box-shadow: 0px 1px 5px black;
 }
 
 .owner-dash-title-container {
@@ -45,6 +25,35 @@
   background-color: #131f24e5;
 }
 
+.owner-img-card {
+  height: clamp(400px, 45vh, 450px);
+  width: clamp(450px, 50vw, 650px);
+  margin-left: -5vw;
+  background-color: #0c0d0e;
+  border-radius: 25px;
+  position: relative;
+}
+.owner-rental-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0px 4px 20px black;
+}
+
+.owner-dash-rental-detail-card {
+  height: clamp(650px, 65vh, 750px);
+  width: clamp(300px, 35%, 400px);
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+  border-radius: 25px;
+  background-color: #131f24a2;
+  box-shadow: 0px 1px 5px black;
+}
+
 .owner-dash-title-container h2 {
   color: white;
   font-size: x-large;
@@ -54,7 +63,7 @@
 
 /* Description */
 .owner-dash-description-container {
-  height: 45%;
+  height: 50%;
   width: 100%;
   margin-top: 2vh;
   z-index: 3;
@@ -63,7 +72,6 @@
   align-items: flex-start;
   text-align: justify;
   background-color: #131f24e5;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -361,9 +369,42 @@
 }
 /*End Remove Rental Button */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 770px) {
   .owner-rental {
-    left: 5vw;
-    width: 90%;
+    height: 100%;
+    width: 100%;
+    padding: 2vh 0vw 2vh 0vw;
+    margin-top: 0vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10vh;
+    position: relative;
+    transition: 1s;
+  }
+
+  .owner-dash-rental-detail-card {
+    height: clamp(650px, 65vh, 750px);
+    width: clamp(300px, 70%, 500px);
+    margin-top: 2vh;
+    margin-left: 0vw;
+    flex-direction: column;
+    transition: 1s;
+  }
+
+  .owner-img-card {
+    width: clamp(450px, 85vw, 650px);
+    margin-left: 0vw;
+    background-color: #0c0d0e;
+    border-radius: 25px;
+    position: relative;
+    transition: 1s;
+  }
+  .owner-rental-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0px 4px 20px black;
+    transition: 1s;
   }
 }
