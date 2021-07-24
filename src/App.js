@@ -9,6 +9,7 @@ import TermsService from './components/information-page/TermsService'
 import PrivacyPolicy from './components/information-page/PrivacyPolicy'
 import EditProfile from './components/main-pages/react-js/EditProfile.js';
 import ProfileConnects from './components/profile-sources/ProfileConnects';
+import AuthProvider from './components/firebase/AuthContext';
 
 
 function App() {
@@ -17,17 +18,19 @@ function App() {
   return (
     <main className="App">
       <AnimatePresence>
-        <Switch location={location} key={location.pathname}>
-          <Route path = '/rental-dashboard'  component={RentalDashboard}/>
-          <Route path = '/owner-dashboard'  component={OwnerDashboard}/>
-          <Route path = '/profile-dashboard'  component={EditProfile}/>
-          <Route path = '/profile-connects'  component={ProfileConnects}/>
-          <Route path = '/learn-more'  component={LearnMore}/>
-          <Route path = '/terms-of-service' component={TermsService}/>
-          <Route path = '/privacy-policy' component={PrivacyPolicy}/>
-          <Route path = '/about-us'  component={AboutUs}/>
-          <Route path = '/homepage'  component={Homepage}/>
-        </Switch>
+        <AuthProvider>
+          <Switch location={location} key={location.pathname}>
+            <Route path = '/rental-dashboard'  component={RentalDashboard}/>
+            <Route path = '/owner-dashboard'  component={OwnerDashboard}/>
+            <Route path = '/profile-dashboard'  component={EditProfile}/>
+            <Route path = '/profile-connects'  component={ProfileConnects}/>
+            <Route path = '/learn-more'  component={LearnMore}/>
+            <Route path = '/terms-of-service' component={TermsService}/>
+            <Route path = '/privacy-policy' component={PrivacyPolicy}/>
+            <Route path = '/about-us'  component={AboutUs}/>
+            <Route path = '/homepage'  component={Homepage}/>
+          </Switch>
+        </AuthProvider>
       </AnimatePresence>
     </main>
   );

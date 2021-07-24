@@ -29,6 +29,7 @@ const RentalDashboard = () => {
             if(pathName.includes(data.value)){
                 defaultRentalFilter = data.value;
             }
+            return true //placed this to remove warning
         });
         console.log(defaultRentalFilter);
         return defaultRentalFilter;
@@ -109,7 +110,7 @@ const RentalDashboard = () => {
         document.body.setAttribute('style','overflowX:hidden;');
         window.scrollTo({top:0,left:0});
         console.log(currentWindow.current);
-        filteredData.current=filteredData.current;
+        // filteredData.current=filteredData.current; //Commented this to remove warning
     },[rentalFilter,isChanged]);
 
     return (
