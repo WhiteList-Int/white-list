@@ -16,11 +16,11 @@ import Img34 from '../../images/house15.jpg';
 
 const sampleData = [
     {
-        name:'Abaka Lodge Rooms',
+        name:'Abaka',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
-        minPrice: 150,
-        maxPrice: 500,
+        minPrice: 150.00,
+        maxPrice: 500.00,
         capacity: '2 to 3 heads',
         available: 8,
         total: 10,
@@ -33,11 +33,11 @@ const sampleData = [
         id: 1
     },
     {
-        name:'Edaha Boarding House',
+        name:'Edaha',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Boarding House',
-        minPrice: 2500,
-        maxPrice: 3000,
+        minPrice: 2500.00,
+        maxPrice: 3000.00,
         capacity: '2 boarders',
         available: 10,
         total: 10,
@@ -50,11 +50,11 @@ const sampleData = [
         id: 2
     },
     {
-        name:'Ilama Apartment',
+        name:'Ilama',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Apartment',
-        minPrice: 3500,
-        maxPrice: 4000,
+        minPrice: 3500.00,
+        maxPrice: 4000.00,
         capacity: '4 to 5 heads',
         available: 3,
         total: 5,
@@ -67,11 +67,11 @@ const sampleData = [
         id: 3
     },
     {
-        name:'Naupa Apartment',
+        name:'Naupa',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Apartment',
-        minPrice: 3500,
-        maxPrice: 4000,
+        minPrice: 3500.00,
+        maxPrice: 4000.00,
         capacity: '4 to 5 heads',
         available: 3,
         total: 5,
@@ -84,11 +84,11 @@ const sampleData = [
         id: 4
     },
     {
-        name:'Rasata Rental',
+        name:'Rasata',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Rent House',
-        minPrice: 7000,
-        maxPrice: 7000,
+        minPrice: 7000.00,
+        maxPrice: 7000.00,
         capacity: 'unlimited',
         available: 1,
         total: 1,
@@ -101,11 +101,11 @@ const sampleData = [
         id: 5
     },
     {
-        name:'Juan Lodge Rooms',
+        name:'Juan',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
-        minPrice: 150,
-        maxPrice: 500,
+        minPrice: 150.00,
+        maxPrice: 500.00,
         capacity: '2 to 3 heads',
         available: 8,
         total: 10,
@@ -118,11 +118,11 @@ const sampleData = [
         id: 6
     },
     {
-        name:'Maria for Lease',
+        name:'Maria',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lease',
-        minPrice: 12000,
-        maxPrice: 12000,
+        minPrice: 12000.00,
+        maxPrice: 12000.00,
         capacity: '6 years',
         available: 1,
         total: 1,
@@ -135,11 +135,11 @@ const sampleData = [
         id: 7
     },
     {
-        name:'Carlos Hotel',
+        name:'Carlos',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Hotel',
-        minPrice: 3500,
-        maxPrice: 6000,
+        minPrice: 3500.00,
+        maxPrice: 6000.00,
         capacity: '1 to 4 heads',
         available: 0,
         total: 0,
@@ -152,11 +152,11 @@ const sampleData = [
         id: 8
     },
     {
-        name:'Sibila Lodge Rooms',
+        name:'Sibila',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
-        minPrice: 150,
-        maxPrice: 500,
+        minPrice: 150.00,
+        maxPrice: 500.00,
         capacity: '2 to 3 heads',
         available: 8,
         total: 10,
@@ -169,11 +169,11 @@ const sampleData = [
         id: 9
     }, 
     {
-        name:'Jose Apartment',
+        name:'Jose',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Apartment',
-        minPrice: 3500,
-        maxPrice: 4000,
+        minPrice: 3500.00,
+        maxPrice: 4000.00,
         capacity: '4 to 5 heads',
         available: 3,
         total: 5,
@@ -186,11 +186,11 @@ const sampleData = [
         id: 10
     }, 
     {
-        name:'Felipe Lodge Rooms',
+        name:'Felipe',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
-        minPrice: 150,
-        maxPrice: 500,
+        minPrice: 150.00,
+        maxPrice: 500.00,
         capacity: '2 to 3 heads',
         available: 8,
         total: 10,
@@ -203,11 +203,11 @@ const sampleData = [
         id: 11
     }, 
     {
-        name:'Cardo Lodge Rooms',
+        name:'Cardo',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
-        minPrice: 150,
-        maxPrice: 500,
+        minPrice: 150.00,
+        maxPrice: 500.00,
         capacity: '2 to 3 heads',
         available: 8,
         total: 10,
@@ -220,11 +220,11 @@ const sampleData = [
         id: 12
     },
     {
-        name:'Dalisay Hotel',
+        name:'Dalisay',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Hotel',
-        minPrice: 3500,
-        maxPrice: 6000,
+        minPrice: 3500.00,
+        maxPrice: 6000.00,
         capacity: '1 to 4 heads',
         available: 0,
         total: 0,
@@ -237,11 +237,11 @@ const sampleData = [
         id: 13
     },
     {
-        name:'Elena Lodge Rooms',
+        name:'Elena',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Lodging House',
-        minPrice: 150,
-        maxPrice: 500,
+        minPrice: 150.00,
+        maxPrice: 500.00,
         capacity: '2 to 3 heads',
         available: 8,
         total: 10,
@@ -254,11 +254,11 @@ const sampleData = [
         id: 14
     },
     {
-        name:'Sebastian Boarding House',
+        name:'Sebastian',
         description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
         categoryName:'Boarding House',
-        minPrice: 2500,
-        maxPrice: 3000,
+        minPrice: 2500.00,
+        maxPrice: 3000.00,
         capacity: '2 boarders',
         available: 10,
         total: 10,
