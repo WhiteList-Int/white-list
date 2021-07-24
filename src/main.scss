@@ -1,20 +1,21 @@
-:root{
-    --bg-color-alt: hsl(198, 87%, 24%);
-    --bg-popup-color: black;
-    --bg-color: linear-gradient(
-      to top, 
-    hsl(173, 52%, 68%, 90%) 0%, 
-    hsl(198, 87%, 24%, 90%) 30%, 
-    hsl(198, 87%, 24%, 90%) 60%, 
-    hsl(173, 52%, 68%, 5%) 100%
-    );
-    --btn-bg-color: linear-gradient(
-      to right, 
+@import 'general';
+@import 'popups';
+
+$bg-color-alt: hsl(198, 87%, 24%);
+$bg-popup-color: black;
+$bg-color: linear-gradient(
+    to top, 
+    hsla(180, 20%, 1%, 0.9) 0%, 
+    hsla(198, 87%, 24%, .90) 30%, 
+    hsla(198, 87%, 24%, .90) 60%, 
+    hsla(173, 52%, 68%, .05) 100%
+);
+$btn-bg-color: linear-gradient(
+    to right, 
     hsl(198, 87%, 24%) 0%, 
     hsl(173, 52%, 68%)  51%, 
     hsl(198, 87%, 24%)  100%
-    );
-}
+);
 
 body {
     height: 100%;
@@ -46,8 +47,8 @@ body {
 }
 
 .homepage{
-    background: var(--bg-color-alt);
-    background: var(--bg-color);
+    background: $bg-color-alt;
+    background: $bg-color;
     &-cards{
         display: flex;
         flex-direction: column;
@@ -80,14 +81,14 @@ body {
         }
     }
     &-popup{
-        background-color: var(--bg-popup-color);
+        background-color: $bg-popup-color;
         border-radius: 100%;
         color: white;
         cursor: pointer;
         padding: 10px;
     }
     &-hide{
-        background-color: var(--bg-popup-color);
+        background-color: $bg-popup-color;
         opacity: 0.4;
         border-radius: 100%;
         color: white;
@@ -125,11 +126,9 @@ body {
         }
         &-popup{
             opacity: 0.3;
-            &:hover{
-                .scroll-up-tooltip-text {
-                    display: none;
-                }
-            }
+        }
+        &-tooltip-text {
+            display: none;
         }
     }
     .start-up--bg-icon {
@@ -163,9 +162,6 @@ body {
         &-popup{
             margin-right: 40px;
         }
-    }
-    .start-up--bg-icon {
-        top: 100px;
     }
 }
   
