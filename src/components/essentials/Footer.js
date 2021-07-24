@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom';
 import Img11 from '../images/white-list-text-black.svg';
 import Img12 from '../images/copyright-black.svg';
-import "./Footer.css";
 import ContactUs from '../pop-ups/ContactUs';
 
 const Footer = () => {
@@ -17,26 +16,26 @@ const Footer = () => {
             <div className = "footer-container">
                 <div className="footer-head">
                     <div className="footer-head-left">
-                        <div className="llink-containers">
-                            <NavLink to="/about-us" className='left-links'>About WhiteList </NavLink>
+                        <div className="footer-container-left">
+                            <NavLink to="/about-us" className='footer-container-left-links'>About WhiteList </NavLink>
                         </div>
-                        <div className="llink-containers">
-                            <span className='left-links' onClick={() => setIsOpen(true)}>Contact Us</span>
+                        <div className="footer-container-left">
+                            <span className='footer-container-left-links' onClick={() => setIsOpen(true)}>Contact Us</span>
                             <ContactUs open={isOpen} onClose={()=> {setIsOpen(false);showScroll();}}> </ContactUs>
                         </div>
                     </div>
                     <div className="footer-head-right">
-                        <div className="rlink-containers">
-                            <NavLink to="/terms-of-service" className='right-links'>Terms of Service</NavLink>
+                        <div className="footer-container-right">
+                            <NavLink to="/terms-of-service" className='footer-container-right-links'>Terms of Service</NavLink>
                         </div>
-                        <div className="rlink-containers">
-                            <NavLink to="/privacy-policy" className='right-links'>Privacy Policy</NavLink>
+                        <div className="footer-container-right">
+                            <NavLink to="/privacy-policy" className='footer-container-right-links'>Privacy Policy</NavLink>
                         </div>
                     </div>
                 </div>
                 <div className="footer-tail">
-                    <img src = {Img11} className="footer-title-text" alt= "title-black"/>
-                    <img src = {Img12} className="footer-copyright-text" alt= "title-black"/>
+                    <img src = {Img11} className="footer-tail-title" alt= "title-black"/>
+                    <img src = {Img12} className="footer-tail-copyright" alt= "title-black"/>
                 </div>
             </div>
         </div>

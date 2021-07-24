@@ -1,5 +1,7 @@
-@import 'general';
-@import 'popups';
+@import 'scss/general';
+@import 'scss/popups';
+@import 'scss/page';
+@import 'components/main-pages/css/main-pgs';
 
 $bg-color-alt: hsl(198, 87%, 24%);
 $bg-popup-color: black;
@@ -49,6 +51,7 @@ body {
 .homepage{
     background: $bg-color-alt;
     background: $bg-color;
+    scroll-behavior: smooth;
     &-cards{
         display: flex;
         flex-direction: column;
