@@ -1,10 +1,13 @@
 import React from 'react';
+import "../css/RentalDashboard.css";
+import sampleData from './../comp/sampleData';
+import filterOptions from './../comp/filterOptions';
+import SearchBar from './../../search-bar/SearchBar';
+import Img from '../../images/white-list-text.svg';
 import starFilled from '../../images/star-rated.svg';
 import starUnfilled from '../../images/star-unrated.svg';
-import Img from '../../images/white-list-text.svg';
 import FilterBar from './../../search-bar/FilterBar';
-import NavbarTransparent from "../../navbar-source/NavbarTransparent";
-import filterOptions from './../comp/filterOptions';
+import NavbarTransparent from "../../essentials/NavbarTransparent";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Select from 'react-select';
 import { motion } from 'framer-motion';
@@ -12,9 +15,6 @@ import { variants } from '../../../animation-variants.js';
 import { transitions } from '../../../page-transitions.js';
 import { useRef, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import "../css/RentalDashboard.css";
-import sampleData from './../comp/sampleData';
-import SearchBar from './../../search-bar/SearchBar';
 
 const RentalDashboard = () => {
     const filterRental = useRef("all");

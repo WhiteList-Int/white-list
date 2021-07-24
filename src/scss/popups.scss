@@ -1,3 +1,7 @@
+//Global Variables
+
+$txt-gradient-clr: linear-gradient(to left, #2C5364, #203A43, #0F2027);
+$txt-gradient-fallback-clr: linear-gradient(to left, #2C5364, #203A43, #0F2027);
 $btn-bg-color: linear-gradient(
     to right, 
     hsl(198, 87%, 24%) 0%, 
@@ -5,6 +9,7 @@ $btn-bg-color: linear-gradient(
     hsl(198, 87%, 24%)  100%
 );
 
+//Pop-up Components
 .sign{
     &-in{
         height: 100%;
@@ -187,9 +192,13 @@ $btn-bg-color: linear-gradient(
     }
     &-title {
         text-align: center;
-        font-size: clamp(20px, 4vh, 50px);
-        font-weight: bold;
-        color: #0f232f;
+        font-size: clamp(20px, 3.5vh, 30px);
+        font-family: "Montserrat", sans-serif;
+        font-weight:bolder;
+        background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
+        background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 5vh;
     }
     &-fill-box {
@@ -221,7 +230,8 @@ $btn-bg-color: linear-gradient(
             margin-left: clamp(40px, 5vw, 100px);
             margin-bottom: 0;
             font-size: clamp(10px, 3vw, 20px);
-            font-weight: bold;
+            font-family: "Source Sans Pro";
+            font-weight: 800;
             color: #0f232f;
         }
         &-box {
