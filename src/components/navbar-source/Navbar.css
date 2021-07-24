@@ -116,7 +116,7 @@
     align-items: center;
     justify-content:center;
     text-decoration: none;
-    width: clamp(80px, 20vw, 150px);
+    width: clamp(60px, 8vw, 100px);
     margin-left:100%;
     margin-top: -35px;
     transform: translateX(-120%);

@@ -1,10 +1,14 @@
 .nav-fixed {
   height: fit-content;
+  position: fixed;
+  top:0;
+  left:0;
   z-index: 10;
   width: 100vw;
-  background: #0F2027;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, rgb(44, 83, 100, 0.95), rgb(32, 58, 67, 0.95), rgb(15, 32, 39, 0.90));  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, rgb(44, 83, 100, 0.95), rgb(32, 58, 67, 0.95), rgb(15, 32, 39, 0.90)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0px 1px 10px black;
+  /* background: #0F2027;
+  background: linear-gradient(to bottom, rgb(44, 83, 100, 0.95), rgb(32, 58, 67, 0.95), rgb(15, 32, 39, 0.90)); */
 }
 
 .nav-fixed-header-img {
@@ -14,6 +18,7 @@
   align-self: center;
 }
 
+/*For Transparent Navbar*/
 .nav-trans-fixed {
   height: fit-content;
   padding-top: 30px;
