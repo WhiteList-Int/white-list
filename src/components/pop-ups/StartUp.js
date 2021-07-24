@@ -5,7 +5,6 @@ import { variants } from '../../animation-variants';
 import { transitions } from '../../page-transitions';
 import renterLogo from '../images/renter-clip.svg';
 import rentOwner from '../images/rent-owner-clip.svg';
-import './StartUp.css';
 
 export default function StartUp({open, onClose}) {
     if(!open) return null;
@@ -22,11 +21,11 @@ export default function StartUp({open, onClose}) {
                 transition={transitions.tweenEaseInFast}
             >
                 <div className='exit-zone' onClick={onClose}/>
-                <div className="left-wing">
+                <div className="start-up-left-wing">
                     <img src={renterLogo} alt="renter"/>
                     <center><h2> A Renter?</h2></center>
                 </div>
-                <div className="right-wing">
+                <div className="start-up-right-wing">
                     <img src={rentOwner} alt="rent owner"/>
                     <center><h2> A Rent Owner?</h2></center>
                 </div>

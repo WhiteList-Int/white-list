@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Img from '../images/white-list-text-black.svg';
 import Img2 from '../images/white-list-tagline-black.svg';
 import Img3 from '../images/startupPage.svg';
-import SignIn from '../sign-in-page/SignIn';
-import "./Navbar.css";
+import SignIn from '../pop-ups/SignIn';
 
 const Navbar = () => {
 
@@ -41,13 +40,13 @@ const Navbar = () => {
         <>
         <nav className = {navbar ? 'navbar-active' : 'navbar'}>
             <div className="navbar-wrapper">
-                <div className = {navbar ? 'container-active' : 'container'}>
-                    <img className = {navbar ? 'header-img-active' : 'header-img'} src = {Img} alt="WhiteList"></img>
-                    <img className = {navbar ? 'tagline-active' : 'tagline'} src = {Img2} alt="WhiteList"></img>
-                    <div className = {startButton ? 'btn-top-container' : 'btn-bot-container'}>
+                <div className = {navbar ? 'navbar-container-active' : 'navbar-container'}>
+                    <img className = {navbar ? 'navbar-header-img-active' : 'navbar-header-img'} src = {Img} alt="WhiteList"></img>
+                    <img className = {navbar ? 'navbar-tagline-active' : 'navbar-tagline'} src = {Img2} alt="WhiteList"></img>
+                    <div className = {startButton ? 'navbar-btn-top-container' : 'navbar-btn-bot-container'}>
                             <NavLink 
                                 to={pathName.current} 
-                                className = {startButton ? 'btn-top' : 'btn-bot'} 
+                                className = {startButton ? 'navbar-btn-top' : 'navbar-btn-bot'} 
                                 onClick={() => {setIsOpen(true); setIsRedirect(false)}}
                             >
                                 LOG-IN
@@ -60,7 +59,7 @@ const Navbar = () => {
                     </div>
                 </div> 
             </div>
-            <img className = "start-up-bg-icon" src = {Img3} alt="WhiteList"/>
+            <img className = "navbar-start-up-bg-icon" src = {Img3} alt="WhiteList"/>
         </nav>
         </>
     )

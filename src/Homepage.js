@@ -6,7 +6,6 @@ import Footer from './components/footer-source/Footer';
 import Card1 from  './components/card-sources/Card1';
 import Card2 from  './components/card-sources/Card2';
 import Card3 from  './components/card-sources/Card3';
-import './App.css';
 
 const Homepage = () => {
     const [scrollerPopup,setScrollerPopup] = useState(true);
@@ -31,7 +30,7 @@ const Homepage = () => {
                 /> <span className="scroll-up-tooltip-text">Click here to go back -></span>
             </div>
             <Navbar />
-            <div className = "cards">
+            <div className = "homepage-cards">
                 <Card1 className ='flex-card'/>            
                 <Card2 className ='flex-card'/>
                 <Card3 className ='flex-card'/> 
