@@ -457,16 +457,16 @@ $btn-bg-color: linear-gradient(
         }
     }
     &-trans {
-        height: fit-content;
-        padding-top: 30px;
-        width: 50vw;
+        height: 80px;
+        width: 100vw;
 
         &-container {
+            display: flex;
             flex-direction: row-reverse;
+            align-items: center;
             background: transparent;
             height: 100%;
             width: 100%;
-            display: flex;
             top: 0;
             left: 0;
             h3{
@@ -533,6 +533,7 @@ $btn-bg-color: linear-gradient(
         &-profileIcon{
             color: white;
             display: flex;
+            height: 100%;
             margin-right: 40px;
             align-items: center;
             justify-content: center;

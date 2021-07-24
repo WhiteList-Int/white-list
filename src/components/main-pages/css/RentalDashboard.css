@@ -305,7 +305,7 @@
   width: 100%;
 }
 
-.price-box h2, h3{
+.price-box h2, .price-box h3{
   color: hsl(198, 80%, 25%);
   margin-top: -5px;
   padding-right: 1ch;
