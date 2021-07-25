@@ -17,8 +17,9 @@ import Img34 from '../../images/house15.jpg';
 const sampleData = [
     {
         name:'Abaka',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Abaka is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Lodging House',
+        units: 'hour',
         minPrice: 150.00,
         maxPrice: 500.00,
         capacity: '2 to 3 heads',
@@ -30,12 +31,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 5, 
         key: 1,
-        id: 1
+        id: '#1'
     },
     {
         name:'Edaha',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Edaha is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Boarding House',
+        units: 'month',
         minPrice: 2500.00,
         maxPrice: 3000.00,
         capacity: '2 boarders',
@@ -47,12 +49,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 5, 
         key: 2,
-        id: 2
+        id: '#2'
     },
     {
         name:'Ilama',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Ilama is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Apartment',
+        units: 'month',
         minPrice: 3500.00,
         maxPrice: 4000.00,
         capacity: '4 to 5 heads',
@@ -64,12 +67,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 2, 
         key: 3,
-        id: 3
+        id: '#3'
     },
     {
         name:'Naupa',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Naupa is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Apartment',
+        units: 'month',
         minPrice: 3500.00,
         maxPrice: 4000.00,
         capacity: '4 to 5 heads',
@@ -81,12 +85,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 5, 
         key: 4,
-        id: 4
+        id: '#4'
     },
     {
         name:'Rasata',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Rasata is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Rent House',
+        units: 'month',
         minPrice: 7000.00,
         maxPrice: 7000.00,
         capacity: 'unlimited',
@@ -98,12 +103,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 3, 
         key: 5,
-        id: 5
+        id: '#5'
     },
     {
         name:'Juan',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Juan is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Lodging House',
+        units: 'hour',
         minPrice: 150.00,
         maxPrice: 500.00,
         capacity: '2 to 3 heads',
@@ -115,12 +121,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 5,
         key: 6,
-        id: 6
+        id: '#6'
     },
     {
         name:'Maria',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Maria is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Lease',
+        units: 'month',
         minPrice: 12000.00,
         maxPrice: 12000.00,
         capacity: '6 years',
@@ -132,12 +139,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 4, 
         key: 7,
-        id: 7
+        id: '#7'
     },
     {
         name:'Carlos',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Carlos is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Hotel',
+        units: 'night',
         minPrice: 3500.00,
         maxPrice: 6000.00,
         capacity: '1 to 4 heads',
@@ -149,12 +157,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 2, 
         key: 8,
-        id: 8
+        id: '#8'
     },
     {
         name:'Sibila',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Sibila is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Lodging House',
+        units: 'hour',
         minPrice: 150.00,
         maxPrice: 500.00,
         capacity: '2 to 3 heads',
@@ -166,12 +175,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 1, 
         key: 9,
-        id: 9
+        id: '#9'
     }, 
     {
         name:'Jose',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Jose is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Apartment',
+        units: 'month',
         minPrice: 3500.00,
         maxPrice: 4000.00,
         capacity: '4 to 5 heads',
@@ -183,12 +193,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 4, 
         key: 10,
-        id: 10
+        id: '#10'
     }, 
     {
         name:'Felipe',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Felipe is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Lodging House',
+        units: 'hour',
         minPrice: 150.00,
         maxPrice: 500.00,
         capacity: '2 to 3 heads',
@@ -200,12 +211,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 3, 
         key: 11,
-        id: 11
+        id: '#11'
     }, 
     {
         name:'Cardo',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Cardo is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Lodging House',
+        units: 'hour',
         minPrice: 150.00,
         maxPrice: 500.00,
         capacity: '2 to 3 heads',
@@ -217,12 +229,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 2, 
         key: 12,
-        id: 12
+        id: '#12'
     },
     {
         name:'Dalisay',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Dalisay is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Hotel',
+        units: 'night',
         minPrice: 3500.00,
         maxPrice: 6000.00,
         capacity: '1 to 4 heads',
@@ -234,12 +247,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 4, 
         key: 13,
-        id: 13
+        id: '#13'
     },
     {
         name:'Elena',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Elena is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Lodging House',
+        units: 'hour',
         minPrice: 150.00,
         maxPrice: 500.00,
         capacity: '2 to 3 heads',
@@ -251,12 +265,13 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 5, 
         key: 14,
-        id: 14
+        id: '#14'
     },
     {
         name:'Sebastian',
-        description: 'You can have a valuable time with yourself and your family if you stay here. Connect now!', 
+        description: 'Sebastian is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike. Lorem Ipsum is a charming six-floored coliving space of semi-furnished rooms for rent in Guadalupe Nuevo, Makati, near Kalayaan Ave., EDSA, Guadalupe, and BGC. Complete with basic amenities needed, its communal areas are suitable study and socialization spots for students and roomies alike.', 
         categoryName:'Boarding House',
+        units: 'month',
         minPrice: 2500.00,
         maxPrice: 3000.00,
         capacity: '2 boarders',
@@ -268,7 +283,7 @@ const sampleData = [
         amenities: ["TV set","Wi-fi"],
         stars: 3, 
         key: 15,
-        id: 15
+        id: '#15'
     }
 ];
 

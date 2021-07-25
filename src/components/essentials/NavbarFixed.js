@@ -1,4 +1,4 @@
-import Img from '../images/white-list-text-black.svg';
+import Img from '../images/white-list-text-gradient.svg';
 import { NavLink } from 'react-router-dom';
 
 const NavbarFixed = () => {

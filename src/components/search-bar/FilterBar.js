@@ -83,11 +83,11 @@ function FilterBar({
         <div className="search-data-result">
           {filteredData.map((value, key) => {
             return (
-              <div className="search-data-item" href={value.link} key={key}>
+              <a className="search-data-item" href={"/rental-preview/"+value.id} key={key}>
                 <div><p>{value.name} </p></div>
                 <div><h6>@{value.value}</h6></div>
                 <div><h6>{value.categoryName}</h6></div>
-              </div>
+              </a>
             );
           })}
         </div>

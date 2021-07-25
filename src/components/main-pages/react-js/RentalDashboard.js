@@ -189,7 +189,7 @@ const RentalDashboard = () => {
                     {filteredData.current.map((rental,key) => {
                         return (
                             <NavLink 
-                                to = {"/rental-preview/#"+rental.id}
+                                to = {"/rental-preview/"+rental.id}
                                 className = "main-rental-list-options" 
                                 key = {rental.key}
                             >
@@ -225,7 +225,12 @@ const RentalDashboard = () => {
                                             <h4>{rental.value}</h4>
                                         </div>
                                         <div className="price-box">
-                                            <h3>PHP</h3><h2>{rental.minPrice.toFixed(2)}</h2>
+                                            <div className="price-box-upper">
+                                                <h3>PHP</h3><h2>{rental.minPrice.toFixed(2)}</h2>
+                                            </div>
+                                            <div className="price-box-lower">
+                                                <h6>{'~ Php '+rental.maxPrice.toFixed(2)+'/'+rental.units}</h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
