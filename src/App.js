@@ -9,6 +9,7 @@ import TermsService from './components/information-page/TermsService'
 import PrivacyPolicy from './components/information-page/PrivacyPolicy'
 import EditProfile from './components/main-pages/react-js/EditProfile.js';
 import ProfileConnects from './components/profile-sources/ProfileConnects';
+import OwnerProfile from './components/owner-dash-sources/OwnerProfile.js';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
           <Route path = '/rental-dashboard'  component={RentalDashboard}/>
-          <Route path = '/owner-dashboard'  component={OwnerDashboard}/>
+          <Route path = '/owner-dashboard'  component={OwnerProfile}/>
+          <Route path = '/owner-rental'  component={OwnerDashboard}/>
           <Route path = '/profile-dashboard'  component={EditProfile}/>
           <Route path = '/profile-connects'  component={ProfileConnects}/>
           <Route path = '/learn-more'  component={LearnMore}/>
