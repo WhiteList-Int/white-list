@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import firebase from 'firebase/app';
-import 'firebase/auth';
+import "firebase/auth";
 
 var firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -19,7 +19,7 @@ export const useAuth = () => {
     return useContext(AuthContext);
 }
 
-export const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticating, setIsAuthenticating] = useState(true);
 
@@ -76,3 +76,5 @@ export const AuthProvider = ({ children }) => {
         {!isAuthenticating && children}
     </AuthContext.Provider>);
 }
+
+export default AuthProvider;
