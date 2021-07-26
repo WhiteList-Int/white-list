@@ -53,6 +53,7 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
 
 
 
+
     if(!open) return null;
 
     return ReactDom.createPortal(
@@ -104,16 +105,16 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                             <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={!redirect}/>
                         </div>
                         <div hidden={redirect} id="toggleSignInFooter" className="sign-in-footer">
-                            <NavLink to={pathName.current} className='sign-up-link'
+                            <span className='sign-up-link'
                             onClick={onRedirect}>
                                 Not yet registered?
-                            </NavLink>
+                            </span>
                         </div>
                         <div hidden={!redirect} id="toggleSignUpFooter" className="sign-in-footer">
-                            <NavLink to={pathName.current} className='sign-up-link'
+                            <span className='sign-up-link'
                             onClick={onRedirect}>
                                 Already have an account?
-                            </NavLink>
+                            </span>
                         </div>
                     </div>
                 </div>
