@@ -12,7 +12,7 @@ export default function ConfirmWindow({open, onClose}) {
                     <div className="exit-zone" onClick={onClose}></div>
                     <div className="confirm-window-cont">
                         <div className="confirm-type-cont">
-                            <h3>Confirm</h3>
+                            <h3>Approve</h3>
                         </div>
                         <div className="confirm-question-cont">
                             <p>Are you sure you would like to continue?</p>
