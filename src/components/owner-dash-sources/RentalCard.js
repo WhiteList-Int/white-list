@@ -24,12 +24,10 @@ function RentalCard() {
     const [showArchive, setArchActive] = useState(false);
 
     return (
-            <>
+        <div>
                 {rentals.map((rental) => (
                     <div className="owner-rental" id={rental.id} key={rental.key}>
-                         <div className="owner-img-card">
-                            <img className="owner-rental-img" src={rental.imgs} alt="owned-rental" />
-                        </div>
+                        <img className="owner-rental-img" src={rental.imgs} alt="owned-rental" />
                         <div className="owner-dash-rental-detail-card" >
                             <div className="owner-dash-title-container" >
                                 <h2>{rental.name}</h2>
@@ -154,7 +152,7 @@ function RentalCard() {
                         
                     </div>
                 ))}
-            </>
+        </div>
     )
 }
 
