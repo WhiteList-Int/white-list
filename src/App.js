@@ -10,6 +10,8 @@ import PrivacyPolicy from './components/information-page/PrivacyPolicy'
 import EditProfile from './components/main-pages/react-js/EditProfile.js';
 import ProfileConnects from './components/profile-sources/ProfileConnects';
 import RentalPreview from './components/information-page/RentalPreview';
+import AuthProvider from './components/FirebaseStuff/AuthContext';
+import PrivateRoute from './PrivateRoutes'
 
 
 function App() {
@@ -18,18 +20,20 @@ function App() {
   return (
     <main className="App">
       <AnimatePresence>
-        <Switch location={location} key={location.pathname}>
-          <Route path = '/rental-dashboard'  component={RentalDashboard}/>
-          <Route path = '/rental-preview'  component={RentalPreview}/>
-          <Route exact path = '/owner-dashboard'  component={OwnerDashboard}/>
-          <Route exact path = '/profile-dashboard'  component={EditProfile}/>
-          <Route exact path = '/profile-connects'  component={ProfileConnects}/>
-          <Route exact path = '/learn-more'  component={LearnMore}/>
-          <Route exact path = '/terms-of-service' component={TermsService}/>
-          <Route exact path = '/privacy-policy' component={PrivacyPolicy}/>
-          <Route exact path = '/about-us'  component={AboutUs}/>
-          <Route exact path = '/homepage'  component={Homepage}/>
-        </Switch>
+        <AuthProvider>
+          <Switch location={location} key={location.pathname}>
+            <PrivateRoute path = '/rental-dashboard'  component={RentalDashboard}/>
+            <PrivateRoute path = '/rental-preview'  component={RentalPreview}/>
+            <PrivateRoute exact path = '/owner-dashboard'  component={OwnerDashboard}/>
+            <PrivateRoute exact path = '/profile-dashboard'  component={EditProfile}/>
+            <PrivateRoute exact path = '/profile-connects'  component={ProfileConnects}/>
+            <Route exact path = '/learn-more'  component={LearnMore}/>
+            <Route exact path = '/terms-of-service' component={TermsService}/>
+            <Route exact path = '/privacy-policy' component={PrivacyPolicy}/>
+            <Route exact path = '/about-us'  component={AboutUs}/>
+            <Route exact path = '/homepage'  component={Homepage}/>
+          </Switch>
+        </AuthProvider>
       </AnimatePresence>
     </main>
   );
