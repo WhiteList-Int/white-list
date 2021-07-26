@@ -2,8 +2,7 @@ import React from 'react'
 import './ProfileConnects.css'
 import ProfileNavbar from './ProfileNavbar'
 import { rentals } from "../owner-dash-sources/dataSrc";
-import '../footer-source/Footer';
-import Footer from '../footer-source/Footer';
+import Footer from '../essentials/Footer';
 
 function ProfileConnects() {
     return (
