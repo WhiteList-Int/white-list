@@ -19,6 +19,11 @@ export default function AuthProvider({ children }) {
         return auth.signInWithEmailAndPassword(email, password)
     }
 
+    function gLogin() {
+        var provider = new auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider);
+    }
+
     function logout() {
         return auth.signOut()
     }
@@ -39,6 +44,7 @@ export default function AuthProvider({ children }) {
         currentUser,
         signup,
         login,
+        gLogin,
         logout,
         resetPassword
     }

@@ -17,7 +17,7 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
     const [loading, setLoading] = useState()
     const history = useHistory()
 
-    const { signup, login } = useAuth()
+    const { signup, login, gLogin } = useAuth()
 
     async function handleSignUp(email, password) {
         try {
@@ -49,6 +49,21 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
             return false;
         }
         
+    }
+
+    async function handleGoogleLogin() {
+        try {
+            setError('');
+            setLoading(true);
+            await gLogin();
+            // history.push("/");
+            setLoading(false);
+            return true;
+        } catch {
+            setError('Failed to create an account');
+            setLoading(false);
+            return false;
+        }
     }
 
 
@@ -92,7 +107,8 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                                 }
                             }}
                             disabled={loading}>Login</button>
-                            <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={redirect}/>
+                            <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={redirect}
+                            onClick={handleGoogleLogin()}/>
                         </div>
                         <div className="sign-in-buttons"> {/*Sign Up*/}
                             <button to={pathName.current} className='sign-in-link' hidden={!redirect}
@@ -102,7 +118,8 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                                 });
                             }}
                             disabled={loading}>Sign-Up</button>
-                            <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={!redirect}/>
+                            <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={!redirect}
+                            onClick={handleGoogleLogin()}/>
                         </div>
                         <div hidden={redirect} id="toggleSignInFooter" className="sign-in-footer">
                             <span className='sign-up-link'
