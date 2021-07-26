@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-// import { NavLink } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import Img from '../images/white-list-text-black.svg';
 import Img2 from '../images/white-list-tagline-black.svg';
 import Img3 from '../images/startupPage.svg';
@@ -7,7 +7,7 @@ import SignIn from '../pop-ups/SignIn';
 
 const Navbar = () => {
 
-    // const pathName = useRef(window.location.pathname);
+    const pathName = useRef(window.location.pathname);
     const [startButton, setStartButton] = useState(false);
     const [navbar, setNavbar] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -44,12 +44,13 @@ const Navbar = () => {
                     <img className = {navbar ? 'navbar-header-img-active' : 'navbar-header-img'} src = {Img} alt="WhiteList"></img>
                     <img className = {navbar ? 'navbar-tagline-active' : 'navbar-tagline'} src = {Img2} alt="WhiteList"></img>
                     <div className = {startButton ? 'navbar-btn-top-container' : 'navbar-btn-bot-container'}>
-                            <button 
-                                to={window.location.href} 
+                            <NavLink 
+                                to={pathName.current} 
                                 className = {startButton ? 'navbar-btn-top' : 'navbar-btn-bot'} 
-                                onClick={() => {setIsOpen(true); setIsRedirect(false)}}>
+                                onClick={() => {setIsOpen(true); setIsRedirect(false)}}
+                            >
                                 LOG-IN
-                            </button>
+                            </NavLink>
                             <SignIn open={isOpen} 
                                 redirect={isRedirect}
                                 onRedirect={() => {setIsRedirect(!isRedirect)}}
