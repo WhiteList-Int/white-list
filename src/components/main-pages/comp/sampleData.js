@@ -46,7 +46,7 @@ const sampleData = [
         imgs: Img21,
         category:'boardinghouse',
         value: 'Mambaling, Cebu City',
-        amenities: ["TV set","Wi-fi"],
+        amenities: ["TV set","Wi-fi","Single Bed"],
         stars: 5, 
         key: 2,
         id: '#2'
@@ -190,7 +190,7 @@ const sampleData = [
         imgs: Img29,
         category:'apartment',
         value: 'Talisay City',
-        amenities: ["TV set","Wi-fi"],
+        amenities: ["TV set","Wi-fi","Laundromat"],
         stars: 4, 
         key: 10,
         id: '#10'
@@ -244,7 +244,7 @@ const sampleData = [
         imgs: Img32,
         category:'hotel',
         value: 'Bulacao, Cebu City',
-        amenities: ["TV set","Wi-fi"],
+        amenities: ["TV set","Wi-fi","Bathtub"],
         stars: 4, 
         key: 13,
         id: '#13'

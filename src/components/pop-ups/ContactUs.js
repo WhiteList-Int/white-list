@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants';
 import { transitions } from '../../page-transitions';
-import { NavLink } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 
 export default function ContactUs({open, onClose}) {
@@ -34,7 +33,7 @@ export default function ContactUs({open, onClose}) {
                 <textarea name="" id="input-box" cols="1" rows="3"></textarea>
                 </div>
                 <div className="contact-us-submit">
-                    <NavLink to='/' className="contact-us-submit-button">Contact Us</NavLink>
+                    <span className="contact-us-submit-button">Contact Us</span>
                 </div>
               </form>
             </motion.div>

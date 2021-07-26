@@ -137,7 +137,7 @@
 }
 
 .rental-dashboard-main-navbar h2{
-  background: linear-gradient(to right, hsl(200, 60%, 25%) 0%, hsl(198, 30%, 30%) 30%, hsl(198, 80%, 25%)) 100%; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, hsl(200, 60%, 25%) 0%, hsl(198, 30%, 30%) 30%, hsl(198, 80%, 25%)) 100%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
@@ -261,7 +261,7 @@
 }
 
 .head-count h4{
-  background: linear-gradient(to right, hsl(200, 60%, 25%) 0%, hsl(198, 30%, 30%) 30%, hsl(198, 80%, 25%)) 100%; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, hsl(200, 60%, 25%) 0%, hsl(198, 30%, 30%) 30%, hsl(198, 80%, 25%)) 100%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Source Sans Pro";
@@ -291,7 +291,7 @@
 }
 
 .text-box h4{
-  background: linear-gradient(to right, hsl(200, 60%, 25%) 0%, hsl(198, 30%, 30%) 30%, hsl(198, 80%, 25%)) 100%; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, hsl(200, 60%, 25%) 0%, hsl(198, 30%, 30%) 30%, hsl(198, 80%, 25%)) 100%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Source Sans Pro";

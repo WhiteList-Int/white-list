@@ -79,7 +79,7 @@ function AboutUs() {
                             <p className="about-team-person-saying">{dev.text2}</p>
                             <p>{dev.text3}</p>
                         </div>
-                        <NavLink to='/' class="about-contact-button">Contact</NavLink>
+                        <span class="about-contact-button">Contact</span>
                     </>
                      ))}
                 </motion.div>

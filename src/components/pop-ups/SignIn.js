@@ -1,15 +1,12 @@
 import React from 'react';
-import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants';
 import { transitions } from '../../page-transitions';
-import { NavLink } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 
 
 export default function SignIn({open, redirect, onClose, onRedirect}) {
-    const pathName = useRef(window.location.pathname);
 
     if(!open) return null;
 
@@ -39,20 +36,20 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                             <input className="" type="password" placeholder="************" required/>
                         </div>
                         <div className="sign-in-buttons">
-                            <NavLink to={pathName.current} className='sign-in-link'>Sign-in</NavLink>
+                            <span className='sign-in-link'>Sign-in</span>
                             <img src={gsign} alt='gsign' className='sign-in-google-link'/>
                         </div>
                         <div hidden={redirect} id="toggleSignInFooter" className="sign-in-footer">
-                            <NavLink to={pathName.current} className='sign-up-link'
+                            <span className='sign-up-link'
                             onClick={onRedirect}>
                                 Not yet registered?
-                            </NavLink>
+                            </span>
                         </div>
                         <div hidden={!redirect} id="toggleSignUpFooter" className="sign-in-footer">
-                            <NavLink to={pathName.current} className='sign-up-link'
+                            <span className='sign-up-link'
                             onClick={onRedirect}>
                                 Already have an account?
-                            </NavLink>
+                            </span>
                         </div>
                     </div>
                 </div>
