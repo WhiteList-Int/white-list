@@ -24,11 +24,15 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
             setError('');
             setLoading(true);
             await signup(emailRef.current.value, passwordRef.current.value);
-            history.push("/homepage");
+            // history.push("/");
+            setLoading(false);
+            return true;
         } catch {
             setError('Failed to create an account');
+            setLoading(false);
+            return false;
         }
-        setLoading(false);
+        
     }
 
     async function handleLogin(email, password) {
@@ -36,11 +40,15 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
             setError('');
             setLoading(true);
             await login(emailRef.current.value, passwordRef.current.value);
-            history.push("/homepage");
+            // history.push("/");
+            setLoading(false);
+            return true;
         } catch {
             setError('Failed to create an account');
+            setLoading(false);
+            return false;
         }
-        setLoading(false);
+        
     }
 
 
@@ -74,21 +82,26 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                             <input className="" type="text" placeholder="Email" required ref={emailRef}/>
                             <input className="" type="password" placeholder="************" required ref={passwordRef}/>
                         </div>
-                        <div hidden={redirect} className="sign-in-buttons"> {/*Login*/}
-                            <button to={pathName.current} className='sign-in-link'
+                        <div  className="sign-in-buttons"> {/*Login*/}
+                            <button to={pathName.current} className='sign-in-link' hidden={redirect}
                             onClick={() => {
-                                handleLogin();
+                                var doNext = handleLogin()
+                                if(doNext){
+                                    history.push("/rental-dashboard");
+                                }
                             }}
                             disabled={loading}>Login</button>
-                            <img src={gsign} alt='gsign' className='sign-in-google-link'/>
+                            <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={redirect}/>
                         </div>
-                        <div hidden={!redirect} className="sign-in-buttons"> {/*Sign Up*/}
-                            <button to={pathName.current} className='sign-in-link'
+                        <div className="sign-in-buttons"> {/*Sign Up*/}
+                            <button to={pathName.current} className='sign-in-link' hidden={!redirect}
                             onClick={() => {
-                                handleSignUp();
+                                handleSignUp().then(() => {
+                                    history.push("/homepage");
+                                });
                             }}
                             disabled={loading}>Sign-Up</button>
-                            <img src={gsign} alt='gsign' className='sign-in-google-link'/>
+                            <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={!redirect}/>
                         </div>
                         <div hidden={redirect} id="toggleSignInFooter" className="sign-in-footer">
                             <NavLink to={pathName.current} className='sign-up-link'
