@@ -96,9 +96,13 @@ const RentalDashboard = () => {
         } else{
             setWindowState(true);
         }
-        document.getElementById("startOfPage").scrollIntoView({bottom:0});
-        currentWindow.current="startOfPage";
-        console.log(currentWindow.current);
+        try{
+            document.getElementById("startOfPage").scrollIntoView({bottom:0});
+            currentWindow.current="startOfPage";
+            console.log(currentWindow.current);
+        } catch(err){
+            console.log(err);
+        }
     });
 
     useEffect(() => {

@@ -20,10 +20,13 @@ import './RentalPreview.scss';
 import ImagePopup from './../pop-ups/ImagePopup';
 import { NavLink } from "react-router-dom";
 import sampleReviews from './../main-pages/comp/sampleReviews';
+import ContactOwnerPopup from './../pop-ups/ContactOwnerPopup';
+import Footer from './../essentials/Footer';
 
 
 const RentalPreview = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isImageOpen, setIsImageOpen] = useState(false);
+    const [isContactOpen, setIsContactOpen] = useState(false);
     const imgToPreview = useRef("");
     const data_id = window.location.hash;
     const activeIndex= useRef(1);
@@ -68,7 +71,7 @@ const RentalPreview = () => {
                           id={imgs.key} 
                           src={imgs.img} 
                           alt="images"
-                          onClick={() => {setIsOpen(true);imgToPreview.current=imgs.img;}}
+                          onClick={() => {setIsImageOpen(true);imgToPreview.current=imgs.img;}}
                         />
                     );
                 })}
@@ -178,13 +181,18 @@ const RentalPreview = () => {
                     <p>--- No Reviews Yet ---</p>
                   </div>
                 </div>
+                <span id='contact-owner-button' onClick={()=>setIsContactOpen(true)}>Contact Owner</span>
               </div>
-              <NavLink to='/contact-owner' id='contact-owner-button'>Contact Owner</NavLink>
             </div>
           </div>
-          <ImagePopup open={isOpen}
-            onClose={() => {setIsOpen(false);showScroll();}}
+          <Footer/>
+          <ImagePopup open={isImageOpen}
+            onClose={() => {setIsImageOpen(false);showScroll();}}
             imgSource={imgToPreview.current}
+          />
+          <ContactOwnerPopup open={isContactOpen}
+            onClose={() => {setIsContactOpen(false);showScroll();}}
+            data = {data}
           />
         </div>
     )
