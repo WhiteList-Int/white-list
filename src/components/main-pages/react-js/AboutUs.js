@@ -1,6 +1,6 @@
 import React from 'react';
-import NavbarFixed from '../../navbar-source/NavbarFixed';
-import '../css/AboutUs.css';
+import Footer from '../../essentials/Footer';
+import NavbarFixed from '../../essentials/NavbarFixed';
 import Img1 from '../../images/nash.jpg';
 import Img2 from '../../images/jez.jpg';
 import Img3 from '../../images/merv.png';
@@ -8,14 +8,13 @@ import { motion } from 'framer-motion';
 import { variants } from '../../../animation-variants.js';
 import { transitions } from '../../../page-transitions.js';
 import { NavLink } from 'react-router-dom';
-import Footer from '../../footer-source/Footer'
 
 function AboutUs() {
     const developers = [
-        { className: 'devs', imgs: Img1, text: 'Nash Uriel Tapayan', text1: 'Front-end Developer',
+        { className: 'devs', imgs: Img1, text: 'Nash Uriel Tapayan', text1: 'Project Manager and Front-end Developer',
         text2: 'I have always believed that each man makes his own happiness and is responsible for his own problems. It is a simple philosophy.',
         text3: 'nashuriel.tapayan@cit.edu'},
-        { className: 'devs', imgs: Img2, text: 'Jezreel Jedidiah Floreta', text1: 'Database Developer', 
+        { className: 'devs', imgs: Img2, text: 'Jezreel Jedidiah Floreta', text1: 'Backend and Database Developer', 
         text2: 'When we have respect for ourselves and others, we gravitate towards connections that encourage that.',
         text3: 'jezreeljedidiah.floreta@cit.edu'},
         { className: 'devs', imgs: Img3, text: 'Mervin John Tampus', text1: 'UX Designer and Co-Developer',
@@ -27,7 +26,7 @@ function AboutUs() {
         <div>
             {window.scroll({top:0,left:0})}
             <motion.body 
-                className="about-page"
+                className="about"
                 initial="fadeOut" 
                 animate="fadeIn" 
                 variants={variants}
@@ -41,7 +40,7 @@ function AboutUs() {
                     variants={variants}
                     transition={transitions.tweenEaseOutFaster}
                 >
-                    <h1 className="team-title">About Us</h1>
+                    <h1 className="about-team-title">About Us</h1>
                     <h2 className="about-h2">Mission</h2>
                     <p className="about-p">The primary goal of our company is to be trusted and reliable in providing
                         its users with a simplified method for finding and connecting people to rentable 
@@ -62,25 +61,25 @@ function AboutUs() {
                     </motion.div>
 
                 <motion.div 
-                    className="team-container"
+                    className="about-team-container"
                     initial="slideOutYOpp" 
                     animate="slideInYOpp"   
                     variants={variants}
                     transition={transitions.tweenEaseOutFaster}
                 >
-                    <h1 className="team-title">Our Team</h1>
+                    <h1 className="about-team-title">Our Team</h1>
                     {developers.map((dev) => (
                         <>
-                        <div className="team-img-container">
-                            <img src={dev.imgs} className="team-pic" alt={dev.text} />
+                        <div className="about-team-container-img">
+                            <img src={dev.imgs} className="about-team-pic" alt={dev.text} />
                         </div>
-                        <h2 className='team-text'>{dev.text}</h2>
-                        <div className="team-description-container">
-                            <p className="person-title">{dev.text1}</p>
-                            <p className="person-saying">{dev.text2}</p>
+                        <h2 className='about-team-text'>{dev.text}</h2>
+                        <div className="about-team-container-description">
+                            <p className="about-team-person-title">{dev.text1}</p>
+                            <p className="about-team-person-saying">{dev.text2}</p>
                             <p>{dev.text3}</p>
                         </div>
-                        <NavLink to='/' class="contact-button">Contact</NavLink>
+                        <span class="about-contact-button">Contact</span>
                     </>
                      ))}
                 </motion.div>

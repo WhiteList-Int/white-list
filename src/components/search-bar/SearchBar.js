@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 
@@ -56,16 +55,16 @@ function SearchBar({
 
   return (
     <div className="search">
-      <div className="searchInputs">
+      <div className="search-inputs">
         <input
           type="text"
-          className="searchInput"
+          className="search-input"
           placeholder={placeholder}
           value={wordEntered}
           onChange={handleFilter}
           onKeyDown = {handleEnter}
         />
-        <div className="searchIcon">
+        <div className="search-icon">
           {filteredData.length === 0 ? (
             <SearchIcon id="searchBtn" onClick={beginSearch} />
           ) : (

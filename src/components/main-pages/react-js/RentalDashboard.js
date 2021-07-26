@@ -1,20 +1,21 @@
-import React from 'react';
-import starFilled from '../../images/star-rated.svg';
-import starUnfilled from '../../images/star-unrated.svg';
-import Img from '../../images/white-list-text.svg';
-import FilterBar from './../../search-bar/FilterBar';
-import NavbarTransparent from "../../navbar-source/NavbarTransparent";
-import filterOptions from './../comp/filterOptions';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import Select from 'react-select';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 import { variants } from '../../../animation-variants.js';
 import { transitions } from '../../../page-transitions.js';
-import { useRef, useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import "../css/RentalDashboard.css";
 import sampleData from './../comp/sampleData';
+import filterOptions from './../comp/filterOptions';
 import SearchBar from './../../search-bar/SearchBar';
+import Img from '../../images/white-list-text.svg';
+import starFilled from '../../images/star-rated.svg';
+import starUnfilled from '../../images/star-unrated.svg';
+import FilterBar from './../../search-bar/FilterBar';
+import NavbarTransparent from "../../essentials/NavbarTransparent";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import RoomIcon from '@material-ui/icons/Room';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import Select from 'react-select';
+import "../css/RentalDashboard.css";
 
 const RentalDashboard = () => {
     const filterRental = useRef("all");
@@ -95,9 +96,13 @@ const RentalDashboard = () => {
         } else{
             setWindowState(true);
         }
-        document.getElementById("startOfPage").scrollIntoView({bottom:0});
-        currentWindow.current="startOfPage";
-        console.log(currentWindow.current);
+        try{
+            document.getElementById("startOfPage").scrollIntoView({bottom:0});
+            currentWindow.current="startOfPage";
+            console.log(currentWindow.current);
+        } catch(err){
+            console.log(err);
+        }
     });
 
     useEffect(() => {
@@ -121,7 +126,6 @@ const RentalDashboard = () => {
             variants={variants}
             transition={transitions.linear}
         >
-            
             <section className="rental-dashboard-head">
                 <nav id="startOfPage"></nav>
                 <div className="rental-nav-trans"><NavbarTransparent /></div>
@@ -185,33 +189,53 @@ const RentalDashboard = () => {
                     </div>
                 </div>
                 <div className="main-rental-list-container">
+
                     {filteredData.current.map((rental,key) => {
                         return (
-                            <NavLink to = "/" className = "main-rental-list-options" key = {rental.key}>
-                                <div
-                                    className="main-rental-list-options-imgs"
-                                    style={{
-                                        width: 150,
-                                        height: 150,
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center center',
-                                        backgroundBlendMode: 'overlay',
-                                        backgroundImage: `url(${rental.imgs})`
-                                    }}
-                                >
-                                    <div className="overlay-color"><h5>{rental.name}</h5></div>
-                                </div>
-                                <div className="information-box">
-                                    <div className="text-box">
-                                        <h3>{rental.value}</h3>
+                            <NavLink 
+                                to = {"/rental-preview/"+rental.id}
+                                className = "main-rental-list-options" 
+                                key = {rental.key}
+                            >
+                                <div className="main-rental-list-options">
+                                    <div
+                                        className="main-rental-list-options-imgs"
+                                        style={{
+                                            width: 300,
+                                            height: 200,
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center center',
+                                            backgroundImage: `url(${rental.imgs})`
+                                        }}
+                                    >
+                                        <h4>{rental.categoryName}</h4>
+                                        <h2>{rental.name}</h2>
                                     </div>
-                                    <div className="stars-container">
-                                        <img src={(rental.stars)>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-1>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-2>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-3>0?starFilled:starUnfilled} alt="*"/>
-                                        <img src={(rental.stars)-4>0?starFilled:starUnfilled} alt="*"/>
+                                    <div className="information-box">
+                                        <div className="stars-container">
+                                            <img src={(rental.stars)>=1?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-1>=1?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-2>=1?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-3>=1?starFilled:starUnfilled} alt="*"/>
+                                            <img src={(rental.stars)-4>=1?starFilled:starUnfilled} alt="*"/>
+                                            <div className="head-count">
+                                                <VpnKeyIcon className="capacity-icon"/>
+                                                <h4>{rental.capacity}</h4>
+                                            </div>
+                                        </div>
+                                        <div className="text-box">
+                                            <RoomIcon className="location-icon"/>
+                                            <h4>{rental.value}</h4>
+                                        </div>
+                                        <div className="price-box">
+                                            <div className="price-box-upper">
+                                                <h3>PHP</h3><h2>{rental.minPrice.toFixed(2)}</h2>
+                                            </div>
+                                            <div className="price-box-lower">
+                                                <h6>{'~ Php '+rental.maxPrice.toFixed(2)+'/'+rental.units}</h6>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </NavLink>

@@ -1,18 +1,17 @@
 import React from 'react';
-import './TermsService.css'
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants.js';
 import { transitions } from '../../page-transitions.js';
 import Img2 from '../images/white-list-icon-gradient.svg';
-import Footer from '../footer-source/Footer';
-import NavbarFixed from '../navbar-source/NavbarFixed';
+import Footer from '../essentials/Footer';
+import NavbarFixed from '../essentials/NavbarFixed';
 
 //reused css from termsservice :)
 function PrivacyPolicy() {
     return (
         <>
             <NavbarFixed/>
-            <body className="terms-service-page">
+            <body className="terms-service">
                 {window.scroll(0,0)}
                 
                 <motion.div 
