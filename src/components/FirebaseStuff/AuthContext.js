@@ -21,7 +21,12 @@ export default function AuthProvider({ children }) {
 
     function gLogin() {
         var provider = new auth.GoogleAuthProvider();
-            auth.signInWithPopup(provider);
+            // auth.signInWithPopup(provider);
+            auth.signInWithPopup(provider).then((result) => {
+                return result.user;
+            }).catch((error) => {
+                return error;
+            });
     }
 
     function logout() {

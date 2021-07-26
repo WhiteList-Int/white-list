@@ -55,7 +55,8 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
         try {
             error.current = '';
             loading.current = true;
-            await gLogin();
+            const res = await gLogin();
+            console.log(res);
             // history.push("/");
             loading.current = false;
             return true;
@@ -108,7 +109,7 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                             }}
                             disabled={loading}>Login</button>
                             <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={redirect}
-                            onClick={handleGoogleLogin()}/>
+                            onClick={() => {handleGoogleLogin();}}/>
                         </div>
                         <div className="sign-in-buttons"> {/*Sign Up*/}
                             <button to={pathName.current} className='sign-in-link' hidden={!redirect}
@@ -119,7 +120,7 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                             }}
                             disabled={loading}>Sign-Up</button>
                             <img src={gsign} alt='gsign' className='sign-in-google-link' hidden={!redirect}
-                            onClick={handleGoogleLogin()}/>
+                            onClick={() => {handleGoogleLogin();}}/>
                         </div>
                         <div hidden={redirect} id="toggleSignInFooter" className="sign-in-footer">
                             <span className='sign-up-link'
