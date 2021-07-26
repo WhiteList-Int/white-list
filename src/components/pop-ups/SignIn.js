@@ -1,9 +1,9 @@
 import React from 'react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants';
 import { transitions } from '../../page-transitions';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 import { useAuth } from '../FirebaseStuff/AuthContext'
@@ -13,23 +13,23 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
     const pathName = useRef(window.location.pathname);
     const emailRef = useRef()
     const passwordRef = useRef()
-    const [error, setError] = useState('')
-    const [loading, setLoading] = useState()
+    const error = useRef('')
+    const loading = useRef()
     const history = useHistory()
 
     const { signup, login, gLogin } = useAuth()
 
     async function handleSignUp(email, password) {
         try {
-            setError('');
-            setLoading(true);
+            error.current = '';
+            loading.current = true;
             await signup(emailRef.current.value, passwordRef.current.value);
             // history.push("/");
-            setLoading(false);
+            loading.current = false;
             return true;
         } catch {
-            setError('Failed to create an account');
-            setLoading(false);
+            error.current = 'Failed to create an account';
+            loading.current = false;
             return false;
         }
         
@@ -37,15 +37,15 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
 
     async function handleLogin(email, password) {
         try {
-            setError('');
-            setLoading(true);
+            error.current = '';
+            loading.current = true;
             await login(emailRef.current.value, passwordRef.current.value);
             // history.push("/");
-            setLoading(false);
+            loading.current = false;
             return true;
         } catch {
-            setError('Failed to create an account');
-            setLoading(false);
+            error.current = 'Failed to create an account';
+            loading.current = false;
             return false;
         }
         
@@ -53,15 +53,15 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
 
     async function handleGoogleLogin() {
         try {
-            setError('');
-            setLoading(true);
+            error.current = '';
+            loading.current = true;
             await gLogin();
             // history.push("/");
-            setLoading(false);
+            loading.current = false;
             return true;
         } catch {
-            setError('Failed to create an account');
-            setLoading(false);
+            error.current = 'Failed to create an account';
+            loading.current = false;
             return false;
         }
     }
