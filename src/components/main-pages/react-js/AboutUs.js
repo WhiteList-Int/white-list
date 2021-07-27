@@ -7,7 +7,6 @@ import Img3 from '../../images/merv.png';
 import { motion } from 'framer-motion';
 import { variants } from '../../../animation-variants.js';
 import { transitions } from '../../../page-transitions.js';
-import { NavLink } from 'react-router-dom';
 
 function AboutUs() {
     const developers = [

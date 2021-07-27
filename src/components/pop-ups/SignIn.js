@@ -6,9 +6,10 @@ import { transitions } from '../../page-transitions';
 import { useHistory } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
+import { useAuth } from '../FirebaseStuff/AuthContext';
 
 
-export default function SignIn({open, redirect, onClose, onRedirect}) {
+export default function SignIn({open, redirect, onClose, onRedirect, directTo}) {
     const pathName = useRef(window.location.pathname);
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -16,6 +17,7 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
     const loading = useRef()
     const history = useHistory()
 
+    console.log(directTo);
     const { signup, login, gLogin } = useAuth()
 
     async function handleSignUp(email, password) {
@@ -100,7 +102,7 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                             onClick={() => {
                                 var doNext = handleLogin()
                                 if(doNext){
-                                    history.push("/rental-dashboard");
+                                    history.push(directTo);
                                 }
                             }}
                             disabled={loading}>Login</button>

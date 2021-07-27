@@ -7,7 +7,6 @@ import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
 import RingVolumeIcon from '@material-ui/icons/RingVolume';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import ReactDom  from 'react-dom';
-import ProfileConnects from './../profile-sources/ProfileConnects';
 
 export default function ContactOwnerPopup({open, onClose, data}) {
     if(!open) return null;
