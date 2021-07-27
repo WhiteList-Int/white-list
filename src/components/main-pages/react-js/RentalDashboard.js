@@ -25,8 +25,7 @@ const RentalDashboard = () => {
 
     const [rentalFilter,setRentalFilter] = useState(()=>{
         const pathName = window.location.pathname;
-        var defaultRentalFilter = 
-        filterOptions.map((data) => {
+        var defaultRentalFilter = filterOptions.map((data) => {
             if(pathName.includes(data.value)){
                 return data.value;
             } else{
