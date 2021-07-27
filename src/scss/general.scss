@@ -314,7 +314,7 @@ $btn-bg-color: linear-gradient(
     &-header-img{
         transition: 400ms ease-in;
         padding-left: 0px;
-        padding-top: 100px;
+        padding-top: clamp(50px,15vh,100px);
         margin-left:50%;
         transform: translateX(-50%);
         width: clamp(300px, 40vw, 600px);
@@ -369,7 +369,8 @@ $btn-bg-color: linear-gradient(
         opacity: 0.9;
         transform: translateX(-50%);
         position: fixed;
-        width: 80vw;
+        max-width: 80vw;
+        height: 50vh;
     }
     &-btn{
         &-top{
@@ -678,7 +679,7 @@ $btn-bg-color: linear-gradient(
     padding-bottom: clamp(20px, 5%, 50px);
     height: clamp(200px, 32vh, 500px);
     box-shadow: 3px 0px 10px black;
-    width: 100%;
+    width: 100vw;
     z-index: 3;
     background-color: white;
     &-container {

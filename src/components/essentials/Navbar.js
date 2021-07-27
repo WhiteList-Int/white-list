@@ -44,12 +44,12 @@ const Navbar = () => {
                     <img className = {navbar ? 'navbar-header-img-active' : 'navbar-header-img'} src = {Img} alt="WhiteList"></img>
                     <img className = {navbar ? 'navbar-tagline-active' : 'navbar-tagline'} src = {Img2} alt="WhiteList"></img>
                     <div className = {startButton ? 'navbar-btn-top-container' : 'navbar-btn-bot-container'}>
-                            <button 
+                            <span
                                 to={window.location.href} 
                                 className = {startButton ? 'navbar-btn-top' : 'navbar-btn-bot'} 
                                 onClick={() => {setIsOpen(true); setIsRedirect(false)}}>
                                 LOG-IN
-                            </button>
+                            </span>
                             <SignIn open={isOpen} 
                                 redirect={isRedirect}
                                 onRedirect={() => {setIsRedirect(!isRedirect)}}

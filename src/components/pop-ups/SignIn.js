@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants';
 import { transitions } from '../../page-transitions';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 import { useAuth } from '../FirebaseStuff/AuthContext'

@@ -202,6 +202,7 @@ $btn-bg-color: linear-gradient(
                             flex-direction:column;
                             align-items: flex-start;
                             justify-content: flex-start;
+                            padding-left: 45px;
                             width: clamp(100,25vh,350px);
                             &-price{
                                 display: flex;
@@ -393,14 +394,15 @@ $btn-bg-color: linear-gradient(
                     justify-items: center;
                     height: 100%;
                     width: 100%;
+                    padding-top: 10vh;
                     &-review{
                         display: grid;
                         justify-content: center;
                         align-items: end;
-                        padding-top: 80px;
+                        padding-top: 10vh;
                         grid-template-columns: repeat(auto-fit, clamp(300px,80vw,600px));
                         grid-template-rows: repeat(auto-fit, minmax(10px, 20px));
-                        grid-row-gap: clamp(3rem,20%,5rem);
+                        grid-row-gap: 5rem;
                         grid-column-gap: 3rem; 
                         width: 100%;
                         height: 100%;
@@ -410,7 +412,7 @@ $btn-bg-color: linear-gradient(
                             align-items: center;
                             justify-content: center;
                             height: fit-content;
-                            border: 2px dotted hsla(0, 0%, 0%, 0.5);
+                            border: 2px dotted hsla(0, 0%, 0%, 0.6);
                             border-radius: 15px;
                             &-show{
                                 display: flex;
