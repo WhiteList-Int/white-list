@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/OwnerDashboard.css'
-import Footer from '../../footer-source/Footer'
+import Footer from '../../essentials/Footer'
 import RentalCard from '../../owner-dash-sources/RentalCard';
 import OwnerNavbar from '../../owner-dash-sources/OwnerNavbar';
 

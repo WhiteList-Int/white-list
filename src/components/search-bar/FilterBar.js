@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 
@@ -56,16 +55,16 @@ function FilterBar({
 
   return (
     <div className="search">
-      <div className="searchInputs">
+      <div className="search-inputs">
         <input
           type="text"
-          className="searchInput"
+          className="search-input"
           placeholder={placeholder}
           value={wordEntered}
           onChange={handleFilter}
           onKeyDown = {handleEnter}
         />
-        <div className="searchIcon">
+        <div className="search-icon">
           {filteredData.length === 0 ? (
             <SearchIcon id="searchBtn" onClick={beginSearch} />
           ) : (
@@ -74,21 +73,21 @@ function FilterBar({
         </div>
       </div>
       {filteredData.length === 0 && wordEntered!=="" && (
-        <div className="dataResult">
-          <div className="dataItem">
+        <div className="search-data-result">
+          <div className="search-data-item">
             <p>No results Found.</p>
           </div>
         </div>
       )}
       {filteredData.length !== 0 && (
-        <div className="dataResult">
+        <div className="search-data-result">
           {filteredData.map((value, key) => {
             return (
-              <div className="dataItem" href={value.link} key={key}>
+              <a className="search-data-item" href={"/rental-preview/"+value.id} key={key}>
                 <div><p>{value.name} </p></div>
                 <div><h6>@{value.value}</h6></div>
                 <div><h6>{value.categoryName}</h6></div>
-              </div>
+              </a>
             );
           })}
         </div>

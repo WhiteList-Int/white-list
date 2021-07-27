@@ -1,18 +1,17 @@
 import React from 'react';
-import './TermsService.css'
 import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants.js';
 import { transitions } from '../../page-transitions.js';
 import Img2 from '../images/white-list-icon-gradient.svg';
-import NavbarFixed from './../navbar-source/NavbarFixed';
-import Footer from './../footer-source/Footer';
+import NavbarFixed from './../essentials/NavbarFixed';
+import Footer from './../essentials/Footer';
 
 function TermsService() {
 
     return (
         <>
             <NavbarFixed />
-            <body className="terms-service-page">
+            <body className="terms-service">
                 {window.scrollTo({top:0,left:0})}
                 <motion.div 
                     className="terms-service-container"
