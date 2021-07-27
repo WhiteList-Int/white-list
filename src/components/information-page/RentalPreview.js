@@ -16,7 +16,6 @@ import NavbarFixed from './../essentials/NavbarFixed';
 import starFilled from '../images/star-rated.svg';
 import starUnfilled from '../images/star-unrated.svg';
 import imgSrc from "../main-pages/comp/imgSrc";
-import './RentalPreview.scss';
 import ImagePopup from './../pop-ups/ImagePopup';
 import sampleReviews from './../main-pages/comp/sampleReviews';
 import ContactOwnerPopup from './../pop-ups/ContactOwnerPopup';

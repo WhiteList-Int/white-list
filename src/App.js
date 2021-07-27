@@ -2,12 +2,12 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Homepage from './Homepage.js';
 import RentalDashboard from './components/main-pages/react-js/RentalDashboard';
-import OwnerDashboard from './components/main-pages/react-js/OwnerDashboard';
+import OwnerDashboard from './components/owner-dash-sources/OwnerDashboard';
 import AboutUs from './components/main-pages/react-js/AboutUs';
-import LearnMore from './components/information-page/LearnMore'
-import TermsService from './components/information-page/TermsService'
-import PrivacyPolicy from './components/information-page/PrivacyPolicy'
-import EditProfile from './components/main-pages/react-js/EditProfile.js';
+import LearnMore from './components/information-page/LearnMore';
+import TermsService from './components/information-page/TermsService';
+import PrivacyPolicy from './components/information-page/PrivacyPolicy';
+import EditProfile from './components/owner-dash-sources/EditProfile.js';
 import ProfileConnects from './components/profile-sources/ProfileConnects';
 import RentalPreview from './components/information-page/RentalPreview';
 import AuthProvider from './components/FirebaseStuff/AuthContext';

@@ -1,13 +1,10 @@
-import React, {useState, useRef} from 'react';
-import '../main-pages/css/EditProfile.css';
+import React, { useState } from 'react';
 import { accounts } from '../profile-sources/account';
 import ConfirmWindow from './ConfirmWindow';
 import ProfileNavbar from './OwnerNavbar';
 
 
 function OwnerProfile() {
-
-    const imageSrc = useRef(accounts[1].imgs);
 
     const [disabledName, setDisableName] = useState(true);
     const [disabledBday, setDisableBday] = useState(true);
@@ -19,7 +16,12 @@ function OwnerProfile() {
     const [isOpen, setIsOpen] = useState(false);
     const showScroll = () => {
         document.body.setAttribute('style', 'overflow-y:scroll;');
-     }
+    }
+
+    const loadFile = (event) => {
+        var image = document.getElementById('change-image');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
     
     return (
         <>
@@ -28,9 +30,9 @@ function OwnerProfile() {
                 <div className="edit-profile-card-image">
                     
                     <div className="edit-profile-picture">
-                        <img src={imageSrc.current} alt="" id="change-image" />
+                        <img src={accounts[1].imgs} alt="" id="change-image" />
                     </div>
-                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange={(event)=>imageSrc.current=event.value} style={{display: 'none'}} /></p>
+                    <p><input type="file"  accept="image/*" name="image" id="file"  onChange={loadFile} style={{display: 'none'}} /></p>
                     <p className="edit-profile-change" id="change-picture"><label  for="file" style={{cursor: 'pointer'}}>Upload Image</label></p>
                         
                     </div>

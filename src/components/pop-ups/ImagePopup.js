@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { variants } from '../../animation-variants';
 import { transitions } from '../../page-transitions';
 import ReactDom  from 'react-dom';
-import '../information-page/RentalPreview.scss'
 
 export default function ImagePopup({open, onClose, imgSource}) {
 

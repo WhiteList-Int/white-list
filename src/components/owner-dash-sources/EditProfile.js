@@ -1,13 +1,11 @@
-import React, {useState, useRef} from 'react'
-import '../css/EditProfile.css'
-import { accounts } from '../../profile-sources/account';
-import ConfirmWindow from '../../owner-dash-sources/ConfirmWindow';
-import ProfileNavbar from '../../profile-sources/ProfileNavbar';
+import React, { useState } from 'react';
+import { accounts } from './../profile-sources/account';
+import ProfileNavbar from './../profile-sources/ProfileNavbar';
+import ConfirmWindow from './ConfirmWindow';
+import './EditProfile.css';
 
 
 function EditProfile() {
-
-    const imageSrc = useRef(accounts[0].imgs);
 
     const [disabledName, setDisableName] = useState(true);
     const [disabledBday, setDisableBday] = useState(true);
@@ -19,7 +17,12 @@ function EditProfile() {
     const [isOpen, setIsOpen] = useState(false);
     const showScroll = () => {
         document.body.setAttribute('style', 'overflow-y:scroll;');
-     }
+    }
+
+    const loadFile = (event) => {
+        var image = document.getElementById('change-image-2');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
     
     return (
         <>
@@ -28,9 +31,9 @@ function EditProfile() {
                 <div className="edit-profile-card-image">
                     
                     <div className="edit-profile-picture">
-                        <img src={imageSrc.current} alt="" id="change-image" />
+                        <img src={accounts[0].imgs} alt="" id="change-image-2" />
                     </div>
-                    <p><input type="file"  accept="image/*" name="image" id="file"  onchange={(event)=>imageSrc.current=event.value} style={{display: 'none'}} /></p>
+                    <p><input type="file"  accept="image/*" name="image" id="file"  onChange={loadFile} style={{display: 'none'}} /></p>
                     <p className="edit-profile-change" id="change-picture"><label  for="file" style={{cursor: 'pointer'}}>Upload Image</label></p>
                         
                     </div>
@@ -62,18 +65,17 @@ function EditProfile() {
                                 </div>
                                 <input className="edit-profile-input" type="text" placeholder={accounts[0].gender} disabled={disabledGender? true: false}/>
                             
-                        
-                            
                                 <div className="edit-profile-row">
                                     <p>Contact Number</p>
                                 </div>
                                 <input className="edit-profile-input" type="text" placeholder={accounts[0].contact} disabled={disabledContact? true: false}/>
                             
-                    
                                 <div className="edit-profile-row">
                                     <p>Occupation</p>
                                 </div>
+
                                 <input className="edit-profile-input"  type="text" placeholder={accounts[0].occupation} disabled={disabledOccupation? true: false}/>
+                                
                                 <button className={saveAppear?"container-disabled":"edit-profile-change"} onClick={()=>{
                                     setInputActive(true); 
                                     setDisableName(false);
@@ -83,7 +85,9 @@ function EditProfile() {
                                     setDisableContact(false);
                                     setDisableOccupation(false);
                                     }}>EDIT</button>
+
                                 <button className={saveAppear?"edit-profile-save-change":"container-disabled"} onClick={()=>{setIsOpen(true);}} >SAVE CHANGES</button>
+                                
                                 <ConfirmWindow open={isOpen} onClose={()=> {
                                     if(true/*if yes or no button*/){
                                         setInputActive(false); 
