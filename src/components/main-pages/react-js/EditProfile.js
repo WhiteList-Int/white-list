@@ -1,6 +1,5 @@
 import React, {useState, useRef} from 'react'
 import '../css/EditProfile.css'
-import NavbarFixed from '../../essentials/NavbarFixed';
 import { accounts } from '../../profile-sources/account';
 import ConfirmWindow from '../../owner-dash-sources/ConfirmWindow';
 import ProfileNavbar from '../../profile-sources/ProfileNavbar';
