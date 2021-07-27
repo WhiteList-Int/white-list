@@ -327,7 +327,7 @@ $btn-bg-color: linear-gradient(
                 display: grid;
                 grid-auto-flow: auto auto;
                 align-items: center;
-                justify-content: center;
+                justify-items: center;
                 height: fit-content;
                 min-width: 250px;
                 img{
@@ -386,16 +386,19 @@ $btn-bg-color: linear-gradient(
                         justify-items: center;
                         height: fit-content;
                         p{
+                            cursor: pointer;
                             text-align: center;
                             word-wrap: break-word;
                             width: 100%;
                         }
                         svg{
+                            cursor: pointer;
                             transform: scale(2);
                         }
                     }
                     a {
                         text-decoration: none !important;
+                        cursor:auto;
                         &:hover{
                             color:hsl(198, 45%, 45%) !important;
                         }
