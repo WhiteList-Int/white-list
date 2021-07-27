@@ -16,6 +16,7 @@ import RoomIcon from '@material-ui/icons/Room';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import Select from 'react-select';
 import "../css/RentalDashboard.css";
+import { useAuth } from '../../FirebaseStuff/AuthContext';
 
 const RentalDashboard = () => {
     const filterRental = useRef("all");
@@ -23,16 +24,20 @@ const RentalDashboard = () => {
     const [isChanged,setIsChanged] = useState(false);
     const [windowState, setWindowState] = useState(true);
 
+    const { currentUser } = useAuth();
+
     const [rentalFilter,setRentalFilter] = useState(()=>{
         const pathName = window.location.pathname;
+<<<<<<< HEAD
         var defaultRentalFilter = filterOptions.map((data) => {
+=======
+        var defaultRentalFilter = "all";
+        filterOptions.map((data) => {
+>>>>>>> parent of b0b7368 (7.4 Stable Update)
             if(pathName.includes(data.value)){
-                return data.value;
-            } else{
-                return "all";
+                defaultRentalFilter = data.value;
             }
         });
-        
         console.log(defaultRentalFilter);
         return defaultRentalFilter;
     });

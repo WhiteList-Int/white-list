@@ -18,6 +18,7 @@ import starUnfilled from '../images/star-unrated.svg';
 import imgSrc from "../main-pages/comp/imgSrc";
 import './RentalPreview.scss';
 import ImagePopup from './../pop-ups/ImagePopup';
+import { NavLink } from "react-router-dom";
 import sampleReviews from './../main-pages/comp/sampleReviews';
 import ContactOwnerPopup from './../pop-ups/ContactOwnerPopup';
 import Footer from './../essentials/Footer';
@@ -139,7 +140,6 @@ const RentalPreview = () => {
                             <SingleBedOutlinedIcon id={data==='Single Bed'?'show-icon':'hide-icon'}/>
                             <BathtubOutlinedIcon id={data==='Bathtub'?'show-icon':'hide-icon'}/>
                             <RssFeedOutlinedIcon id={data==='Wi-fi'?'show-icon':'hide-icon'}/>
-                            <LocalLaundryServiceOutlinedIcon id={data==='Laundromat'?'show-icon':'hide-icon'}/>
                             <h4>{data}</h4>
                           </div>
                         )

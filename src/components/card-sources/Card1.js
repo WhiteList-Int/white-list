@@ -1,23 +1,13 @@
 import React from 'react';
-import { useState, useRef } from 'react';
 import Img1 from '../images/lodginghouse.svg';
 import Img2 from '../images/boarding-houses.svg';
 import Img3 from '../images/apartments.svg';
 import Img4 from '../images/rent-house.svg';
 import Img5 from '../images/hotels.svg';
 import Img6 from '../images/lease.svg';
-import SignIn from './../pop-ups/SignIn';
+import { NavLink } from 'react-router-dom';
 
 const Card1 = () => {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const [isRedirect, setIsRedirect] = useState(false);
-    const link = useRef('/rental-dashboard/all');
-
-    const showScroll = () => {
-        document.body.setAttribute('style','overflow-y:scroll;');
-    }
-
     const bubbles = [
         { imgs: Img1, text: 'Lodging House', link: '/rental-dashboard/lodginghouse', id: 'b1', key: 1},
         { imgs: Img2, text: 'Boarding House', link: '/rental-dashboard/boardinghouse', id: 'b2', key: 2},
@@ -31,18 +21,12 @@ const Card1 = () => {
             <h1>VARIOUS RENTAL SERVICES</h1>
             <div className="card-1-container">
                 {bubbles.map((bub) => (
-                    <span onClick={() => {link.current=bub.link; setIsOpen(true); setIsRedirect(false)}} className = 'card-1-bubbles' id = {bub.id} key = {bub.key}>
+                    <NavLink to = {bub.link} className = 'card-1-bubbles' id = {bub.id} key = {bub.key}>
                         <div className="card-1-bubbles-cont-img"><img className="card-1-bubbles-img" src = {bub.imgs} alt = {bub.text}/></div>
                         <div className='card-1-bubbles-text'><center><h2>{bub.text}</h2></center></div>
-                    </span>
+                    </NavLink>
                 ))}
             </div>
-            <SignIn open={isOpen} 
-                redirect={isRedirect}
-                onRedirect={() => {setIsRedirect(!isRedirect)}}
-                onClose={() => {setIsOpen(false);showScroll();}}
-                directTo={link.current}
-            />
         </div>
     )
 }
