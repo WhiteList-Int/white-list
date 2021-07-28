@@ -687,6 +687,42 @@ $btn-bg-color: linear-gradient(
             }
         }
     }
+    &-profile{
+        height: 70px;
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 10;
+        width: 100vw;
+        display: flex;
+        background: hsl(0, 0%, 100%);
+        box-shadow: 0px 1px 10px hsla(0, 0%, 0%, 0.5);
+        align-items: center;
+        &-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            &-header-img{
+                width: 150px;
+                padding: 15px;
+                margin-left: 30px;
+            }
+            &-links{
+                margin-left: 3vw;
+                color: white;
+                font-weight: 400;
+                color: hsl(198, 90%, 25%);
+                font-size: clamp(1rem, 1.1rem, 1.2rem);
+                font-family: " Poppins ";
+                text-decoration: none;
+                &:hover {
+                    color: hsl(189, 98%, 35%);
+                    text-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.2);
+                }
+            }
+        }
+    }
 }
 
 

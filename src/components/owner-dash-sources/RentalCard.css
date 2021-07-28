@@ -1,14 +1,12 @@
 /* Background to Cards*/
 .owner-rental {
-  height: clamp(400px, 55vh, 800px);
+  height: clamp(300px, 20vh, 500px);
   width: 100%;
   padding: 2vh 2vw 2vh 2vw;
-  background-color: rgba(0, 0, 0, 0.26);
-  margin-top: 5vh;
+  padding-top: 10vh;
+  padding-bottom: 100vh;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 10vh;
 }
 

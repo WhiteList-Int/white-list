@@ -221,3 +221,91 @@ $bg-color: linear-gradient(
         }
     }
 }
+.owner{
+    
+    &-dashboard{
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 100px;
+        background: linear-gradient(
+            to top, 
+            hsla(198, 90%, 25%, .50) 0%, 
+            hsla(198, 52%, 68%, .25) 40%,
+            hsla(198, 52%, 68%, .1) 100%
+        );
+        &-title{
+            width: 100vw;
+            grid-column-start: 1;
+            grid-column-end: span 3;
+            padding-left: 50px;
+            h1{
+                font-size: clamp(30px, 3vw, 40px);
+                font-family: "Montserrat", sans-serif;
+                background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
+                background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+            }
+        }
+        &-card{
+            width: 100%;
+            &-container{
+                &-rental{
+                    &-img{
+
+                    }
+                }
+                &-left{
+                    &-description{
+                        &-disabled{
+
+                        }
+                    }
+                    &-wrapper{
+                        &-edit{
+                            &-disable{
+
+                            }
+                            &-enable{
+
+                            }
+                        }
+                        &-save{
+
+                        }
+                    }
+                }
+                &-right{
+                    &-cont{
+                        &-nav{
+
+                        }
+                        &-wrapper{
+                            &-buttons{
+                                &-negative{
+
+                                }
+                                &-positive{
+
+                                }
+                            }
+                            &-details{
+
+                            }
+                        }
+                    }
+                    &-hidden{
+
+                    }
+                }
+                &-remove{
+                    &-button{
+
+                    }
+                }
+            }
+        }
+    }   
+}

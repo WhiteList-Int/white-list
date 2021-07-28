@@ -1,14 +1,13 @@
-import Img from '../images/white-list-text.svg';
-import "./OwnerNavbar.css";
+import Img from '../images/white-list-text-gradient.svg';
 import { NavLink } from 'react-router-dom';
 
 function OwnerNavbar() {
     return (
-        <nav className = 'nav-owner'>
-            <div className = 'nav-owner-container'>
-                <NavLink to = '/homepage'><img className = 'nav-owner-header-img' src = {Img} alt="WhiteList"></img></NavLink>
-                <NavLink to="/owner-dashboard" className="owner-links">Owner's Profile</NavLink>
-                <NavLink to="/owner-rental" className="owner-links">Your Rental</NavLink>
+        <nav className = 'navbar-profile'>
+            <div className = 'navbar-profile-container'>
+                <NavLink to = '/homepage'><img className = 'navbar-profile-container-header-img' src = {Img} alt="WhiteList"></img></NavLink>
+                <NavLink to="/owner-dashboard" className="navbar-profile-container-links">Owner's Profile</NavLink>
+                <NavLink to="/owner-rental" className="navbar-profile-container-links">Your Rental</NavLink>
                 {/* <NavLink to="/profile-connects" className="owner-links">Your Connects</NavLink> */}
             </div> 
            

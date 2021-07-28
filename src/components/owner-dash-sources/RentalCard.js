@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import { rentals } from "./dataSrc";
-import { pends } from "./pendSrc";
+import { rentals, pends, archives } from "./dataSrc";
 import './RentalCard.css'
 import IconButton from '@material-ui/core/IconButton';
 import CreateIcon from '@material-ui/icons/Create';
@@ -9,15 +8,14 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
-import ConfirmWindow from './ConfirmWindow'
-import { archives } from './archivedSrc';
+import ConfirmWindow from './ConfirmWindow';
 
 function RentalCard() {
     
     const [isOpen, setIsOpen] = useState(false);
     const showScroll = () => {
         document.body.setAttribute('style', 'overflow-y:scroll;');
-     }
+    }
     const [disableDescription, setDisDescription] = useState(false);
     const [editDescription, setEditDesc] = useState(false);
     const [showPending, setPendActive] = useState(false);
@@ -62,7 +60,7 @@ function RentalCard() {
                             <div className={showPending? "container-disabled":"owner-dash-pending-container"} >
                                 <h2 >Pending Connections</h2>
                                 <button className="owner-dash-small-button" >
-                                    <IconButton onClick = {() => { setPendActive(true);setDisDescription(true);setArchActive(false);setEditDesc(false);}}>
+                                <IconButton onClick = {() => { setPendActive(true);setDisDescription(true);setArchActive(false);setEditDesc(false);}}>
                                         <AddIcon fontSize='medium' />
                                     </IconButton>
                                 </button>
