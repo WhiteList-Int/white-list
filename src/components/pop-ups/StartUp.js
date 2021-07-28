@@ -6,8 +6,6 @@ import { transitions } from '../../page-transitions';
 import Img1 from '../images/ssstep1.png';
 import Img2 from '../images/ssstep5.png';
 import Img5 from '../images/ssstep6.png';
-import Img6 from '../images/ssstep7.png';
-import Img7 from '../images/ssstep8.png';
 import Img9 from '../images/ssstep10.png';
 
 export default function StartUp({open, onClose}) {

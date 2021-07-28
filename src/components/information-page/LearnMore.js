@@ -1,5 +1,10 @@
 import React from 'react';
-import Img2 from '../images/white-list-icon-gradient.svg';
+import Img1 from '../images/stock1.jpg';
+import Img2 from '../images/stock2.jpg';
+import Img3 from '../images/stock3.jpg';
+import Img4 from '../images/stock4.jpg';
+import Img5 from '../images/stock5.jpg';
+import Img6 from '../images/stock6.jpg';
 import Footer from '../essentials/Footer'
 import NavbarFixed from '../essentials/NavbarFixed';
 import { motion } from 'framer-motion';
@@ -11,7 +16,7 @@ function LearnMore() {
     return (
         <>
             <NavbarFixed />
-            <body className="learn-more-page">
+            <body className="learn-more">
                 {window.scroll(0,0)}
 
                 <motion.div 
@@ -22,8 +27,36 @@ function LearnMore() {
                     variants={variants}
                     transition={transitions.tweenEaseOutFast}
                 >
-                    <img className = "learn-more-bg-icon" src = {Img2} alt="WhiteList"></img>
-                    <h1 className="learn-more-h1">General</h1>
+                <div className="learn-more-container-section">
+                    <div className="learn-more-container-section-1">
+                        <img src={Img1} alt="" />
+                        <div className="learn-more-container-section-overlay">
+                            <h1>Host your Rental <br/> with <span>WhiteList</span></h1>
+                        </div>
+                    </div>
+                    <div className="learn-more-container-section-2">
+                        <h2>We'll help you gain new connections</h2>
+                        <div className="learn-more-container-section-2-grid">
+                        
+                                <img src={Img2} alt="" />
+                          
+                            
+                                <img src={Img3} alt="" />
+                            
+                           
+                                <img src={Img4} alt="" />
+                           
+                        </div>
+                    </div>
+                </div>
+               
+                {/* <img src={Img2} alt="stock photo2" />    
+                <img src={Img3} alt="stock photo3" />    
+                <img src={Img4} alt="stock photo4" />    
+                <img src={Img5} alt="stock photo5" />    
+                <img src={Img6} alt="stock photo6" />     */}
+                
+                    {/* <h1 className="learn-more-h1">General</h1>
                     <h2 className="learn-more-h2" id="type1-h2">What is a Rental Owner?</h2>
                     <p className="learn-more-p" id="type1-p">The primary goal of our company is to be trusted and reliable in providing
                         its users with a simplified method for finding and connecting people to rentable 
@@ -35,9 +68,7 @@ function LearnMore() {
                        
                     <h2 className="learn-more-h2" id="type2-h2">How do Rental Owners host their rental?</h2>
                     <p className="learn-more-p" id="type3-p">Once you contact WhiteList, you will receive an email 
-                    from us containing the requirements and instructions on how to host your rental. 
-                    Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod ab debitis unde cum minima repellat, quos harum quaerat ullam rem ducimus non accusamus esse veritatis ipsa assumenda! Iste quas expedita sunt, voluptas mollitia, distinctio maiores ex assumenda sint quod libero sed molestias. Dolorum nisi quas doloribus, nulla esse nemo dignissimos. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab dolorem laboriosam rem porro assumenda. Doloremque corporis libero voluptatem architecto odio, commodi ut maxime, adipisci sed reprehenderit saepe! Officia deleniti voluptatum, voluptatibus optio earum distinctio et ullam quibusdam nisi est repellat saepe pariatur impedit eius omnis cum enim. Quibusdam sit harum dignissimos sint, praesentium dolor esse impedit enim nostrum, magnam excepturi non, nobis culpa iste delectus quis iusto placeat fugit commodi optio libero fuga voluptatibus modi. Enim voluptatibus soluta minus assumenda officia voluptates expedita tempora ut! Itaque nostrum odio recusandae, possimus natus sed reiciendis sequi illo quae animi laudantium aliquam fugiat!</p>
-                    <p className="learn-more-p" id="type3-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, neque architecto. Voluptas aliquam ut sit placeat assumenda accusantium adipisci asperiores tempore consectetur dolorem totam minus, commodi illo cum illum? Minima dicta architecto temporibus repellat itaque tenetur sed alias repudiandae consequuntur facilis iste voluptas, optio aliquam neque soluta corporis commodi vero rerum. Quod perspiciatis, recusandae, error debitis eos et repellendus adipisci eius ad voluptatem vitae tenetur? Rem sed natus molestiae eligendi accusamus doloremque aliquid nostrum optio. Nulla rem itaque temporibus veritatis sed impedit inventore, magnam neque dolores eum ratione quis vel iure ipsa debitis non molestiae ut. Similique sint, pariatur earum cupiditate debitis itaque dolorem eligendi vero rem minima deserunt quia eos fugit quidem at alias tempore illum reprehenderit qui nihil ipsam fugiat esse sunt? Eaque, pariatur quod. Ipsum voluptatibus obcaecati fugiat alias magnam rem laborum explicabo enim tempore doloremque deleniti, ad voluptas in harum debitis nisi impedit commodi delectus! Animi optio quisquam at nesciunt rem praesentium velit eos dolore, dicta veritatis quibusdam consectetur numquam ut autem! At cum eaque ratione voluptas maiores quaerat, ullam harum, eos tenetur eveniet reprehenderit. Facilis sed minus dolorum incidunt vero corrupti architecto natus optio? Quod commodi corrupti temporibus blanditiis quis inventore cum voluptates nobis consequuntur!</p>
+                    from us containing the requirements and instructions on how to host your rental. */}
                 </motion.div>
             </body>
             <Footer />
