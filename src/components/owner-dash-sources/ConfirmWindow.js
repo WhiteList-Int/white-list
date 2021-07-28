@@ -9,7 +9,6 @@ export default function ConfirmWindow({open, onClose}) {
         <>
             {document.body.setAttribute('style','overflow:hidden;')}
                 <div className="confirm-window-page">
-                    <div className="exit-zone" onClick={onClose}></div>
                     <div className="confirm-window-cont">
                         <div className="confirm-type-cont">
                             <h3>Confirm</h3>
@@ -18,8 +17,8 @@ export default function ConfirmWindow({open, onClose}) {
                             <p>Are you sure you would like to continue?</p>
                         </div>
                         <div className="confirm-buttons-cont">
-                            <button className="confirm-no-button" onClick={()=>{}}>No</button>
-                            <button className="confirm-yes-button"onClick={()=>{}}>Yes</button>
+                            <button className="confirm-no-button" onClick={()=>{onClose(false)}}>No</button>
+                            <button className="confirm-yes-button" onClick={()=>{onClose(true)}}>Yes</button>
                         </div>
                     </div>
                 </div>
