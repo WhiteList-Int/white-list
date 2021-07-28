@@ -23,11 +23,11 @@ function OwnerDashboard() {
     return (
         <>
             <OwnerNavbar />
-            <body className="owner">
-                <div className="owner-title">
-                    <h1>Your Rental</h1>
-                </div>
+            <body className="owner-dashboard">
                 <div className="owner-dashboard-card">
+                    <div className="owner-dashboard-title">
+                        <h1>Your Rental</h1>
+                    </div>
                     {rentals.map((rental) => (
                         <div className="owner-dashboard-card-container">
                             <div className="owner-dashboard-card-container-rental">

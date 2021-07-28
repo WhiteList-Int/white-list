@@ -222,9 +222,9 @@ $bg-color: linear-gradient(
     }
 }
 .owner{
-    
     &-dashboard{
         display: grid;
+        grid-auto-flow: row;
         width: 100vw;
         height: 100vh;
         padding-top: 100px;
@@ -252,6 +252,8 @@ $bg-color: linear-gradient(
         &-card{
             width: 100%;
             &-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
                 &-rental{
                     &-img{
 
