@@ -22,8 +22,6 @@ $btn-bg-color: linear-gradient(
   margin: 0;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,68 +31,98 @@ $btn-bg-color: linear-gradient(
   background: -webkit-linear-gradient(to top, #85d8ce, #085070); /* Chrome 1*/
   background: $bg-color;
   font-family: Arial, Helvetica, sans-serif;
-
+  position: relative;
+  text-align: justify;
   &-container {
-    height: 230vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-top: 7vh;
     background-color: #e2eef3;
     &-section {
-      height: 110vh;
-      width: 100%;
-      position: relative;
-      text-align: justify;
-      &-1 {
-        img {
+      margin: 0;
+      height: 100%;
+      width: 100vw;
+      &-top {
+        height: 100vh;
+        &-cont {
           height: 100%;
-          width: 100%;
-          object-fit: cover;
-          position: absolute;
-        }
-        h1 {
-          text-align: center;
-          padding: 2vh 2vw;
-          font-size: 72px;
-          font-weight: 300;
-          font-family: "Montserrat", sans-serif;
-          span {
-            font-weight: 600;
+          img {
+            height: 100vh;
+            width: auto;
+            object-fit: contain;
+          }
+          &-overlay {
+            height: 100vh;
+            padding: 2vh 2vw;
+            width: clamp(250px, 50%, 450px);
+            background: linear-gradient(to top, #85d8ceb2, #085170a1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: absolute;
+            transition: 1s;
+            h1 {
+              text-align: center;
+              font-size: clamp(50px, 7vw, 82px);
+              transition: 1s;
+              font-weight: 300;
+              font-family: "Montserrat", sans-serif;
+              span {
+                font-weight: 600;
+                background: $txt-gradient-fallback-clr; /* fallback for old browsers */
+                background: $txt-gradient-clr;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 1px 4px 10px rgba(7, 7, 7, 0.356);
+              }
+            }
           }
         }
       }
-
-      &-overlay {
-        height: 100%;
-        width: 40%;
-        background: linear-gradient(to top, #85d8ceb2, #085170a1);
+      &-mid {
+        height: clamp(250px, 20vh, 300px);
+        width: 100%;
+        position: relative;
+        background-color: #12313f;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        color: white;
-        position: absolute;
-      }
-
-      &-2 {
-        height: 120vh;
-        width: 100%;
-        top: 110vh;
-        position: absolute;
-        background-color: #085170;
+        transition: 1s;
+        padding: 0 1vw;
         h2 {
-          text-align: center;
-          padding: 5vh 2vw;
-          font-size: 64px;
+          font-size: clamp(40px, 8vw, 64px);
           font-weight: 400;
           font-family: "Montserrat", sans-serif;
+          transition: 1s;
         }
+      }
+      &-bottom {
+        height: 100%;
         &-grid {
+          background: linear-gradient(to top, #85d8ce, #085170);
+          width: 100%;
+          display: grid;
           grid-template-columns: 1fr 1fr 1fr;
-          object-fit: contain;
+          align-items: end;
+          justify-items: center;
+        }
+        img {
+          border-top-left-radius: 20px;
+          height: auto;
+          width: 100%;
+          box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.274);
+        }
+      }
+      &-text {
+        height: 50vh;
+        background-color: #ffffff75;
+        padding: 10vh 10vw 0 10vw;
+        h3 {
+          font-size: clamp(20px, 15vw, 40px);
+          margin: 0;
+          background: $txt-gradient-fallback-clr; /* fallback for old browsers */
+          background: $txt-gradient-clr;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
     }
