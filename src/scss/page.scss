@@ -158,8 +158,10 @@ $bg-color-gradient: linear-gradient(
   justify-content: center;
   background: white;
   font-family: Arial, Helvetica, sans-serif;
-  padding-top: 80px;
-
+  padding-top: 70px;
+  #terms-data-src {
+    color: rgba(128, 128, 128, 0.404);
+  }
   &-container {
     color: black;
     padding: 2vh 0 5vh 0;

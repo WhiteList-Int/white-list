@@ -285,7 +285,7 @@ function TermsService() {
                     <h2 className="terms-service-h2">24. Contact Information</h2>
                     <p className="terms-service-p2">Questions or concerns: hello@whitelist.ph</p>
                     
-                    <p>https://rentalbee.ph/terms-of-service</p>
+                    <p className="terms-service-p2" id="terms-data-src">Reference: https://rentalbee.ph/terms-of-service</p>
                     </motion.div>
                 </body>
                 <Footer/>
