@@ -8,9 +8,7 @@ import Img2 from '../images/ssstep5.png';
 import Img5 from '../images/ssstep6.png';
 import Img6 from '../images/ssstep7.png';
 import Img7 from '../images/ssstep8.png';
-import Img8 from '../images/ssstep9.png';
 import Img9 from '../images/ssstep10.png';
-import './StartUp.css';
 
 export default function StartUp({open, onClose}) {
     if(!open) return null;
@@ -19,7 +17,7 @@ export default function StartUp({open, onClose}) {
         <>
             {document.body.setAttribute('style','overflow:hidden;')}
             <motion.div 
-                className="start-up"
+                className="start-now"
                 initial="fadeOut" 
                 animate="fadeIn" 
                 exit="fadeOut"
@@ -31,46 +29,42 @@ export default function StartUp({open, onClose}) {
                     <div className="start-now-renter">
                        <center> <h1>Looking for Rentals?</h1></center>
                        <center>
-                            <h2>WhiteList gives you an easier way to find your desired rental!</h2>
+                            <h2>WhiteList offers you an easy way to find your desired rental.</h2>
+                            <h2>Just within 4 steps, you're Done!</h2>
                        </center>
                     </div>
-                    <div className="start-now-parent-grid">
+                    <div className="start-now-grid">
                         
                         <div className="start-now-steps">
                             <img src={Img1} alt="renter"/>
                             <div className="start-now-text-cont">
                                 <h2>Step 1</h2>
-                                <p>  </p>
+                                <h3> Log In to WhiteList </h3>
                             </div>
                         </div>
                         <div className="start-now-steps">
                             <img src={Img2} alt="rent owner"/>
-                            <h2>Step 2</h2>
+                            <div className="start-now-text-cont">
+                                <h2>Step 2</h2>
+                                <h3> Browse available Rentals </h3>
+                            </div>
                         </div>
 
                         <div className="start-now-steps">
                             <img src={Img5} alt="rent owner"/>
-                            <h2>Step 5</h2>
+                            <div className="start-now-text-cont">
+                                <h2>Step 3</h2>
+                                <h3> Choose a Rental </h3>
+                            </div>
                         </div>
 
-                        <div className="start-now-steps">
-                            <img src={Img6} alt="rent owner"/>
-                            <h2>Step 6</h2>
-                        </div>
-
-                        <div className="start-now-steps">
-                            <img src={Img7} alt="rent owner"/>
-                            <h2>Step 7</h2>
-                        </div>
-
-                        <div className="start-now-steps">
-                            <img src={Img8} alt="rent owner"/>
-                            <h2>Step 8</h2>
-                        </div>
 
                         <div className="start-now-steps">
                             <img src={Img9} alt="rent owner"/>
-                        <h2>Step 9</h2>
+                            <div className="start-now-text-cont">
+                               <h2>Step 4</h2>
+                                <h3> Connect with an Owner </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
