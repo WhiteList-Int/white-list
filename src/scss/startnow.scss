@@ -39,22 +39,25 @@ $btn-bg-color: linear-gradient(
     display: flex;
     flex-direction: column;
     padding: 3vh 0 10vh 0;
-    & h2 {
+    h2 {
       background: $txt-gradient-fallback-clr; /* fallback for old browsers */
       background: $txt-gradient-clr;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: clamp(28px, 30px, 1.2rem);
+      font-size: clamp(20px, 3vw, 30px);
       font-weight: 600;
       margin: 4vh 4vw;
     }
   }
-  &-renter h1 {
-    font-size: clamp(1rem, 2.5rem, 3rem);
-    background: $txt-gradient-fallback-clr; /* fallback for old browsers */
-    background: $txt-gradient-clr;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &-renter{
+    padding-top: 30px;
+    h1 {
+      font-size: clamp(28px, 4.5vw, 50px);
+      background: $txt-gradient-fallback-clr; /* fallback for old browsers */
+      background: $txt-gradient-clr;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
   &-grid {
     display: grid;
@@ -65,14 +68,15 @@ $btn-bg-color: linear-gradient(
   }
   &-steps {
     display: grid;
+    padding: 30px;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     grid-column-gap: 2vw;
     background-color: rgba(255, 255, 255, 0.377);
-    border-radius: 20px;
-    & img {
-      height: 100%;
+    img {
+      height: auto;
       width: 100%;
-      border-radius: 20px;
+      border-radius: 10px;
       box-shadow: -5px 7px 7px rgba(0, 0, 0, 0.438);
     }
     @media screen and (max-width: 600px) {
@@ -81,9 +85,7 @@ $btn-bg-color: linear-gradient(
       justify-items: center;
       padding: 5vh 0 5vh 0;
       & img {
-        height: 30vh;
         width: 80%;
-        border-radius: 20px;
         box-shadow: -5px 7px 7px rgba(0, 0, 0, 0.438);
       }
     }
@@ -91,20 +93,22 @@ $btn-bg-color: linear-gradient(
   &-text-cont {
     height: 100%;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
-    & h2 {
-      font-size: clamp(1.8rem, 35px, 3rem);
+    h2 {
+      margin: 0;
+      font-size: clamp(20px, 3vw, 25px);
+      text-align: center;
     }
-    & h3 {
-      font-size: clamp(1.5rem, 30px, 2rem);
-
+    h3 {
+      margin:0;
+      padding-top: 20px;
+      font-size: clamp(25px, 2.5vw, 30px);
+      text-align: center;
       background: rgb(44, 44, 44);
-
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { accounts } from '../profile-sources/account';
-import ConfirmWindow from './ConfirmWindow';
-import OwnerNavbar from './OwnerNavbar';
+import { accounts } from './../profile-sources/account';
+import ProfileNavbar from './../profile-sources/ProfileNavbar';
+import ConfirmWindow from '../owner-dash-sources/ConfirmWindow';
 import ppImg from '../images/no_user.png';
 import Footer from './../essentials/Footer';
 import { motion } from 'framer-motion';
 import { variants } from './../../animation-variants';
 import { transitions } from './../../page-transitions';
 
-function OwnerProfile() {
+
+function EditProfile() {
 
     const [enableFields, setEnableFields] = useState(true);
     const [saveAppear, setSaveAppear] = useState(false);
@@ -25,7 +26,7 @@ function OwnerProfile() {
     return (
         <>
         <div className="edit-profile-background">
-            <OwnerNavbar /> 
+            <ProfileNavbar /> 
             <div className="edit-profile"
                 initial="slideOutYOpp" 
                 animate="slideInYOpp" 
@@ -147,4 +148,4 @@ function OwnerProfile() {
     )
 }
 
-export default OwnerProfile
+export default EditProfile

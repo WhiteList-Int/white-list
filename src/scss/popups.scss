@@ -386,6 +386,7 @@ $btn-bg-color: linear-gradient(
                         justify-items: center;
                         height: fit-content;
                         p{
+                            padding:10px;
                             cursor: pointer;
                             text-align: center;
                             word-wrap: break-word;
@@ -400,7 +401,7 @@ $btn-bg-color: linear-gradient(
                         text-decoration: none !important;
                         cursor:auto;
                         &:hover{
-                            color:hsl(198, 45%, 45%) !important;
+                            color:hsl(0, 0%, 100%) !important;
                         }
                     }
                 }

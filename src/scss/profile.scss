@@ -1,227 +1,311 @@
-.edit-profile-page {
-    background: hsl(198, 87%, 24%);
-    background: -webkit-linear-gradient(
-      to top,
-      hsl(173, 52%, 68%),
-      hsl(198, 87%, 20%)
-    );
-    background: linear-gradient(to top, hsl(173, 52%, 68%), hsl(198, 87%, 24%));
-    width: 100vw;
+$bg-color: linear-gradient(
+    to top, 
+    hsla(198, 90%, 25%, .50) 0%, 
+    hsla(198, 52%, 68%, .25) 20%,
+    hsla(198, 52%, 68%, .15) 30%,
+    hsla(198, 52%, 68%, .1) 100%
+);
+
+.edit-profile{
     height: 100%;
-    display: flex;
-    flex-direction: row;
+    width: calc(100% - 60px);
+    display: grid;
+    justify-items: center;
     align-items: center;
-    justify-content: flex-end;
-}
-  
-.edit-profile-card-image {
-    background-color: #b8c6db;
-    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-    width: clamp(250px, 45vw, 300px);
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-self: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
-    transition: 0.5s;
-    box-shadow: 2px 2px 10px #000;
-}
-.edit-profile-card-input {
-    width: clamp(520px, 75%, 78vw);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.edit-profile-card-input-cont {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.171);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 5vh 0 5vh 0;
-}
-  
-.edit-profile-picture {
-    height: clamp(200px, 250px, 300px);
-    width: clamp(200px, 250px, 300px);
-    margin-top: 7vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.edit-profile-picture img {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    object-fit: cover;
-    border-radius: 50%;
-}
-  
-.edit-profile-change {
-    transition: 0.1s;
-    margin-top: 5vh;
-    height: clamp(45px, 6vh, 60px);
-    width: clamp(250px, 23vw, 300px);
-    background-color: #19282f;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    position: relative;
-    letter-spacing: 2px;
-}
-.edit-profile-change:hover {
-    color: hsl(0, 0%, 0%);
-    background-color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-  
-#change-picture {
-    transition: 0.1s;
-    margin: 0;
-    height: clamp(20px, 25px, 30px);
-    width: clamp(100px, 150px, 200px);
-    text-align: center;
-    background-color: #19282f;
-    color: hsl(0, 0%, 100%);
-    border-radius: 10px;
-    position: relative;
-    letter-spacing: 0px;
-}
-  
-#change-picture:hover {
-    color: hsl(0, 0%, 100%);
-    background-color: black;
-    cursor: pointer;
-}
-  
-.edit-profile-info-cont {
-    margin: 1vh 0 1vh 0;
-    width: 50%;
-}
-  
-.edit-profile-input {
-    height: clamp(40px, 1vh, 55px);
-    width: 100%;
-    border-radius: 5px;
-    border: 2px inset;
-    font-size: large;
-    padding: 0.2vh 0.5vw;
-}
-  
-.edit-profile-input:disabled {
-    transition: 1s;
-    background-color: #b8c6db;
-    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-}
-  
-.edit-profile-input[type="date"] {
-    color: black;
-}
-.edit-profile-input::placeholder {
-    color: black;
-}
-  
-.edit-profile-input:focus::placeholder {
-    color: grey;
-}
-  
-.edit-profile-row {
-    margin: 2vh 0 1vh 0;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-start;
-}
-  
-.edit-profile-row p {
-    height: 100%;
-    font-size: clamp(1rem, 1.125rem, 1.3rem);
-    font-weight: 500;
-    width: 69%;
-    color: white;
-    margin: 0;
-    padding: 0;
-    align-self: flex-end;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
-}
-  
-.edit-profile-save-change {
-    transition: 0.2s;
-    margin-top: 5vh;
-    height: clamp(45px, 6vh, 60px);
-    width: clamp(250px, 23vw, 300px);
-    background-color: #19282f;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    position: relative;
-    letter-spacing: 1px;
-}
-  
-.edit-profile-save-change:hover {
-    background-color: #3ed598;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-}
-  
-@media screen and (max-width: 700px) {
-    .edit-profile-page {
-      flex-direction: column;
+    grid-template-columns: 1fr 3fr;
+    @media screen and (max-width:800px){
+        grid-template-columns: 1fr;
+        &-container{
+            background: transparent !important;
+            margin-top:120px;
+        }
+        &-wrapper{
+            margin-bottom: 150px;
+        }
     }
-    .edit-profile-card-image {
-      width: 80%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      position: relative;
-      padding-bottom: 5vh;
-      transition: 0.5s;
-      box-shadow: 0 0 0 #000;
+    &-background{
+        min-height: 100vh;
+        width: 100vw;
+        background: $bg-color;
+        display: grid;
+        justify-items: center;
+        align-items: center;
     }
-  
-    .edit-profile-card-input {
-      width: 100%;
-      box-shadow: 2px 2px 10px #000;
-      border-radius: 30px;
+    &-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+            to top, 
+            hsla(198, 90%, 25%, .50) 0%, 
+            hsla(198, 52%, 68%, .25) 40%,
+            hsla(198, 52%, 68%, .1) 100%
+        );
+        height:100%;
+        width: 100%;
+        &-img{
+            img{
+                margin-top: 30px;
+                height: clamp(150px,20vw,250px);
+                width: clamp(150px,20vw,250px);
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+        }
+        &-change{
+            label{
+                background-image: $btn-bg-color;
+                width: clamp(120px, 25vw, 150px);
+                display: flex;
+                justify-content:center;
+            
+                padding-left: clamp(20px, 5%, 30px);
+                padding-right: clamp(20px, 5%, 30px);
+                padding-top: 5px;
+                padding-bottom: 5px;
+            
+                text-decoration: none;
+                font-size: 12px;
+                font-family: "Source Sans Pro";
+                font-weight: 400;
+                text-align: center;
+                letter-spacing:2px;
+                text-transform: uppercase;
+            
+                transition: 1s;
+                background-size: 300% auto;
+                text-shadow: 1px 1px 3px grey;
+                color: white;            
+                border-radius: 30px;
+        
+                &:hover {
+                    background-position: right center; /* change the direction of the change here */
+                    text-shadow: 1px 1px 3px grey;
+                }
+            }
+        }
     }
-    .edit-profile-card-input-cont {
-      width: 100%;
-      box-shadow: 2px 2px 10px #000;
-      border-radius: 30px;
-    }
-  
-    .edit-profile-info-cont {
-      margin-top: 2vh;
-      width: 80%;
-      overflow: hidden;
-    }
-  
-    .edit-profile-input {
-      height: clamp(40px, 1vh, 55px);
-      width: 97%;
-      border-radius: 5px;
-      font-size: large;
-      padding: 0.2vh 0.5vw;
-    }
-    .edit-profile-row p {
-      height: 100%;
-      font-size: clamp(1rem, 1.125rem, 1.3rem);
-      width: 90%;
-      margin: 0;
-      padding: 0;
-      align-self: flex-end;
+    &-wrapper{
+        width: 90%;
+        min-height: 300px;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 20px;
+        padding: 30px 0;
+        border-radius: 20px;
+        border: 1px outset hsla(0, 0%, 0%, 0.1);
+        box-shadow: 5px 5px 10px hsla(0, 0%, 0%, 0.1);
+        @media screen and (max-width:800px){
+            grid-template-columns: 1fr !important;
+            &-change{
+                grid-column-start: 1 !important;
+                grid-column-end: span 1 !important;
+                &-save{
+                    grid-column-start: 1 !important;
+                    grid-column-end: span 1 !important;
+                }
+            }
+        }
+        &-row{
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            width: fit-content;
+            justify-self: center;
+            @media screen and (max-width:800px){
+                align-items: center;
+                justify-items: center;
+                &-header{
+                    grid-column-end: span 1 !important;
+                    padding-left: 0 !important;
+                    text-align: center;
+                }
+            }
+            &-header{
+                grid-column-start: 1;
+                grid-column-end: span 3;
+                padding-left: 50px;
+                p{
+                    font-size: clamp(30px, 3vw, 40px);
+                    font-family: "Montserrat", sans-serif;
+                    background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
+                    background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &-input{
+            border: none;
+            height: fit-content;
+            padding: 10px 0;
+            border-bottom: 1px solid black !important;
+            background-color: transparent;
+            &:focus{
+                outline: none;
+            }
+        }
+        &-change{
+            justify-self: center;
+            grid-column-start: 1;
+            grid-column-end: span 3;
+            background-image: $btn-bg-color;
+            width: clamp(100px, 25vw, 150px);
+            display: flex;
+            justify-content:center;
+        
+            padding-left: clamp(20px, 5%, 30px);
+            padding-right: clamp(20px, 5%, 30px);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        
+            text-decoration: none;
+            font-size: 15px;
+            font-family: "Source Sans Pro";
+            font-weight: 400;
+            text-align: center;
+            letter-spacing:2px;
+            text-transform: uppercase;
+        
+            transition: 1s;
+            background-size: 300% auto;
+            text-shadow: 1px 1px 3px grey;
+            color: white;            
+            border-radius: 30px;
+    
+            &:hover {
+                background-position: right center; /* change the direction of the change here */
+                text-shadow: 1px 1px 3px grey;
+            }
+            &-disabled{
+                display: none !important;
+            }
+            &-save{
+                background-image: $btn-bg-color;
+                width: clamp(100px, 25vw, 150px);
+                display: flex;
+                justify-content:center;
+            
+                padding-left: clamp(20px, 5%, 30px);
+                padding-right: clamp(20px, 5%, 30px);
+                padding-top: 5px;
+                padding-bottom: 5px;
+            
+                text-decoration: none;
+                font-size: 15px;
+                font-family: "Source Sans Pro";
+                font-weight: 400;
+                text-align: center;
+                letter-spacing:2px;
+                text-transform: uppercase;
+            
+                transition: 1s;
+                background-size: 300% auto;
+                text-shadow: 1px 1px 3px grey;
+                color: white;            
+                border-radius: 30px;
+        
+                justify-self: center;
+                grid-column-start: 1;
+                grid-column-end: span 3;
+
+                &:hover {
+                    background-position: right center; /* change the direction of the change here */
+                    text-shadow: 1px 1px 3px grey;
+                }
+            }
+        }
     }
 }
-  
+.owner{
+    
+    &-dashboard{
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 100px;
+        background: linear-gradient(
+            to top, 
+            hsla(198, 90%, 25%, .50) 0%, 
+            hsla(198, 52%, 68%, .25) 40%,
+            hsla(198, 52%, 68%, .1) 100%
+        );
+        &-title{
+            width: 100vw;
+            grid-column-start: 1;
+            grid-column-end: span 3;
+            padding-left: 50px;
+            h1{
+                font-size: clamp(30px, 3vw, 40px);
+                font-family: "Montserrat", sans-serif;
+                background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
+                background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+            }
+        }
+        &-card{
+            width: 100%;
+            &-container{
+                &-rental{
+                    &-img{
+
+                    }
+                }
+                &-left{
+                    &-description{
+                        &-disabled{
+
+                        }
+                    }
+                    &-wrapper{
+                        &-edit{
+                            &-disable{
+
+                            }
+                            &-enable{
+
+                            }
+                        }
+                        &-save{
+
+                        }
+                    }
+                }
+                &-right{
+                    &-cont{
+                        &-nav{
+
+                        }
+                        &-wrapper{
+                            &-buttons{
+                                &-negative{
+
+                                }
+                                &-positive{
+
+                                }
+                            }
+                            &-details{
+
+                            }
+                        }
+                    }
+                    &-hidden{
+
+                    }
+                }
+                &-remove{
+                    &-button{
+
+                    }
+                }
+            }
+        }
+    }   
+}

@@ -56,7 +56,6 @@ export default function StartUp({open, onClose}) {
                             </div>
                         </div>
 
-
                         <div className="start-now-steps">
                             <img src={Img9} alt="rent owner"/>
                             <div className="start-now-text-cont">

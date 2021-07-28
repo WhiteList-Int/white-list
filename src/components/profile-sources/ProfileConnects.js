@@ -3,13 +3,22 @@ import './ProfileConnects.css'
 import ProfileNavbar from './ProfileNavbar'
 import { rentals } from "../owner-dash-sources/dataSrc";
 import Footer from '../essentials/Footer';
+import { motion } from 'framer-motion';
+import { variants } from './../../animation-variants';
+import { transitions } from './../../page-transitions';
 
 function ProfileConnects() {
     return (
         <>
         <div className="profile-connects">
             <ProfileNavbar /> 
-                <div className="profile-connects-page">
+                <motion.div 
+                    className="profile-connects-page"
+                    initial="slideOutYOpp" 
+                    animate="slideInYOpp" 
+                    variants={variants}
+                    transition={transitions.tweenEaseOutFaster}
+                >
                     <div className="profile-connects-title-container">
                         <div className="profile-connects-label-cont">
                         <p>Date</p>
@@ -36,7 +45,7 @@ function ProfileConnects() {
                         <p className="grid-item">{rental.status}</p>
                     </div>
                     ))}
-                </div>
+                </motion.div>
         </div>
         
         <Footer />

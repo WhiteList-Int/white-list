@@ -7,24 +7,37 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background: #085070; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #85d8ce, #085272); /* Chrome 1*/
-  background: linear-gradient(to top, #85d8ce, #085070);
+  overflow-y: hidden;
+  background: linear-gradient(
+    to top, 
+    hsla(198, 90%, 25%, .50) 0%, 
+    hsla(198, 52%, 68%, .25) 40%,
+    hsla(198, 52%, 68%, .1) 100%
+  );
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .owner-dashboard-title-container {
   height: 25%;
   width: 100%;
-  background-color: #ffffff;
-  margin-top: 2vh;
+  background-color: hsla(0, 0%, 100%);
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   text-align: justify;
   position: relative;
-  box-shadow: 0px 4px 5px black;
+  box-shadow: 0px 4px 5px hsl(0, 0%, 0%, 0.1);
+}
+
+.owner-dashboard-title-container h1{
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* fallback for old browsers */
+  background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
 .your-rental {

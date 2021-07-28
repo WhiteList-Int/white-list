@@ -34,7 +34,6 @@ $btn-bg-color: linear-gradient(
             &-container{
                 display: flex;
                 flex-direction: row;
-                width: calc(fit-content + 200vh);
                 height: 100%;
                 overflow-x: hidden !important;
                 overflow-y: hidden !important;
