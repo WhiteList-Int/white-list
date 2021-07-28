@@ -182,6 +182,8 @@ function PrivacyPolicy() {
 
                     <h2 className="terms-service-h2">GOT FEEDBACK?</h2>
                     <p className="terms-service-p2">Your opinion matters to us! If you'd like to provide feedback to us about this Privacy Policy, please email us at hello@whitelist.ph </p>
+                
+                    <p>https://rentalbee.ph/data-privacy</p>
                 </motion.div>
             </body>
             <Footer/>

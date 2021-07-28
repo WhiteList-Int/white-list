@@ -5,10 +5,10 @@ $txt-gradient-fallback-clr: linear-gradient(to left, #2c5364, #203a43, #0f2027);
 $bg-color-alt: hsl(198, 87%, 24%);
 
 $bg-color-about: linear-gradient(
-    to top, 
-    hsla(198, 90%, 25%, .50) 0%, 
-    hsla(198, 52%, 68%, .25) 40%,
-    hsla(198, 52%, 68%, .1) 100%
+  to top,
+  hsla(198, 90%, 25%, 0.5) 0%,
+  hsla(198, 52%, 68%, 0.25) 40%,
+  hsla(198, 52%, 68%, 0.1) 100%
 );
 
 $bg-color: linear-gradient(
@@ -25,6 +25,13 @@ $btn-bg-color: linear-gradient(
   hsl(198, 87%, 24%) 100%
 );
 
+$bg-color-gradient: linear-gradient(
+  to top,
+  hsla(198, 90%, 25%, 0.5) 0%,
+  hsla(198, 52%, 68%, 0.25) 20%,
+  hsla(198, 52%, 68%, 0.15) 30%,
+  hsla(198, 52%, 68%, 0.1) 100%
+);
 //General Components
 .learn-more {
   margin: 0;
@@ -149,18 +156,15 @@ $btn-bg-color: linear-gradient(
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  background: #085070; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #85d8ce, #085070); /* Chrome 1*/
-  background: linear-gradient(to top, #85d8ce, #085070);
+  background: white;
   font-family: Arial, Helvetica, sans-serif;
+  padding-top: 80px;
 
   &-container {
     color: black;
     padding: 2vh 0 5vh 0;
     height: 100%;
-    width: clamp(90vw, 95%, 500px);
-    background-color: #e2eef3;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -286,190 +290,194 @@ $btn-bg-color: linear-gradient(
 
 //About Page
 .about {
-    height: 100%;
-    width: 100vw;
+  height: 100%;
+  width: 100vw;
+  display: grid;
+  position: relative;
+  grid-auto-flow: row;
+  color: white;
+  background: $bg-color-about;
+  font-family: Arial, Helvetica, sans-serif;
+
+  hr.solid {
+    border-top: 2px solid #bbb;
+    width: 100%;
+  }
+  &-icon {
+    position: fixed;
+    z-index: -1;
+    height: 50vh;
+    opacity: 0.1;
+    margin-right: -30px;
+    margin-bottom: -100px;
+    bottom: 0;
+    right: 0;
+  }
+
+  &-section {
     display: grid;
-    position: relative;
     grid-auto-flow: row;
-    color: white;
-    background: $bg-color-about;
-    font-family: Arial, Helvetica, sans-serif;
+    transition: 1s;
+    margin-top: 15vh;
+    width: 100%;
+    border-radius: 12px;
+    padding-bottom: 15vh;
 
-    hr.solid {
-        border-top: 2px solid #bbb;
-        width: 100%;
+    &-title {
+      width: 100%;
+      font-size: clamp(30px, 10vw, 50px);
+      font-family: "Montserrat", sans-serif;
+      background: $txt-gradient-fallback-clr; /* fallback for old browsers */
+      background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      text-align: center;
     }
-    &-icon{
-        position: fixed;
-        z-index: -1;
-        height: 50vh;
-        opacity: 0.1;
-        margin-right: -30px;
-        margin-bottom: -100px;
-        bottom: 0;
-        right: 0;
-    }
-
-    &-section {
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 3vh;
+      align-items: center;
+      justify-items: center;
+      width: 100%;
+      @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+      &-container {
         display: grid;
         grid-auto-flow: row;
-        transition: 1s;
-        margin-top: 15vh;
-        width: 100%;
-        border-radius: 12px;
-        padding-bottom: 15vh;
+        align-items: center;
+        justify-items: center;
+        width: 80%;
+        &-h2 {
+          margin-top: 2vh;
+          font-size: 20px;
+          padding: 1.5ch;
+          width: 100%;
+          font-family: "Source Sans Pro", sans-serif;
+          background: $txt-gradient-fallback-clr; /* fallback for old browsers */
+          background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 800;
+          border: 1px outset rgba(0, 0, 0, 0.05);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          border-radius: 5px;
+          color: #0f232f;
+        }
+        &-p {
+          font-size: medium;
+          width: 100%;
+          min-height: 250px;
+          word-wrap: normal;
+          font-family: "Source Sans Pro", sans-serif;
+          font-weight: 500;
+          border: 1px outset rgba(0, 0, 0, 0.05);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+          padding: 3ch;
+          text-align: justify;
+          text-indent: 2vw;
+          border-radius: 10px;
+          color: hsl(198, 50%, 20%);
+        }
+      }
+    }
+  }
 
-        &-title {
-            width: 100%;
-            font-size: clamp(30px,10vw,50px);
-            font-family: "Montserrat", sans-serif;
-            background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
-            background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            text-align: center;
-        }
-        &-wrapper{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-top: 3vh;
-            align-items: center;
-            justify-items: center;
-            width: 100%;
-            @media screen and (max-width:600px){
-                grid-template-columns: 1fr;
-            }
-            &-container{
-                display: grid;
-                grid-auto-flow: row;
-                align-items: center;
-                justify-items: center;
-                width: 80%;
-                &-h2 {
-                    margin-top: 2vh;
-                    font-size: 20px;
-                    padding: 1.5ch;
-                    width: 100%;
-                    font-family: "Source Sans Pro", sans-serif;
-                    background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
-                    background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-weight: 800;
-                    border: 1px outset rgba(0, 0, 0, 0.05);
-                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-                    text-align: center;
-                    border-radius: 5px;
-                    color: #0f232f;
-                }
-                &-p {
-                    font-size: medium;
-                    width: 100%;
-                    min-height: 250px;
-                    word-wrap: normal;
-                    font-family: "Source Sans Pro", sans-serif;
-                    font-weight: 500;
-                    border: 1px outset rgba(0, 0, 0, 0.05);
-                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-                    padding: 3ch;
-                    text-align: justify;
-                    text-indent: 2vw;
-                    border-radius: 10px;
-                    color: hsl(198, 50%, 20%);
-                }
-            }
-        }
+  &-container {
+    display: grid;
+    grid-auto-flow: row;
+    padding-top: 5vh;
+    padding-bottom: 20vh;
+    width: 100vw;
+    &-title {
+      font-size: clamp(30px, 10vw, 50px);
+      font-family: "Montserrat", sans-serif;
+      background: $txt-gradient-fallback-clr; /* fallback for old browsers */
+      background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      text-align: end;
+      text-align: center;
+      padding-bottom: 1vh;
     }
-    
-    &-container {
+    &-content {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      @media screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
+      }
+      width: 100%;
+      &-wrapper {
         display: grid;
-        grid-auto-flow: row;
-        padding-top: 5vh;
-        padding-bottom: 20vh;
-        width: 100vw;
-        &-title{
-            font-size: clamp(30px,10vw,50px);
-            font-family: "Montserrat", sans-serif;
-            background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
-            background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            text-align: end;
-            text-align: center;
-            padding-bottom: 1vh;
+        justify-items: center;
+        width: 80%;
+        border: 1px outset hsla(0, 0%, 0%, 0.1);
+        box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.1);
+        border-radius: 10px;
+        padding-top: 5ch !important;
+        &-img {
+          display: grid;
+          justify-items: center;
+          &-pic {
+            width: 150px;
+            border-radius: 50%;
+          }
         }
-        &-content{
-            display: grid;
-            justify-items: center;
-            grid-template-columns: 1fr 1fr 1fr;
-            @media screen and (max-width:900px){
-                grid-template-columns: 1fr;
-            }
-            width: 100%;
-            &-wrapper{
-                display: grid;
-                justify-items: center;
-                width: 80%;
-                border: 1px outset hsla(0, 0%, 0%, 0.1);
-                box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.1);
-                border-radius: 10px;
-                padding-top: 5ch !important;
-                &-img {
-                    display: grid;
-                    justify-items: center;
-                    &-pic {
-                        width: 150px;
-                        border-radius: 50%;
-                    }
-                }
-                &-text {
-                    text-align: center;
-                    font-family: "Montserrat", sans-serif;
-                    background: $txt-gradient-fallback-clr;  /* fallback for old browsers */
-                    background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-weight: 700;
-                    width: 100%;
-                }
-                &-description {
-                    align-items: center;
-                    min-height: 20vh;
-                    padding: 3ch;
-                    &-person{
-                        &-title{
-                            color: white;
-                            justify-self: flex-start;
-                            text-shadow: 1px 1px 5px black;
-                            font-family: "Montserrat", sans-serif;
-                            font-weight: 400;
-                            margin: 0;
-                            padding: 0 1ch !important;
-                            padding-bottom: 2ch !important;
-                            text-align: center;
-                            font-size: 18px;
-                        }
-                        &-saying{
-                            background-image: linear-gradient(-225deg, rgb(27, 27, 27) 0%, hsl(0, 12%, 7%) 100%);
-                            background-clip: text;
-                            text-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.25);
-                            -webkit-text-fill-color: transparent;
-                            font-family: "Source Sans Pro", sans-serif;
-                            font-weight: 500;
-                            text-align: center;
-                        }
-                        &-email{
-                            font-family: "Source Sans Pro", sans-serif;
-                            color:#12313f;
-                            font-size: 15px;
-                            font-weight: 400;
-                            text-align: center;
-                        }
-                    }
-                }
-            }
+        &-text {
+          text-align: center;
+          font-family: "Montserrat", sans-serif;
+          background: $txt-gradient-fallback-clr; /* fallback for old browsers */
+          background: $txt-gradient-clr; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 700;
+          width: 100%;
         }
+        &-description {
+          align-items: center;
+          min-height: 20vh;
+          padding: 3ch;
+          &-person {
+            &-title {
+              color: white;
+              justify-self: flex-start;
+              text-shadow: 1px 1px 5px black;
+              font-family: "Montserrat", sans-serif;
+              font-weight: 400;
+              margin: 0;
+              padding: 0 1ch !important;
+              padding-bottom: 2ch !important;
+              text-align: center;
+              font-size: 18px;
+            }
+            &-saying {
+              background-image: linear-gradient(
+                -225deg,
+                rgb(27, 27, 27) 0%,
+                hsl(0, 12%, 7%) 100%
+              );
+              background-clip: text;
+              text-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.25);
+              -webkit-text-fill-color: transparent;
+              font-family: "Source Sans Pro", sans-serif;
+              font-weight: 500;
+              text-align: center;
+            }
+            &-email {
+              font-family: "Source Sans Pro", sans-serif;
+              color: #12313f;
+              font-size: 15px;
+              font-weight: 400;
+              text-align: center;
+            }
+          }
+        }
+      }
     }
+  }
 }
