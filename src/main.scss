@@ -1,173 +1,188 @@
-@import 'scss/general';
-@import 'scss/profile';
-@import 'scss/popups';
-@import 'scss/rental';
-@import 'scss/main-pgs';
-@import 'scss/page';
+@import "scss/general";
+@import "scss/profile";
+@import "scss/popups";
+@import "scss/rental";
+@import "scss/main-pgs";
+@import "scss/page";
+@import "scss/startnow";
 
 $bg-color-alt: hsl(198, 87%, 24%);
 $bg-popup-color: black;
 $bg-color: linear-gradient(
-    to top, 
-    hsla(180, 20%, 1%, 0.9) 0%, 
-    hsla(198, 87%, 24%, .90) 30%, 
-    hsla(198, 87%, 24%, .90) 60%, 
-    hsla(173, 52%, 68%, .05) 100%
+  to top,
+  hsla(180, 20%, 1%, 0.9) 0%,
+  hsla(198, 87%, 24%, 0.9) 30%,
+  hsla(198, 87%, 24%, 0.9) 60%,
+  hsla(173, 52%, 68%, 0.05) 100%
 );
 $btn-bg-color: linear-gradient(
-    to right, 
-    hsl(198, 87%, 24%) 0%, 
-    hsl(173, 52%, 68%)  51%, 
-    hsl(198, 87%, 24%)  100%
+  to right,
+  hsl(198, 87%, 24%) 0%,
+  hsl(173, 52%, 68%) 51%,
+  hsl(198, 87%, 24%) 100%
 );
 
 body {
-    height: 100%;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar {
-    width: 0.5em;
-    &-track{
-        background: hsla(198, 87%, 24%, 0);
+  width: 0.5em;
+  &-track {
+    background: hsla(198, 87%, 24%, 0);
+  }
+  &-thumb {
+    background: #085070; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to top,
+      #85d8ce,
+      #074661
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to top,
+      #85d8ce,
+      #085070
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 100px;
+    &:hover {
+      background: #0d7dad; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to top,
+        #9efff4,
+        #0d7dad
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to top,
+        #9efff4,
+        #0d7dad
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
-    &-thumb{
-        background: #085070;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, #85D8CE, #074661);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, #85D8CE, #085070); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        border-radius: 100px;
-        &:hover{
-            background: #0d7dad;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to top, #9efff4, #0d7dad);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to top, #9efff4, #0d7dad); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        }
-    }
+  }
 }
 
-.homepage{
-    background: $bg-color-alt;
-    background: $bg-color;
-    scroll-behavior: smooth;
-    &-cards{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+.homepage {
+  background: $bg-color-alt;
+  background: $bg-color;
+  scroll-behavior: smooth;
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.scroll-up {
+  &-container {
+    &-popup {
+      transition: 1s;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      z-index: 5;
+      bottom: 0;
+      left: 0;
+    }
+    &-hide {
+      transition: 0.8s;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      z-index: 6;
+      bottom: -100%;
+      left: 0;
+    }
+  }
+  &-popup {
+    background-color: $bg-popup-color;
+    border-radius: 100%;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+  }
+  &-hide {
+    background-color: $bg-popup-color;
+    opacity: 0.4;
+    border-radius: 100%;
+    color: white;
+    padding: 10px;
+  }
+  &-tooltip-text {
+    opacity: 0;
+    transition: 0.3s;
+    position: fixed;
+    bottom: 42px;
+    right: 100px;
+    width: fit-content;
+    background: hsla(0, 0%, 0%, 0.8);
+    color: #fff;
+    font-family: "Source Sans Pro";
+    text-shadow: 0px 0px 5px grey;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 7;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .scroll-up {
+    &-container {
+      &-hide {
         align-items: center;
+        margin-bottom: 40px;
+      }
+      &-popup {
+        align-items: center;
+        margin-bottom: 40px;
+      }
     }
+    &-popup {
+      opacity: 0.3;
+    }
+    &-tooltip-text {
+      display: none;
+    }
+  }
+  .start-up--bg-icon {
+    top: 150px;
+  }
 }
 
-.scroll-up{
-    &-container{
-        &-popup{
-            transition:1s;
-            position: fixed;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            z-index: 5;
-            bottom: 0;
-            left: 0;
-        }
-        &-hide{
+@media screen and (min-width: 600px) {
+  .scroll-up {
+    &-container {
+      &-hide {
+        align-items: flex-end;
+        margin-bottom: 40px;
+      }
+      &-popup {
+        align-items: flex-end;
+        opacity: 0.5;
+        margin-bottom: 40px;
+        &:hover {
+          .scroll-up-tooltip-text {
             transition: 0.8s;
-            position: fixed;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            z-index: 6;
-            bottom: -100%;
-            left: 0;
+            right: 90px;
+            opacity: 1;
+          }
         }
+      }
     }
-    &-popup{
-        background-color: $bg-popup-color;
-        border-radius: 100%;
-        color: white;
-        cursor: pointer;
-        padding: 10px;
+    &-hide {
+      margin-right: 40px;
     }
-    &-hide{
-        background-color: $bg-popup-color;
-        opacity: 0.4;
-        border-radius: 100%;
-        color: white;
-        padding: 10px;
+    &-popup {
+      margin-right: 40px;
     }
-    &-tooltip-text{
-        opacity: 0;
-        transition: 0.3s;
-        position: fixed;
-        bottom: 42px;
-        right: 100px;
-        width: fit-content;
-        background: hsla(0, 0%, 0%, 0.8);
-        color: #fff;
-        font-family: "Source Sans Pro";
-        text-shadow: 0px 0px 5px grey;
-        text-align: center;
-        border-radius: 6px;
-        padding: 8px;
-        z-index: 7;
-    }
+  }
 }
-
-@media screen and (max-width:600px) {
-    .scroll-up{
-        &-container{
-            &-hide{
-                align-items: center;
-                margin-bottom: 40px;
-            }
-            &-popup{
-                align-items: center;
-                margin-bottom: 40px;
-            }
-        }
-        &-popup{
-            opacity: 0.3;
-        }
-        &-tooltip-text {
-            display: none;
-        }
-    }
-    .start-up--bg-icon {
-        top: 150px;
-    }
-}
-
-@media screen and (min-width:600px) {
-    .scroll-up{
-        &-container{
-            &-hide{
-                align-items: flex-end;
-                margin-bottom: 40px;
-            }
-            &-popup{
-                align-items: flex-end;
-                opacity: 0.5;
-                margin-bottom: 40px;
-                &:hover{
-                    .scroll-up-tooltip-text {
-                        transition: 0.8s;
-                        right: 90px;
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-        &-hide{
-            margin-right: 40px;
-        }
-        &-popup{
-            margin-right: 40px;
-        }
-    }
-}
-  
-  
