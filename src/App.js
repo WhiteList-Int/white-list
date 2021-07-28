@@ -7,7 +7,7 @@ import AboutUs from './components/main-pages/react-js/AboutUs';
 import LearnMore from './components/information-page/LearnMore';
 import TermsService from './components/information-page/TermsService';
 import PrivacyPolicy from './components/information-page/PrivacyPolicy';
-import EditProfile from './components/owner-dash-sources/EditProfile.js';
+import EditProfile from './components/profile-sources/EditProfile.js';
 import ProfileConnects from './components/profile-sources/ProfileConnects';
 import RentalPreview from './components/information-page/RentalPreview';
 import AuthProvider from './components/FirebaseStuff/AuthContext';
