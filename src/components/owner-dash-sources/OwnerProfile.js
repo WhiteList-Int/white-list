@@ -66,7 +66,7 @@ function OwnerProfile() {
                         <p>Full Name</p>
                         <input 
                             className="edit-profile-wrapper-input" 
-                            type="text" placeholder={accounts[0].name} 
+                            type="text" placeholder={accounts[1].name} 
                             disabled={enableFields}
                         />
                     </div>
@@ -76,7 +76,7 @@ function OwnerProfile() {
                             className="edit-profile-wrapper-input" 
                             type="text" 
                             onFocus={(e)=>e.target.type = 'date' }  
-                            placeholder={accounts[0].bday} 
+                            placeholder={accounts[1].bday} 
                             disabled={enableFields}
                         />
                     </div>
@@ -85,7 +85,7 @@ function OwnerProfile() {
                         <input 
                             className="edit-profile-wrapper-input" 
                             type="text" 
-                            placeholder={accounts[0].email} 
+                            placeholder={accounts[1].email} 
                             disabled={enableFields}
                         />
                     </div>
@@ -93,7 +93,7 @@ function OwnerProfile() {
                         <p>Gender</p>
                         <input className="edit-profile-wrapper-input" 
                             type="text" 
-                            placeholder={accounts[0].gender} 
+                            placeholder={accounts[1].gender} 
                             disabled={enableFields}
                         />
                     </div>
@@ -102,7 +102,7 @@ function OwnerProfile() {
                         <input 
                             className="edit-profile-wrapper-input" 
                             type="text" 
-                            placeholder={accounts[0].contact} 
+                            placeholder={accounts[1].contact} 
                             disabled={enableFields}
                         />
                     </div>
@@ -110,7 +110,7 @@ function OwnerProfile() {
                         <p>Occupation</p>
                         <input className="edit-profile-wrapper-input"  
                             type="text" 
-                            placeholder={accounts[0].occupation} 
+                            placeholder={accounts[1].occupation} 
                             disabled={enableFields}
                         />
                     </div>
