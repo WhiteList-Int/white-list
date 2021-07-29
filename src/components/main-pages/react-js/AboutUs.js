@@ -51,11 +51,6 @@ function AboutUs() {
                                     opportunities. It primarily is an online, software solution directed towards the needs of students 
                                     and workers looking for affordable locations.
                                 </p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempora alias sed, 
-                                laborum nisi saepe at officia illum itaque voluptas perspiciatis aliquid voluptatum tenetur iure eaque ullam 
-                                sint ipsam quaerat repellat laudantium, qui tempore fuga. Officiis, incidunt nemo id maiores officia ipsa tempora 
-                                quaerat neque vel autem consequuntur natus sint?
-                                </p>
                             </div>
                         </div>
                         <div className="about-section-wrapper-container">
@@ -67,11 +62,6 @@ function AboutUs() {
                                     gain a good reputation and establish a consistent cash flow and long-term 
                                     corporate relationships.
                                 </p> 
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempora alias sed,
-                                    laborum nisi saepe at officia illum itaque voluptas perspiciatis aliquid voluptatum tenetur iure eaque ullam sint ipsam quaerat 
-                                    repellat laudantium, qui tempore fuga. Officiis, incidunt nemo id maiores officia ipsa tempora quaerat neque vel autem consequuntur 
-                                    natus sint?
-                                </p>
                             </div>
                         </div>
                     </div>

@@ -7,9 +7,10 @@ import { useHistory } from 'react-router-dom';
 import ReactDom  from 'react-dom';
 import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 import { useAuth } from '../FirebaseStuff/AuthContext'
+import accountsData from './../main-pages/comp/accountsData';
 
 
-export default function SignIn({open, redirect, onClose, onRedirect}) {
+export default function SignIn({open, linkToOpen, redirect, onClose, onRedirect}) {
     const pathName = useRef(window.location.pathname);
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -86,9 +87,19 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                         <div  className="sign-in-buttons"> {/*Login*/}
                             <button to={pathName.current} className='sign-in-link' hidden={redirect}
                             onClick={() => {
-                                var doNext = handleLogin()
+                                if(accountsData.some(code => code.email === emailRef.current.value) &&
+                                accountsData.some(code => code.password === passwordRef.current.value)){
+                                setTimeout(alert("Welcome back Lister!"), 300);
+                                    history.push(linkToOpen||"/rental-dashboard/all");
+                                /*var doNext = handleLogin()
                                 if(doNext){
-                                    history.push("/rental-dashboard");
+                                    history.push(linkToOpen);
+                                }*/
+                                } else if (accountsData.some(code => code.email === emailRef.current.value) ||
+                                accountsData.some(code => code.password === passwordRef.current.value)){
+                                    setTimeout(alert("Password or Username is Invalid"), 300);
+                                } else{
+                                    setTimeout(alert("User does not exist!"), 300);
                                 }
                             }}
                             disabled={loading}>Login</button>
@@ -97,6 +108,7 @@ export default function SignIn({open, redirect, onClose, onRedirect}) {
                         <div className="sign-in-buttons"> {/*Sign Up*/}
                             <button to={pathName.current} className='sign-in-link' hidden={!redirect}
                             onClick={() => {
+                                setTimeout(alert("Successfully Registered User!"), 300);
                                 handleSignUp().then(() => {
                                     history.push("/homepage");
                                 });

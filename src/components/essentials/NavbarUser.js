@@ -10,7 +10,8 @@ const NavbarUser = () => {
         <nav className = 'navbar-user'>
             <div className = 'navbar-user-container'>
                 <div>
-                    <NavLink to = '/homepage'><img className = 'navbar-user-header-img' src = {Img} alt="WhiteList"></img></NavLink>
+                    <NavLink to = '
+                    '><img className = 'navbar-user-header-img' src = {Img} alt="WhiteList"></img></NavLink>
                 </div>
                 <div className="navbar-user-container-side">
                     <h3>Nash-Taps</h3>

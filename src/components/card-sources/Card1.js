@@ -5,9 +5,18 @@ import Img3 from '../images/apartments.svg';
 import Img4 from '../images/rent-house.svg';
 import Img5 from '../images/hotels.svg';
 import Img6 from '../images/lease.svg';
-import { NavLink } from 'react-router-dom';
+import SignIn from './../pop-ups/SignIn';
+import { useState, useRef } from 'react';
 
 const Card1 = () => {
+    const linkToOpen = useRef("all");
+    const [isOpen, setIsOpen] = useState(false);
+    const [isRedirect, setIsRedirect] = useState(false);
+
+    const showScroll = () => {
+        document.body.setAttribute('style','overflow-y:scroll;');
+    }
+
     const bubbles = [
         { imgs: Img1, text: 'Lodging House', link: '/rental-dashboard/lodginghouse', id: 'b1', key: 1},
         { imgs: Img2, text: 'Boarding House', link: '/rental-dashboard/boardinghouse', id: 'b2', key: 2},
@@ -21,12 +30,18 @@ const Card1 = () => {
             <h1>VARIOUS RENTAL SERVICES</h1>
             <div className="card-1-container">
                 {bubbles.map((bub) => (
-                    <NavLink to = {bub.link} className = 'card-1-bubbles' id = {bub.id} key = {bub.key}>
+                    <span className = 'card-1-bubbles' id = {bub.id} key = {bub.key} onClick={()=>{linkToOpen.current=bub.link;setIsOpen(true);}}>
                         <div className="card-1-bubbles-cont-img"><img className="card-1-bubbles-img" src = {bub.imgs} alt = {bub.text}/></div>
                         <div className='card-1-bubbles-text'><center><h2>{bub.text}</h2></center></div>
-                    </NavLink>
+                    </span>
                 ))}
             </div>
+            <SignIn open={isOpen} 
+                linkToOpen={linkToOpen.current}
+                redirect={isRedirect}
+                onRedirect={() => {setIsRedirect(!isRedirect)}}
+                onClose={() => {setIsOpen(false);showScroll();}}
+            />
         </div>
     )
 }
