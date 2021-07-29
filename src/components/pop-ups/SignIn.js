@@ -90,7 +90,7 @@ export default function SignIn({open, linkToOpen, redirect, onClose, onRedirect}
                                 if(accountsData.some(code => code.email === emailRef.current.value) &&
                                 accountsData.some(code => code.password === passwordRef.current.value)){
                                 setTimeout(alert("Welcome Lister!"), 300);
-                                    if(emailRef.current.value.email === 'mervin_john32@gmail.com'){
+                                    if(emailRef.current.value === 'mervin_john32@gmail.com'){
                                         history.push(linkToOpen||"/owner-dashboard");
                                     }   else{
                                         history.push(linkToOpen||"/rental-dashboard/all");

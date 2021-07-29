@@ -116,7 +116,7 @@ function OwnerDashboard() {
                                     </div>
                                 ))}
                             </div>
-                            <div className="owner-dashboard-card-container-remove" onClick={()=>{setIsOpen(true);}}>
+                            <div className="owner-dashboard-card-container-remove" onClick={()=>{alert("Your request for removal will be sent to the Whitelist team!");setIsOpen(true);}}>
                                 <span className='owner-dashboard-card-container-remove-button'><h5>Remove Rental Property</h5></span>
                             </div>
                         </div>
