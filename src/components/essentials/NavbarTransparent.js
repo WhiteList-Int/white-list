@@ -10,7 +10,7 @@ const NavbarFixed = () => {
         <nav className = 'navbar-trans'>
             <div className = 'navbar-trans-container'>
                 <div className="navbar-trans-profileIcon"><AccountCircleIcon onClick={()=>setOpenNavbar(!openNavbar)} /></div>
-                <h3>Nash-Taps</h3>
+                <h3>Yezreel</h3>
             </div>
             <div className="navbar-trans-profile-side">
                 <div className={openNavbar?"navbar-trans-profile-side-nav":"navbar-trans-profile-side-nav-hide"}>
