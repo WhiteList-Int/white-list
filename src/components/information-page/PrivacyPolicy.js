@@ -4,13 +4,13 @@ import { variants } from '../../animation-variants.js';
 import { transitions } from '../../page-transitions.js';
 import Img2 from '../images/white-list-icon-gradient.svg';
 import Footer from '../essentials/Footer';
-import NavbarUser from '../essentials/NavbarUser';
+import NavbarFixed from '../essentials/NavbarFixed';
 
 //reused css from termsservice :)
 function PrivacyPolicy() {
     return (
         <>
-            <NavbarUser/>
+            <NavbarFixed/>
             <body className="terms-service">
                 {window.scroll(0,0)}
                 

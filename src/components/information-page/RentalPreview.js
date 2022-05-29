@@ -12,7 +12,7 @@ import SingleBedOutlinedIcon from '@material-ui/icons/SingleBedOutlined';
 import BathtubOutlinedIcon from '@material-ui/icons/BathtubOutlined';
 import RssFeedOutlinedIcon from '@material-ui/icons/RssFeedOutlined';
 import sampleData from '../main-pages/comp/sampleData';
-import NavbarFixed from './../essentials/NavbarFixed';
+import NavbarUser from './../essentials/NavbarUser';
 import starFilled from '../images/star-rated.svg';
 import starUnfilled from '../images/star-unrated.svg';
 import imgSrc from "../main-pages/comp/imgSrc";
@@ -39,7 +39,7 @@ const RentalPreview = () => {
 
     return (
         <div className="rental-preview">
-          <NavbarFixed/>
+          <NavbarUser/>
           <div className="rental-preview-wrapper">
             <div className="rental-preview-wrapper-gallery">
               <div 
