@@ -74,6 +74,7 @@ export default function SignIn({
 				}
 				setRegisterEmail('');
 				setRegisterPassword('');
+				onClose();
 				navigateCurrentUser();
 			});
 		} catch (error) {

@@ -11,6 +11,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase-config';
 import { updateDoc, getDoc, doc } from 'firebase/firestore';
 import { firestore } from '../../firebase-config';
+import { storage } from '../../firebase-config';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 
 function EditProfile() {
 	const [enableFields, setEnableFields] = useState(true);
@@ -23,9 +25,29 @@ function EditProfile() {
 	const [contactNum, setContactNum] = useState('');
 	const [occupation, setOccupation] = useState('');
 	const [user, loading] = useAuthState(auth);
+	const [imageUpload, setImageUpload] = useState(null);
+	const [imageUrl, setImageUrl] = useState('');
 
+	const uploadImage = () => {
+		if (imageUpload == null) return;
+		const imageRef = ref(storage, `user/profilePics/${user.uid}/image`);
+		uploadBytes(imageRef, imageUpload).then((snapshot) => {
+			getDownloadURL(snapshot.ref).then((url) => {
+				setImageUrl(url);
+			});
+		});
+	};
+
+	const imageListRef = ref(storage, `user/profilePics/${user.uid}/`);
 	useEffect(() => {
 		getCurrentUser();
+		listAll(imageListRef).then((response) => {
+			response.items.forEach((item) => {
+				getDownloadURL(item).then((url) => {
+					setImageUrl(url);
+				});
+			});
+		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [loading]);
 
@@ -41,6 +63,7 @@ function EditProfile() {
 		try {
 			const userDoc = doc(firestore, 'user', user.uid);
 			updateDoc(userDoc, updatedUser);
+			uploadImage();
 		} catch (error) {
 			console.log(error);
 		}
@@ -71,6 +94,7 @@ function EditProfile() {
 	const loadFile = (event) => {
 		var image = document.getElementById('change-image');
 		image.src = URL.createObjectURL(event.target.files[0]);
+		setImageUpload(event.target.files[0]);
 	};
 
 	return (
@@ -86,7 +110,7 @@ function EditProfile() {
 				>
 					<motion.div className='edit-profile-container'>
 						<div className='edit-profile-container-img'>
-							<img src={ppImg} alt='' id='change-image' />
+							<img src={imageUrl ? imageUrl : ppImg} alt='' id='change-image' />
 						</div>
 						<p>
 							<input
