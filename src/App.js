@@ -1,4 +1,4 @@
-import {Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Homepage from './Homepage.js';
 import RentalDashboard from './components/main-pages/react-js/RentalDashboard';
@@ -32,7 +32,6 @@ function App() {
 					<Route exact path='/privacy-policy' element={<PrivacyPolicy />} />
 					<Route exact path='/about-us' element={<AboutUs />} />
 					<Route exact path='/' element={<Homepage />} />
-					<Route exact path='/homepage' element={<Homepage />} />
 				</Routes>
 				{/* </AuthProvider> */}
 			</AnimatePresence>

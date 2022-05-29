@@ -12,7 +12,8 @@ import { auth } from '../../firebase-config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { firestore } from '../../firebase-config';
-import { setDoc, doc } from 'firebase/firestore';
+import { getDoc, setDoc, doc } from 'firebase/firestore';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function SignIn({
 	open,
@@ -26,14 +27,15 @@ export default function SignIn({
 	const [loginPassword, setLoginPassword] = useState('');
 	const [registerEmail, setRegisterEmail] = useState('');
 	const [registerPassword, setRegisterPassword] = useState('');
-
+	const [user] = useAuthState(auth);
 	const navigate = useNavigate();
 
 	const login = async () => {
 		try {
 			await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
 			alert('Successfully Logged In!');
-			navigate('/rental-dashboard');
+			onClose();
+			navigateCurrentUser();
 		} catch (err) {
 			alert('Incorrect Credentials');
 			console.log(err.message);
@@ -44,6 +46,12 @@ export default function SignIn({
 		//sign up back-end
 		const newUser = {
 			email: registerEmail,
+			isOwner: false,
+			name: '',
+			gender: '',
+			contact: '',
+			occupation: '',
+			bday: '',
 		};
 
 		//create user for Authentication
@@ -66,10 +74,27 @@ export default function SignIn({
 				}
 				setRegisterEmail('');
 				setRegisterPassword('');
+				navigateCurrentUser();
 			});
 		} catch (error) {
 			console.log(error.message);
 		}
+	};
+
+	const navigateCurrentUser = async () => {
+		const userDoc = doc(firestore, 'user', user.uid);
+		await getDoc(userDoc).then((docSnap) => {
+			if (docSnap.exists()) {
+				// console.log('Document data:', docSnap.data());
+				const myData = docSnap.data();
+				myData.isOwner
+					? navigate('/owner-dashboard')
+					: navigate('/rental-dashboard');
+			} else {
+				// doc.data() will be undefined in this case
+				console.log('No such document!');
+			}
+		});
 	};
 
 	if (!open) return null;

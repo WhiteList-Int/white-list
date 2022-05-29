@@ -14,16 +14,10 @@ const NavbarFixed = () => {
 	var [email, setEmail] = useState('');
 	const navigate = useNavigate();
 
-	const logout = async () => {
-		try {
-			await signOut(auth).then(() => {
-				console.log('logged out successfully');
-				navigate('/');
-			});
-		} catch (error) {
-			console.log('Error Logging out');
-		}
-	};
+	useEffect(() => {
+		getCurrentUser();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [loading]);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const getCurrentUser = async () => {
 		const userDoc = doc(firestore, 'user', user.uid);
@@ -39,10 +33,17 @@ const NavbarFixed = () => {
 			}
 		});
 	};
-	useEffect(() => {
-		getCurrentUser();
-	}, [getCurrentUser, loading]);
 
+	const logout = async () => {
+		try {
+			await signOut(auth).then(() => {
+				console.log('logged out successfully');
+				navigate('/');
+			});
+		} catch (error) {
+			console.log('Error Logging out');
+		}
+	};
 	return (
 		<nav className='navbar-trans'>
 			<div className='navbar-trans-container'>

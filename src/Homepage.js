@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import Navbar from './components/essentials/Navbar';
 import Footer from './components/essentials/Footer';
 import Card1 from './components/card-sources/Card1';
 import Card2 from './components/card-sources/Card2';
 import Card3 from './components/card-sources/Card3';
-import { auth } from './firebase-config';
-import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Homepage = () => {
 	const [scrollerPopup, setScrollerPopup] = useState(true);
-	const [user, loading] = useAuthState(auth);
-	const navigate = useNavigate();
-
-	useEffect(() => {
-		if (user) {
-			navigate('/rental-dashboard');
-		}
-	}, [user, loading, navigate]);
 
 	const showScrollUp = () => {
 		if (window.scrollY > 100) {
