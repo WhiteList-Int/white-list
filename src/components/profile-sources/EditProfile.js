@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { accounts } from './../profile-sources/account';
+// import { accounts } from './../profile-sources/account';
 import ProfileNavbar from './../profile-sources/ProfileNavbar';
 import ConfirmWindow from '../owner-dash-sources/ConfirmWindow';
 import ppImg from '../images/no_user.png';
@@ -8,10 +8,8 @@ import { motion } from 'framer-motion';
 import { variants } from './../../animation-variants';
 import { transitions } from './../../page-transitions';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../firebase-config';
+import { auth, firestore, storage } from '../../firebase-config';
 import { updateDoc, getDoc, doc } from 'firebase/firestore';
-import { firestore } from '../../firebase-config';
-import { storage } from '../../firebase-config';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 
 function EditProfile() {
@@ -24,6 +22,7 @@ function EditProfile() {
 	const [bday, setBday] = useState('');
 	const [contactNum, setContactNum] = useState('');
 	const [occupation, setOccupation] = useState('');
+	const [isGoogleUser, setGoogleUser] = useState('');
 	const [user, loading] = useAuthState(auth);
 	const [imageUpload, setImageUpload] = useState(null);
 	const [imageUrl, setImageUrl] = useState('');
@@ -81,6 +80,10 @@ function EditProfile() {
 				setContactNum(myData.contact);
 				setOccupation(myData.occupation);
 				setBday(myData.bday);
+				setGoogleUser(myData.isGoogleUser);
+				myData.isGoogleUser
+					? setImageUrl(myData.googleAvatar)
+					: setImageUrl('');
 			} else {
 				// doc.data() will be undefined in this case
 				console.log('No such document!');
@@ -110,7 +113,11 @@ function EditProfile() {
 				>
 					<motion.div className='edit-profile-container'>
 						<div className='edit-profile-container-img'>
-							<img src={imageUrl ? imageUrl : ppImg} alt='' id='change-image' />
+							<img
+								src={imageUrl ? imageUrl : isGoogleUser ? imageUrl : ppImg}
+								alt=''
+								id='change-image'
+							/>
 						</div>
 						<p>
 							<input

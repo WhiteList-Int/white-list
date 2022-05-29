@@ -9,11 +9,15 @@ import gsign from '../images/btn_google_signin_light_normal_web@2x.png';
 // import { useAuth } from '../FirebaseStuff/AuthContext'
 // import accountsData from './../main-pages/comp/accountsData';
 import { auth } from '../../firebase-config';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import {
+	getAdditionalUserInfo,
+	signInWithEmailAndPassword,
+} from 'firebase/auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { firestore } from '../../firebase-config';
 import { getDoc, setDoc, doc } from 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 export default function SignIn({
 	open,
@@ -29,6 +33,46 @@ export default function SignIn({
 	const [registerPassword, setRegisterPassword] = useState('');
 	const [user] = useAuthState(auth);
 	const navigate = useNavigate();
+
+	const signInGoogle = () => {
+		const auth = getAuth();
+		const provider = new GoogleAuthProvider();
+		signInWithPopup(auth, provider)
+			.then(async (result) => {
+				// The signed-in user info.
+				const userGoogle = result.user;
+				if (getAdditionalUserInfo(result).isNewUser) {
+					const newUser = {
+						email: userGoogle.email,
+						isOwner: false,
+						name: userGoogle.displayName,
+						gender: '',
+						contact: '',
+						occupation: '',
+						bday: '',
+						isGoogleUser: true,
+						googleAvatar: userGoogle.photoURL,
+					};
+
+					//create userData for Firestore
+					try {
+						await setDoc(doc(firestore, 'user', userGoogle.uid), newUser);
+					} catch (error) {
+						console.log(error);
+					}
+				}
+
+				alert('Successfully Logged In!');
+				onClose();
+				navigateCurrentUser();
+			})
+			.catch((error) => {
+				const errorMessage = error.message;
+
+				alert(errorMessage);
+				// ...
+			});
+	};
 
 	const login = async () => {
 		try {
@@ -52,6 +96,7 @@ export default function SignIn({
 			contact: '',
 			occupation: '',
 			bday: '',
+			isGoogleUser: false,
 		};
 
 		//create user for Authentication
@@ -170,6 +215,7 @@ export default function SignIn({
 								src={gsign}
 								alt='gsign'
 								className='sign-in-google-link'
+								onClick={signInGoogle}
 								hidden={redirect}
 							/>
 						</div>
@@ -189,6 +235,7 @@ export default function SignIn({
 								src={gsign}
 								alt='gsign'
 								className='sign-in-google-link'
+								onClick={signInGoogle}
 								hidden={!redirect}
 							/>
 						</div>
